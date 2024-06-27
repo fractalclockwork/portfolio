@@ -48,6 +48,6 @@ test4
 
 test5
 
-[repo![](https://fractalclockwork.github.io/portfolio/assets/img/code.jpeg width="35")](https://github.com/fractalclockwork/Data200/blob/main/FinalPoject/README.md)
+[repo![](https://fractalclockwork.github.io/portfolio/assets/img/code.jpeg){width=35px}](https://github.com/fractalclockwork/Data200/blob/main/FinalPoject/README.md)
 
 
