@@ -30,18 +30,18 @@ Software Engineer, Operating Systems @ OpenTV (_7 years_)
 
 test1 
 
-<a href="assets/img/code.jpg" class="image fit"><img src="https://github.com/fractalclockwork/Data200/blob/main/FinalPoject/README.md" alt=""></a>
+<a href="assets/img/code.jpeg" class="image fit"><img src="https://github.com/fractalclockwork/Data200/blob/main/FinalPoject/README.md" alt=""></a>
 
 test2
 
 <a href="https://github.com/fractalclockwork/Data200/blob/main/FinalPoject/README.md">
-    <img src="assests/img/code.jpg" width="100"/>
+    <img src="assets/img/code.jpeg" width="100"/>
 </a>
 
 test3
 
-[![repo](https://fractalclockwork.github.io/portfolio/assets/img/code.jpg)](https://github.com/fractalclockwork/Data200/blob/main/FinalPoject/README.md)
+[![repo](https://fractalclockwork.github.io/portfolio/assets/img/code.jpeg)](https://github.com/fractalclockwork/Data200/blob/main/FinalPoject/README.md)
 
 test4
 
-[<img src="https://fractalclockwork.github.io/portfolio/assets/img/code.jpg" alt="repo" height="32" />](https://github.com/fractalclockwork/Data200/blob/main/FinalPoject/README.md)
+[<img src="https://fractalclockwork.github.io/portfolio/assets/img/code.jpeg" alt="repo" height="32" />](https://github.com/fractalclockwork/Data200/blob/main/FinalPoject/README.md)
