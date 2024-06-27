@@ -42,5 +42,5 @@ test2
 
 test3
 
-![repo](https://fractalclockwork.github.io/portfolio/assets/code.jpg)(https://github.com/fractalclockwork/Data200/blob/main/FinalPoject/README.md)
+[![repo](https://fractalclockwork.github.io/portfolio/assets/code.jpg)](https://github.com/fractalclockwork/Data200/blob/main/FinalPoject/README.md)
 
