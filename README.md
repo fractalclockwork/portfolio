@@ -30,9 +30,7 @@ Software Engineer, Operating Systems @ OpenTV (_7 years_)
 
 test1 
 
-<a href="assests/img/code.jpg" class="image fit"><img src="assests/img/code.jpg" alt=""></a>
-
-![foo](./assets/img/code.jpeg)[repo](https://github.com/fractalclockwork/Data200/blob/main/FinalPoject/README.md)
+<a href="assests/img/code.jpg" class="image fit"><img src="https://github.com/fractalclockwork/Data200/blob/main/FinalPoject/README.md" alt=""></a>
 
 test2
 
@@ -45,7 +43,5 @@ test3
 [![repo](https://fractalclockwork.github.io/portfolio/img/assets/code.jpg)](https://github.com/fractalclockwork/Data200/blob/main/FinalPoject/README.md)
 
 test4
-
-[<img src="https://gist.github.com/cxmeel/0dbc95191f239b631c3874f4ccf114e2/raw/SERVICE-icon.svg" alt="Get it on SERVICE" height="32" />](https://example.com/...)
 
 [<img src="https://fractalclockwork.github.io/portfolio/assets/img/code.jpg" alt="repo" height="32" />](https://github.com/fractalclockwork/Data200/blob/main/FinalPoject/README.md)
