@@ -37,10 +37,15 @@ test1
 test2
 
 <a href="https://github.com/fractalclockwork/Data200/blob/main/FinalPoject/README.md">
-    <img src="https://fractalclockwork.github.io/portfolio/assets/code.jpg" width="100"/>
+    <img src="https://fractalclockwork.github.io/portfolio/assets/img/code.jpg" width="100"/>
 </a>
 
 test3
 
-[![repo](https://fractalclockwork.github.io/portfolio/assets/code.jpg)](https://github.com/fractalclockwork/Data200/blob/main/FinalPoject/README.md)
+[![repo](https://fractalclockwork.github.io/portfolio/img/assets/code.jpg)](https://github.com/fractalclockwork/Data200/blob/main/FinalPoject/README.md)
 
+test4
+
+[<img src="https://gist.github.com/cxmeel/0dbc95191f239b631c3874f4ccf114e2/raw/SERVICE-icon.svg" alt="Get it on SERVICE" height="32" />](https://example.com/...)
+
+[<img src="https://fractalclockwork.github.io/portfolio/assets/img/code.jpg" alt="repo" height="32" />](https://github.com/fractalclockwork/Data200/blob/main/FinalPoject/README.md)
