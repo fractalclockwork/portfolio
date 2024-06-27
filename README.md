@@ -35,7 +35,7 @@ test1
 test2
 
 <a href="https://github.com/fractalclockwork/Data200/blob/main/FinalPoject/README.md">
-    <img src="assets/img/code.jpg" width="100"/>
+    <img src="assests/img/code.jpg" width="100"/>
 </a>
 
 test3
