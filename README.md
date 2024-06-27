@@ -22,7 +22,7 @@ Software Engineer, Operating Systems @ OpenTV (_7 years_)
 
 [repo](https://github.com/fractalclockwork/Data200/blob/main/FinalPoject/README.md)
 
-[paper](https://github.com/fractalclockwork/Data200/blob/main/FinalPoject/narrative/Final_Project_Report.pdf)
+[paper](https://fractalclockwork.github.io/Data200/FinalPoject/narrative/Final_Project_Report.pdf)
 
-[slides](https://github.com/fractalclockwork/Data200/blob/main/FinalPoject/narrative/Final_Project_Report.pdf)
+[slides](https://fractalclockwork.github.io/Data200/FinalPoject/narrative/Final_Project_Presentation.pdf)
 
