@@ -18,6 +18,6 @@ Software Engineer, Operating Systems @ OpenTV (_7 years_)
 
 ## Projects
 
-### [Classifying Damage Level Disaster-Induced Images Via Computer Vision](hhttps://github.com/fractalclockwork/Data200/blob/main/FinalPoject/README.md)
+### [Classifying Damage Level Disaster-Induced Images Via Computer Vision](https://github.com/fractalclockwork/Data200/blob/main/FinalPoject/README.md)
 
 
