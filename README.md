@@ -27,7 +27,7 @@ Software Engineer, Operating Systems @ OpenTV (_7 years_)
 [slides](https://fractalclockwork.github.io/Data200/FinalPoject/narrative/Final_Project_Presentation.pdf)
 
 
-<label for="myButton">Click the button to go to the website:</label>
+<label for="myButton">Code:</label>
 <a href="https://github.com/fractalclockwork/Data200/blob/main/FinalPoject/README.md">
   <img id="myButton" src="assets/img/code.jpeg" alt="Go to Website" style="width:42px;height:42px;border:0;">
 </a>
