@@ -2,6 +2,8 @@
 
 #### Technical Skills: Python, C/C++, CUDA, MATLAB, TensorFlow
 
+![](https://img.shields.io/badge/nvidia-GTX1080) ![](https://img.shields.io/badge/CUDA-12.5) ![](https://img.shields.io/badge/MATLAB-Octave) ![](https://img.shields.io/badge/TensorFlow-PyTorch) ![](https://img.shields.io/badge/C\/C++-11\/14\/17\/20\/23)
+
 ## Education
 - M.S., Molecular Science and Software Engineering  | University of California, Berkeley CA (_May 2026 exp_ )
 - Professional Education, Applied Data Science      | Massachusetts Institute of Technology (_May 2023_)
