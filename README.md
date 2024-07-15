@@ -2,7 +2,7 @@
 
 #### Technical Skills: Python, C/C++, CUDA, MATLAB, TensorFlow
 
-[![](https://img.shields.io/badge/Nvidia-GTX1080-blue)](https://www.nvidia.com/en-gb/geforce/graphics-cards/geforce-gtx-1080/specifications/) ![](https://img.shields.io/badge/CUDA-12.5) ![](https://img.shields.io/badge/MATLAB-Octave) ![](https://img.shields.io/badge/TensorFlow-PyTorch) ![](https://img.shields.io/badge/C\/C++-11\/14\/17\/20\/23-blue)
+[![](https://img.shields.io/badge/Nvidia-GTX1080-blue)](https://www.nvidia.com/en-gb/geforce/graphics-cards/geforce-gtx-1080/specifications/) ![](https://img.shields.io/badge/CUDA-12.5) ![](https://img.shields.io/badge/MATLAB-Octave) ![](https://img.shields.io/badge/TensorFlow-PyTorch) ![](https://img.shields.io/badge/C/C++-11/14/17/20/23-blue)
 
 ## Education
 - M.S., Molecular Science and Software Engineering  | University of California, Berkeley CA (_May 2026 exp_ )
