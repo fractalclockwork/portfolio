@@ -22,14 +22,4 @@ Software Engineer, Operating Systems @ OpenTV (_7 years_)
 
 ### Classifying Damage Level Disaster-Induced Images Via Computer Vision
 
-[repo](https://github.com/fractalclockwork/Data200/blob/main/FinalPoject/README.md)
-
-[paper](https://fractalclockwork.github.io/Data200/FinalPoject/narrative/Final_Project_Report.pdf)
-
-[slides](https://fractalclockwork.github.io/Data200/FinalPoject/narrative/Final_Project_Presentation.pdf)
-
-
-<label for="myButton">Code:</label>
-<a href="https://github.com/fractalclockwork/Data200/blob/main/FinalPoject/README.md">
-  <img id="myButton" src="assets/img/code.jpeg" alt="Go to Website" style="width:42px;height:42px;border:0;">
-</a>
+[repo](https://github.com/fractalclockwork)
