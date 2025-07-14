@@ -28,10 +28,10 @@ I specialize in projects that require low-level insight and high-level systems t
 
 ## 📚 Education
 
-- **M.S. in Molecular Science and Software Engineering** — University of California, Berkeley _(exp. 2026)_
+- **M.S. in Molecular Science and Software Engineering** — University of California, Berkeley _(2026)_
 - **Certificate in Applied Data Science** — Massachusetts Institute of Technology _(2023)_
+- **Open University at College of Science and Engineering** -- San Francisco State University _(1999-2021)_ 
 - **B.S. in Electronics Engineering Technology** — Hamilton Technical College _(1993)_
-- Additional coursework at San Francisco State University and Open University
 
 ---
 
@@ -65,7 +65,7 @@ _Tools:_ V4L2, FFmpeg, MediaMTX, GStreamer
 
 ### Disaster Image Severity Classification with CNNs  
 Fine-tuned convolutional models to classify damage severity from disaster-scene imagery using public crisis datasets  
-→ _Explored multimodal cues for humanitarian response modeling_  
+https://github.com/fractalclockwork/portfolio→ _Explored multimodal cues for humanitarian response modeling_  
 _Tools:_ PyTorch, TensorFlow, NumPy, OpenCV  
 [repo](https://github.com/fractalclockwork/Data200)
 
