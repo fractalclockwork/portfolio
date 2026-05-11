@@ -3,8 +3,6 @@ layout: default
 title: Brent A. Thorne
 ---
 
-# Brent A. Thorne
-
 **Embedded Systems Engineer • Scientific Computing Specialist • R&D Platform Architect**  
 _Firmware + Drivers • Real-Time Sensing • HPC Optimization • Applied AI_
 
