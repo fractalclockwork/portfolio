@@ -152,10 +152,15 @@ flowchart LR
 
 # Technical Focus Areas {#skills}
 
-- **Embedded:** Yocto, Buildroot, V4L2, DMA, Device Trees  
-- **HPC:** OpenMP, MPI, AVX2, CUDA kernels  
-- **AI/ML:** PyTorch, TensorFlow, ONNX, OpenCV  
-- **DevOps:** Docker, GitHub Actions, CI/CD workflows  
+- **Embedded:** Yocto, Buildroot, RTOS, V4L2, DMA, Device Trees  
+- **Firmware:** I2C, SPI, UART, CAN, timing/synchronization, motion control  
+- **Build & Test:** Make, CMake, cross-compilation toolchains, LabGrid, reproducible builds  
+- **Signal Processing:** sensor fusion, precision measurement, filtering  
+- **HPC:** OpenMP, MPI, AVX2, CUDA kernels, numerical methods  
+- **AI/ML:** PyTorch, TensorFlow, ONNX, OpenCV, real-time vision pipelines  
+- **Instrumentation:** network analyzers, oscilloscopes, RF signal generators, automated lab workflows  
+- **CI/CD:** Docker, Jenkins, GitHub Actions, automated artifact packaging  
+- **Debugging:** system-level profiling, hardware integration, performance tuning  
 - **Visualization:** Matplotlib, VTK, Mayavi  
 
 ---
@@ -175,11 +180,20 @@ flowchart LR
 - Designed and implemented Linux kernel drivers for radar and imaging hardware, including DMA-based high-rate ADC capture
 - Built real-time multi-camera acquisition pipelines (V4L2, GStreamer, RTSP) for embedded vision platforms
 - Developed CUDA-accelerated scientific computing tools for agent-based simulation and volumetric analysis
+- Designed CI/CD automation for embedded Linux targets using Docker, GitHub Actions, and LabGrid workflows
+- Coordinated with hardware engineers to integrate analog/digital subsystems and negotiate design trade-offs
 
 ### Senior HW/SW R&D Engineer — Grid Net _(2013–2018)_
 - Led firmware and driver development for smart-grid metering modem platforms deployed across utility networks
 - Wrote and maintained Linux kernel modules for custom communication hardware (SPI, UART, CAN)
 - Owned board bring-up, bootloader configuration, and Yocto-based BSP integration for ARM-based field devices
+- Established reproducible build environments, cross-compilation toolchains, and automated artifact packaging
+- Guided cross-functional collaboration among firmware, hardware, and test engineering groups
+
+### Design Engineer — Embedded Systems Consultant _(2011–2013)_
+- Built embedded medical and wearable systems integrating precision bioelectrical sensing and real-time signal processing
+- Designed hardware prototypes using CAD, CNC machining, and custom PCB development
+- Developed the system described in US patent application 61834836 for bioelectrical signal processing
 
 ### Systems & Integration Engineer — OpenTV _(2004–2011)_
 - Developed embedded Linux software for broadband set-top boxes and interactive media platforms
@@ -188,9 +202,16 @@ flowchart LR
 
 ---
 
+# Patents {#patents}
+
+- **US 61834836** — System for Optimal Physical Exercise and Training _(Filed Jun 13, 2013)_  
+  Developed a system for processing, displaying, and comparing bioelectrical signals.
+
+---
+
 # Contact {#contact}
 
-- [brentathorne@gmail.com](mailto:brentathorne@gmail.com)  
+- [bathorne@berkeley.edu](mailto:bathorne@berkeley.edu)  
 - [LinkedIn](https://www.linkedin.com/in/brent-thorne-a581554)  
 - [GitHub Pages](https://fractalclockwork.github.io)  
 - [Resume (PDF)](/assets/Brent_Thorne_Resume.pdf)
