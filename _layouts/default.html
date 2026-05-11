@@ -4,34 +4,65 @@
     <meta charset="UTF-8" />
     <title>{{ page.title | default: site.title }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Brent A. Thorne — Embedded Systems Engineer, Scientific Computing Specialist, and R&D Platform Architect. Firmware, real-time sensing, HPC, and applied AI." />
 
     <!-- Theme CSS -->
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
 
+    <style>
+      .mermaid {
+        text-align: center;
+        background: transparent;
+        padding: 1em 0;
+      }
+      .mermaid svg {
+        max-width: 100%;
+        height: auto;
+      }
+      header img {
+        max-width: 150px;
+        border-radius: 50%;
+      }
+      img[src*="shields.io"] {
+        margin-right: 4px;
+        margin-bottom: 4px;
+      }
+      section {
+        margin-bottom: 2em;
+      }
+    </style>
   </head>
   <body>
 
-    <header>
-      <h1>{{ site.title }}</h1>
-      {% if site.logo %}
-      <img src="{{ site.logo | relative_url }}" alt="Logo" style="max-width:150px;border-radius:50%;">
-      {% endif %}
-    </header>
+    <div class="wrapper">
+      <header>
+        <h1>{{ site.title }}</h1>
+        {% if site.logo %}
+        <img src="{{ site.logo | relative_url }}" alt="Logo" />
+        {% endif %}
+      </header>
 
-    <main>
-      {{ content }}
-    </main>
+      <main>
+        {{ content }}
+      </main>
 
-    <footer>
-      <p>© {{ site.time | date: '%Y' }} {{ site.title }}</p>
-    </footer>
+      <footer>
+        <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}</p>
+      </footer>
+    </div>
 
-    <!-- Mermaid.js (Client-Side Rendering) -->
+    <!-- Mermaid.js — rewrite kramdown's <code class="language-mermaid"> to <pre class="mermaid"> -->
     <script type="module">
-      import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
-      mermaid.initialize({ startOnLoad: true });
+      import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+      document.querySelectorAll('code.language-mermaid').forEach(codeEl => {
+        const pre = codeEl.parentElement;
+        const mermaidPre = document.createElement('pre');
+        mermaidPre.classList.add('mermaid');
+        mermaidPre.textContent = codeEl.textContent;
+        pre.parentElement.replaceChild(mermaidPre, pre);
+      });
+      mermaid.initialize({ startOnLoad: true, theme: 'dark' });
     </script>
 
   </body>
 </html>
-
