@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{{ page.title | default: site.title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+
+  </head>
+  <body>
+
+    <header>
+      <h1>{{ site.title }}</h1>
+      {% if site.logo %}
+      <img src="{{ site.logo | relative_url }}" alt="Logo" style="max-width:150px;border-radius:50%;">
+      {% endif %}
+    </header>
+
+    <main>
+      {{ content }}
+    </main>
+
+    <footer>
+      <p>© {{ site.time | date: '%Y' }} {{ site.title }}</p>
+    </footer>
+
+    <!-- Mermaid.js (Client-Side Rendering) -->
+    <script type="module">
+      import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
+      mermaid.initialize({ startOnLoad: true });
+    </script>
+
+  </body>
+</html>
+
