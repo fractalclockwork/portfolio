@@ -6,31 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Brent A. Thorne — Embedded Systems Engineer, Scientific Computing Specialist, and R&D Platform Architect. Firmware, real-time sensing, HPC, and applied AI." />
 
-    <!-- Theme CSS -->
-    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+    <!-- Open Graph -->
+    <meta property="og:title" content="{{ page.title | default: site.title }}" />
+    <meta property="og:description" content="Embedded Systems Engineer — Firmware, real-time sensing, HPC, and applied AI." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{ page.url | absolute_url }}" />
+    <meta property="og:image" content="{{ '/assets/img/headshot_circle.png' | absolute_url }}" />
 
-    <style>
-      .mermaid {
-        text-align: center;
-        background: transparent;
-        padding: 1em 0;
-      }
-      .mermaid svg {
-        max-width: 100%;
-        height: auto;
-      }
-      header img {
-        max-width: 150px;
-        border-radius: 50%;
-      }
-      img[src*="shields.io"] {
-        margin-right: 4px;
-        margin-bottom: 4px;
-      }
-      section {
-        margin-bottom: 2em;
-      }
-    </style>
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="{{ page.title | default: site.title }}" />
+    <meta name="twitter:description" content="Embedded Systems Engineer — Firmware, real-time sensing, HPC, and applied AI." />
+    <meta name="twitter:image" content="{{ '/assets/img/headshot_circle.png' | absolute_url }}" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{{ '/assets/img/headshot_circle.png' | relative_url }}" />
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}" />
   </head>
   <body>
 
@@ -38,9 +34,17 @@
       <header>
         <h1>{{ site.title }}</h1>
         {% if site.logo %}
-        <img src="{{ site.logo | relative_url }}" alt="Logo" />
+        <img src="{{ site.logo | relative_url }}" alt="{{ site.title }}" />
         {% endif %}
       </header>
+
+      <nav class="site-nav">
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </nav>
 
       <main>
         {{ content }}

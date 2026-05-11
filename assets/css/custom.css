@@ -1,0 +1,134 @@
+/* --- Navigation --- */
+nav.site-nav {
+  margin-bottom: 2em;
+  padding: 0.75em 0;
+  border-bottom: 1px solid #333;
+}
+
+nav.site-nav a {
+  color: #b5e853;
+  text-decoration: none;
+  margin-right: 1.5em;
+  font-size: 0.95em;
+  font-weight: bold;
+  letter-spacing: 0.03em;
+}
+
+nav.site-nav a:hover {
+  text-decoration: underline;
+}
+
+/* --- Intro paragraph --- */
+.intro-text {
+  font-size: 1.05em;
+  line-height: 1.6;
+  margin-bottom: 1.5em;
+  color: #ccc;
+}
+
+/* --- Badges --- */
+img[src*="shields.io"] {
+  margin-right: 4px;
+  margin-bottom: 4px;
+}
+
+/* --- Project cards --- */
+.project-card {
+  border: 1px solid #333;
+  border-radius: 6px;
+  padding: 1.5em;
+  margin-bottom: 2em;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.project-card h2 {
+  margin-top: 0;
+  border-bottom: none;
+  font-size: 1.3em;
+}
+
+.project-card .mermaid {
+  margin-top: 1em;
+}
+
+/* --- Section spacing --- */
+section {
+  margin-bottom: 2.5em;
+}
+
+h1 {
+  border-bottom: 1px solid #333;
+  padding-bottom: 0.3em;
+}
+
+/* --- Experience entries --- */
+.experience h3 {
+  margin-bottom: 0.3em;
+}
+
+.experience ul {
+  margin-top: 0.3em;
+}
+
+/* --- Header --- */
+header img {
+  max-width: 150px;
+  border-radius: 50%;
+}
+
+/* --- Mermaid diagrams --- */
+.mermaid {
+  text-align: center;
+  background: transparent;
+  padding: 1em 0;
+}
+
+.mermaid svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* --- Footer --- */
+footer {
+  margin-top: 3em;
+  padding-top: 1em;
+  border-top: 1px solid #333;
+  font-size: 0.9em;
+  color: #666;
+}
+
+/* --- Blockquote (closing quote) --- */
+blockquote {
+  border-left: 3px solid #b5e853;
+  padding-left: 1em;
+  color: #999;
+  font-style: italic;
+}
+
+/* --- Print styles --- */
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+
+  .mermaid {
+    page-break-inside: avoid;
+  }
+
+  nav.site-nav {
+    display: none;
+  }
+}
+
+/* --- Responsive --- */
+@media (max-width: 600px) {
+  nav.site-nav a {
+    display: block;
+    margin-bottom: 0.5em;
+  }
+
+  .project-card {
+    padding: 1em;
+  }
+}
