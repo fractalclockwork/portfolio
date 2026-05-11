@@ -72,11 +72,11 @@ CUDA, Python, AVX2, Matplotlib
 ### Algorithm Diagram
 ```mermaid
 flowchart TD
-    INIT[Initialize Points on Sphere] --> FORCE[Compute Repulsive Forces (CUDA)]
-    FORCE --> UPDATE[Update Positions]
-    UPDATE --> CHECK[Convergence Check]
+    INIT["Initialize Points on Sphere"] --> FORCE["Compute Repulsive Forces (CUDA)"]
+    FORCE --> UPDATE["Update Positions"]
+    UPDATE --> CHECK["Convergence Check"]
     CHECK -->|Not Converged| FORCE
-    CHECK -->|Converged| OUTPUT[Final Distribution]
+    CHECK -->|Converged| OUTPUT["Final Distribution"]
 ```
 
 ---
