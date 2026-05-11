@@ -50,7 +50,7 @@ C, Kernel Modules, DMA, mmap, FFTW
 flowchart LR
     ADC[High-Rate ADC] --> DMA[DMA Engine]
     DMA --> KMOD[Kernel Driver]
-    KMOD --> RB[Ring Buffer (mmap)]
+    KMOD --> RB[Ring Buffer mmap]
     RB --> FFT[User-Space FFT Engine]
     FFT --> APP[Analysis Application]
 ```
