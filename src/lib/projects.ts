@@ -228,13 +228,13 @@ export function withBasePath(path: string): string {
 }
 
 export const about = {
-  name: "Brent A. Thorne",
+  /** Public studio identity — personal legal name is not shown on this surface. */
+  name: "La Playa",
   brand: "fractalclockwork",
   email: "bathorne@berkeley.edu",
   github: "https://github.com/fractalclockwork",
-  linkedin: "https://www.linkedin.com/in/brent-thorne-a581554",
-  resumePath: "/Brent_Thorne_Resume.pdf",
-  bio: "I design reproducible, high-performance frameworks for scientific problems, drawing on topological data analysis, hypergraphs, and accelerator-aware algorithms — and I keep a hardware bench for the systems that still need solder, cores, and CRTs.",
+  resumePath: "/resume.pdf",
+  bio: "La Playa is the studio face for fractalclockwork — reproducible, high-performance frameworks for scientific problems, topological data analysis, hypergraphs, and accelerator-aware algorithms, plus a hardware bench for systems that still need solder, cores, and CRTs.",
   focus: [
     "Embedded Linux drivers, BSP bring-up, and real-time sensing pipelines",
     "HPC regression, containerized clusters, and scientific DevOps",

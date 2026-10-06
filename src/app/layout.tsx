@@ -22,11 +22,11 @@ const plexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "fractalclockwork — Brent A. Thorne",
+  title: "fractalclockwork — La Playa",
   description:
-    "Professional portfolio for Brent A. Thorne (fractalclockwork): hardware research, scientific computing, and agentic engineering — CRT Drive, core memory, HPC tooling.",
+    "La Playa / fractalclockwork portfolio: hardware research, scientific computing, and agentic engineering — CRT Drive, core memory, HPC tooling.",
   openGraph: {
-    title: "fractalclockwork — Brent A. Thorne",
+    title: "fractalclockwork — La Playa",
     description:
       "Curated portfolio: CRT Drive, core memory, HPC tooling, and reproducible lab infrastructure.",
     type: "website",

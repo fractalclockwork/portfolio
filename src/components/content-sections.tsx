@@ -183,7 +183,7 @@ export function ContentSections() {
                   nativeButton={false}
                   render={
                     <a
-                      href={about.linkedin}
+                      href={about.github}
                       target="_blank"
                       rel="noopener noreferrer"
                     />
@@ -192,7 +192,7 @@ export function ContentSections() {
                   size="lg"
                   className="h-10 rounded-md border-signal/25 bg-transparent px-4 font-tech text-[11px] tracking-[0.16em] text-signal uppercase hover:bg-signal/10 hover:text-signal-bright"
                 >
-                  LinkedIn
+                  GitHub
                   <ArrowUpRight data-icon="inline-end" />
                 </Button>
                 <Button
