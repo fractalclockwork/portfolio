@@ -4,18 +4,19 @@ import { randomWordSalad, saladIntervalMs } from "@/lib/word-salad";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
+const PLACEHOLDER = "salt-fogged tidepool compiles amid the ringbuffer.";
+
 export function WordSalad({ className = "" }: { className?: string }) {
-  const [phrase, setPhrase] = useState(() => randomWordSalad());
+  const [phrase, setPhrase] = useState(PLACEHOLDER);
 
   useEffect(() => {
     let timer: ReturnType<typeof setTimeout>;
-    const schedule = () => {
-      timer = setTimeout(() => {
-        setPhrase(randomWordSalad());
-        schedule();
-      }, saladIntervalMs());
+    const tick = () => {
+      setPhrase(randomWordSalad());
+      timer = setTimeout(tick, saladIntervalMs());
     };
-    schedule();
+    // Defer first randomize so SSR/CSR markup match; then rotate every 3–5s.
+    timer = setTimeout(tick, 0);
     return () => clearTimeout(timer);
   }, []);
 
