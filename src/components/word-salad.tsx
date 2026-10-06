@@ -5,13 +5,9 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
 export function WordSalad({ className = "" }: { className?: string }) {
-  const [phrase, setPhrase] = useState("…");
-  const [ready, setReady] = useState(false);
+  const [phrase, setPhrase] = useState(() => randomWordSalad());
 
   useEffect(() => {
-    setPhrase(randomWordSalad());
-    setReady(true);
-
     let timer: ReturnType<typeof setTimeout>;
     const schedule = () => {
       timer = setTimeout(() => {
@@ -34,7 +30,7 @@ export function WordSalad({ className = "" }: { className?: string }) {
       </p>
       <AnimatePresence mode="wait">
         <motion.p
-          key={ready ? phrase : "boot"}
+          key={phrase}
           className="mt-1.5 max-w-lg text-[15px] leading-snug text-steel/90 italic"
           initial={{ opacity: 0, y: 6 }}
           animate={{ opacity: 1, y: 0 }}
