@@ -1,8 +1,10 @@
-# fractalclockwork — portfolio
+# `\frac` — portfolio
 
-Professional portfolio for **La La Playa** (`fractalclockwork`).
+Professional portfolio for **La La Playa** — public mark **`\frac`** (frac), formerly displayed as fractalclockwork.
 
 **Live:** [fractalclockwork.github.io/portfolio](https://fractalclockwork.github.io/portfolio/)
+
+GitHub account / Pages hostname remain `fractalclockwork` (display-only rebrand).
 
 ## Stack
 

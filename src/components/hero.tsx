@@ -20,6 +20,8 @@ const fade = {
   }),
 };
 
+const brandAria = `${about.brandPlain}, formerly ${about.brandLegacy}`;
+
 export function Hero() {
   return (
     <section className="relative isolate min-h-[100svh] overflow-hidden">
@@ -34,7 +36,8 @@ export function Hero() {
         >
           <a
             href="#top"
-            className="font-tech text-[11px] tracking-[0.28em] text-steel uppercase transition-colors hover:text-signal"
+            aria-label={brandAria}
+            className="font-tech text-[13px] tracking-[0.12em] text-steel transition-colors hover:text-signal"
           >
             {about.brand}
           </a>
@@ -64,13 +67,18 @@ export function Hero() {
 
         <div className="flex flex-1 flex-col justify-end gap-6 pt-24 sm:justify-center sm:pt-8 lg:max-w-2xl">
           <motion.p
-            className="font-display text-[clamp(2.6rem,9vw,5.6rem)] leading-[0.9] font-bold tracking-[-0.04em] text-signal signal-glow"
+            className="font-tech text-[clamp(3rem,12vw,6.5rem)] leading-[0.9] font-medium tracking-tight text-signal signal-glow"
             custom={0}
             variants={fade}
             initial="hidden"
             animate="show"
+            aria-label={brandAria}
           >
-            fractalclockwork
+            {about.brand}
+            <span className="sr-only">
+              {" "}
+              ({about.brandPlain}, formerly {about.brandLegacy})
+            </span>
           </motion.p>
 
           <motion.p

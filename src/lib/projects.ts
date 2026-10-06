@@ -230,14 +230,18 @@ export function withBasePath(path: string): string {
 export const about = {
   /**
    * Public studio identity — renamed La Playa → “La Playa bug” → La La Playa.
+   * Mark: fractalclockwork → \frac (display-only; GitHub handle unchanged).
    * Personal legal name is not shown on this surface.
    */
   name: "La La Playa",
-  brand: "fractalclockwork",
+  /** LaTeX-styled public mark (literal backslash + frac). */
+  brand: "\\frac",
+  brandPlain: "frac",
+  brandLegacy: "fractalclockwork",
   email: "bathorne@berkeley.edu",
   github: "https://github.com/fractalclockwork",
   resumePath: "/resume.pdf",
-  bio: "La La Playa (née La Playa, briefly La Playa bug) is the studio face for fractalclockwork — reproducible, high-performance frameworks for scientific problems, topological data analysis, hypergraphs, and accelerator-aware algorithms, plus a hardware bench for systems that still need solder, cores, and CRTs.",
+  bio: "La La Playa (née La Playa, briefly La Playa bug) is the studio face for \\frac — formerly fractalclockwork — reproducible, high-performance frameworks for scientific problems, topological data analysis, hypergraphs, and accelerator-aware algorithms, plus a hardware bench for systems that still need solder, cores, and CRTs.",
   focus: [
     "Embedded Linux drivers, BSP bring-up, and real-time sensing pipelines",
     "HPC regression, containerized clusters, and scientific DevOps",

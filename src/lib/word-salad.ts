@@ -20,6 +20,36 @@ const nouns = [
   "lighthouse",
   "CUDA",
   "hammock",
+  "numerator",
+  "denominator",
+  "quotient",
+];
+
+/** Cyclical / reduplicative tokens (banana-class loops). */
+const cyclical = [
+  "banana",
+  "bananna",
+  "murmur",
+  "cancan",
+  "nana",
+  "paprika",
+  "tumtum",
+  "tango",
+  "bonbon",
+  "couscous",
+  "berber",
+  "gaga",
+];
+
+/** Math / LaTeX-flavored tokens. */
+const mathTokens = [
+  "\\frac",
+  "reduce",
+  "numerator",
+  "denominator",
+  "quotient",
+  "cancel",
+  "simplify",
 ];
 
 const verbs = [
@@ -38,6 +68,8 @@ const verbs = [
   "naps",
   "pipelines",
   "oscillates",
+  "reduces",
+  "loops",
 ];
 
 const adjectives = [
@@ -56,6 +88,8 @@ const adjectives = [
   "sunstruck",
   "coincident-current",
   "beach-adjacent",
+  "cyclical",
+  "reduced",
 ];
 
 const connectors = [
@@ -75,18 +109,27 @@ function pick<T>(items: T[]): T {
   return items[Math.floor(Math.random() * items.length)]!;
 }
 
-/** One nonsensical but vaguely technical-coastal sentence. */
+function nounish(): string {
+  const roll = Math.random();
+  if (roll < 0.28) return pick(cyclical);
+  if (roll < 0.4) return pick(mathTokens);
+  return pick(nouns);
+}
+
+/** One nonsensical but vaguely technical-coastal / cyclical / math sentence. */
 export function randomWordSalad(): string {
-  const pattern = Math.floor(Math.random() * 4);
+  const pattern = Math.floor(Math.random() * 5);
   switch (pattern) {
     case 0:
-      return `${pick(adjectives)} ${pick(nouns)} ${pick(verbs)} ${pick(connectors)} the ${pick(nouns)}.`;
+      return `${pick(adjectives)} ${nounish()} ${pick(verbs)} ${pick(connectors)} the ${nounish()}.`;
     case 1:
-      return `${pick(nouns)} ${pick(verbs)} ${pick(adjectives)} ${pick(nouns)} ${pick(connectors)} ${pick(nouns)}.`;
+      return `${nounish()} ${pick(verbs)} ${pick(adjectives)} ${nounish()} ${pick(connectors)} ${nounish()}.`;
     case 2:
-      return `The ${pick(adjectives)} ${pick(nouns)} ${pick(verbs)}; ${pick(nouns)} ${pick(verbs)} ${pick(connectors)} ${pick(nouns)}.`;
+      return `The ${pick(adjectives)} ${nounish()} ${pick(verbs)}; ${nounish()} ${pick(verbs)} ${pick(connectors)} ${nounish()}.`;
+    case 3:
+      return `${pick(cyclical)} ${pick(verbs)} ${pick(mathTokens)} ${pick(connectors)} ${pick(cyclical)}.`;
     default:
-      return `${pick(verbs)} the ${pick(adjectives)} ${pick(nouns)} ${pick(connectors)} ${pick(adjectives)} ${pick(nouns)}.`;
+      return `${pick(verbs)} the ${pick(adjectives)} ${nounish()} ${pick(connectors)} ${pick(adjectives)} ${nounish()}.`;
   }
 }
 
