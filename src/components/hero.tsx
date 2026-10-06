@@ -2,6 +2,7 @@
 
 import { AtmosphereField } from "@/components/atmosphere-field";
 import { Button } from "@/components/ui/button";
+import { WordSalad } from "@/components/word-salad";
 import { about } from "@/lib/projects";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
@@ -82,9 +83,18 @@ export function Hero() {
             {about.name}
           </motion.p>
 
+          <motion.div
+            custom={2}
+            variants={fade}
+            initial="hidden"
+            animate="show"
+          >
+            <WordSalad />
+          </motion.div>
+
           <motion.h1
             className="max-w-xl font-display text-[clamp(1.25rem,3vw,1.85rem)] leading-tight font-medium tracking-tight text-foreground text-balance"
-            custom={2}
+            custom={3}
             variants={fade}
             initial="hidden"
             animate="show"
@@ -95,7 +105,7 @@ export function Hero() {
 
           <motion.p
             className="max-w-md text-base leading-relaxed text-steel sm:text-lg"
-            custom={3}
+            custom={4}
             variants={fade}
             initial="hidden"
             animate="show"
@@ -106,7 +116,7 @@ export function Hero() {
 
           <motion.div
             className="flex flex-wrap items-center gap-3 pt-1"
-            custom={4}
+            custom={5}
             variants={fade}
             initial="hidden"
             animate="show"

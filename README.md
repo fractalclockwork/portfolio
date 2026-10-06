@@ -1,6 +1,6 @@
 # fractalclockwork — portfolio
 
-Professional portfolio for **La Playa** (`fractalclockwork`).
+Professional portfolio for **La La Playa** (`fractalclockwork`).
 
 **Live:** [fractalclockwork.github.io/portfolio](https://fractalclockwork.github.io/portfolio/)
 

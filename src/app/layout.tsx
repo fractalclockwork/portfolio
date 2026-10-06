@@ -22,11 +22,11 @@ const plexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "fractalclockwork — La Playa",
+  title: "fractalclockwork — La La Playa",
   description:
-    "La Playa / fractalclockwork portfolio: hardware research, scientific computing, and agentic engineering — CRT Drive, core memory, HPC tooling.",
+    "La La Playa / fractalclockwork portfolio: hardware research, scientific computing, and agentic engineering — CRT Drive, core memory, HPC tooling.",
   openGraph: {
-    title: "fractalclockwork — La Playa",
+    title: "fractalclockwork — La La Playa",
     description:
       "Curated portfolio: CRT Drive, core memory, HPC tooling, and reproducible lab infrastructure.",
     type: "website",
