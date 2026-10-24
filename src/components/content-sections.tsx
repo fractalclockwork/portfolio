@@ -2,7 +2,13 @@
 
 import { ProjectList } from "@/components/project-list";
 import { Button } from "@/components/ui/button";
-import { about, featured, sections, withBasePath } from "@/lib/projects";
+import {
+  about,
+  experience,
+  featured,
+  sections,
+  withBasePath,
+} from "@/lib/projects";
 import { motion } from "framer-motion";
 import { ArrowUpRight, Mail } from "lucide-react";
 
@@ -55,8 +61,8 @@ export function ContentSections() {
         <div className="mx-auto max-w-6xl">
           <SectionHeader
             label="Featured"
-            title="Strongest public anchors"
-            intro="A short list: CRT Drive, core memory (and redux), and HPC regression tooling. Classroom homework is filtered out on purpose."
+            title="Selected public work"
+            intro="rad-lab and FPGA Kit show how bring-up is practiced; HPC Runner and Core Memory Redux cover cluster regression and fidelity-gated simulation. Classroom dumps are filtered out on purpose."
           />
           <ProjectList projects={featured} />
         </div>
@@ -80,45 +86,43 @@ export function ContentSections() {
       ))}
 
       <section
-        id="agents"
+        id="experience"
         className="relative border-t border-signal/10 px-5 py-20 sm:px-8 sm:py-28"
       >
-        <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-end">
-          <motion.div
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, margin: "-80px" }}
-            variants={reveal}
-          >
-            <p className="font-tech text-[11px] tracking-[0.28em] text-brass uppercase">
-              How the work gets done
-            </p>
-            <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
-              Built with modern agents
-            </h2>
-            <p className="mt-4 max-w-xl text-base leading-relaxed text-steel sm:text-lg">
-              Cursor and local agent workflows speed research scaffolding,
-              docs, and CI — they do not replace bench verification, SPICE
-              ladders, or cluster regressions. The repos above are the proof;
-              this page is not a chatbot demo.
-            </p>
-          </motion.div>
-          <motion.aside
-            className="border-l border-signal/20 pl-6 sm:pl-8"
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, margin: "-80px" }}
-            variants={reveal}
-          >
-            <p className="font-tech text-[11px] tracking-[0.2em] text-steel uppercase">
-              Practice
-            </p>
-            <ul className="mt-4 space-y-3 text-[15px] leading-relaxed text-steel">
-              <li>Agent-assisted bring-up and documentation for hardware repos.</li>
-              <li>Reproducible containers and Actions over one-off notebooks.</li>
-              <li>Honest empty states when a project is still private.</li>
-            </ul>
-          </motion.aside>
+        <div className="mx-auto max-w-6xl">
+          <SectionHeader
+            label="Experience"
+            title="Professional history"
+            intro="Condensed timeline across embedded firmware, wireless systems, and independent R&D. Full detail is in the resume."
+          />
+          <ol className="mt-12 space-y-10">
+            {experience.map((job) => (
+              <motion.li
+                key={`${job.org}-${job.dates}`}
+                className="border-l border-signal/20 pl-5 sm:pl-6"
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true, margin: "-60px" }}
+                variants={reveal}
+              >
+                <p className="font-tech text-[11px] tracking-[0.2em] text-brass uppercase">
+                  {job.dates}
+                </p>
+                <h3 className="mt-2 font-display text-xl font-semibold tracking-tight text-foreground sm:text-2xl">
+                  {job.title}
+                </h3>
+                <p className="mt-1 text-[15px] text-steel">
+                  {job.org}
+                  <span className="text-steel/70"> · {job.location}</span>
+                </p>
+                <ul className="mt-4 space-y-2 text-[15px] leading-relaxed text-steel">
+                  {job.highlights.map((line) => (
+                    <li key={line}>{line}</li>
+                  ))}
+                </ul>
+              </motion.li>
+            ))}
+          </ol>
         </div>
       </section>
 
@@ -128,7 +132,7 @@ export function ContentSections() {
       >
         <div className="mx-auto max-w-6xl">
           <SectionHeader
-            label="About"
+            label="Profile"
             title={about.name}
             intro={about.bio}
           />
@@ -141,7 +145,7 @@ export function ContentSections() {
               variants={reveal}
             >
               <p className="font-tech text-[11px] tracking-[0.22em] text-brass uppercase">
-                Focus
+                Competencies
               </p>
               <ul className="mt-4 space-y-3 text-[15px] leading-relaxed text-steel">
                 {about.focus.map((item) => (
@@ -165,6 +169,13 @@ export function ContentSections() {
                   <li key={item}>{item}</li>
                 ))}
               </ul>
+
+              <p className="mt-10 font-tech text-[11px] tracking-[0.22em] text-brass uppercase">
+                Patent
+              </p>
+              <p className="mt-4 text-[15px] leading-relaxed text-steel">
+                {about.patent}
+              </p>
 
               <p className="mt-10 font-tech text-[11px] tracking-[0.22em] text-brass uppercase">
                 Contact
@@ -193,6 +204,22 @@ export function ContentSections() {
                   className="h-10 rounded-md border-signal/25 bg-transparent px-4 font-tech text-[11px] tracking-[0.16em] text-signal uppercase hover:bg-signal/10 hover:text-signal-bright"
                 >
                   GitHub
+                  <ArrowUpRight data-icon="inline-end" />
+                </Button>
+                <Button
+                  nativeButton={false}
+                  render={
+                    <a
+                      href={about.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    />
+                  }
+                  variant="outline"
+                  size="lg"
+                  className="h-10 rounded-md border-signal/25 bg-transparent px-4 font-tech text-[11px] tracking-[0.16em] text-signal uppercase hover:bg-signal/10 hover:text-signal-bright"
+                >
+                  LinkedIn
                   <ArrowUpRight data-icon="inline-end" />
                 </Button>
                 <Button
