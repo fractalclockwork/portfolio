@@ -3,9 +3,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: `From the bench and the cluster — ${about.brandPlain}`,
+  title: `From the bench and the cluster — ${about.name}`,
   description:
-    "Curated public work: CRT Drive, core memory, HPC tooling, and reproducible lab infrastructure — La La Playa / \\frac.",
+    "Curated public work: rad-lab, FPGA Kit, HPC Runner, core memory, and reproducible lab infrastructure.",
 };
 
 function Ext({
@@ -37,7 +37,7 @@ export default function FromTheBenchPost() {
               href="/"
               className="text-steel transition-colors hover:text-signal"
             >
-              {about.brand}
+              {about.name}
             </Link>
             {" · "}
             Blog
@@ -46,17 +46,13 @@ export default function FromTheBenchPost() {
             From the bench and the cluster
           </h1>
           <p className="mt-3 font-tech text-[11px] tracking-[0.16em] text-steel/80 uppercase">
-            2026-10-06 · {about.name} · {about.brand}
+            2026-10-24 · {about.name}
           </p>
           <p className="mt-6 text-base leading-relaxed text-steel sm:text-lg">
             A short tour of curated public work — hardware research, scientific
-            computing, and agentic engineering in one workshop. The mark is{" "}
-            <span className="font-tech text-signal">{about.brand}</span> (a
-            reduction of <em>fractalclockwork</em>); the studio is{" "}
-            <strong className="font-medium text-foreground">{about.name}</strong>.
-            The GitHub account and Pages host stay on{" "}
-            <Ext href={about.github}>fractalclockwork</Ext>. Classroom dumps
-            stay off this page.
+            computing, and reproducible lab infrastructure. Classroom dumps stay
+            off this page. Source lives under{" "}
+            <Ext href={about.github}>github.com/fractalclockwork</Ext>.
           </p>
         </header>
 
@@ -67,61 +63,63 @@ export default function FromTheBenchPost() {
             </h2>
             <ul className="mt-4 space-y-4">
               <li>
-                <Ext href="https://github.com/fractalclockwork/crt-drive">
-                  CRT Drive
+                <Ext href="https://github.com/fractalclockwork/rad-lab">
+                  rad-lab
                 </Ext>{" "}
-                — Open firmware for analog CRTs and TVs: sync and video from a
-                microcontroller, replacing sealed drive ASICs still in the
-                chassis. Clearest bridge between modern tooling and old iron.
+                — Containerized SDR and hardware-in-the-loop lab: role-structured
+                toolset, human assent before TX, SIL→HWIL stages, and evidence
+                reports for RF bring-up.
               </li>
               <li>
-                <Ext href="https://github.com/fractalclockwork/core-memory">
-                  Core Memory
+                <Ext href="https://github.com/fractalclockwork/fpga-kit">
+                  FPGA Kit
                 </Ext>{" "}
-                and{" "}
-                <Ext href="https://github.com/fractalclockwork/core-memory-redux">
-                  Core Memory Redux
-                </Ext>{" "}
-                — A real 9″ 64×64 ferrite plane as a first-class device. One repo
-                drives and senses the array; the redux rebuilds the
-                coincident-current path with a fidelity-gated ladder from SPICE
-                toward ideal N×N models. Electronics you can argue with, not
-                slides.
+                — Reproducible FPGA bring-up archive for Digilent Spartan boards:
+                toolchain notes, board memory, and lab continuity so firmware
+                work survives tool churn.
               </li>
               <li>
                 <Ext href="https://github.com/fractalclockwork/hpc-runner">
                   HPC Runner
                 </Ext>{" "}
-                — Modular, execution-agnostic regression tests for HPC
-                workloads: the same suite locally, in containers, or on a real
-                scheduler. Less photogenic than a CRT; more useful when
-                numerics have to stay honest across machines.
+                — Execution-agnostic regression for HPC workloads: the same suite
+                locally, in containers, or on a real scheduler.
+              </li>
+              <li>
+                <Ext href="https://github.com/fractalclockwork/core-memory-redux">
+                  Core Memory Redux
+                </Ext>{" "}
+                — Fidelity-gated SIL ladder for a 64×64 coincident-current
+                core-memory driver, from SPICE through ideal N×N models before
+                physical bring-up.
               </li>
             </ul>
           </section>
 
           <section>
             <h2 className="font-display text-xl font-semibold tracking-tight text-foreground sm:text-2xl">
-              Hardware and retrocompute
+              Hardware and sensing
             </h2>
             <p className="mt-4">
-              The shelf past featured is short on purpose.{" "}
+              Beyond featured:{" "}
+              <Ext href="https://github.com/fractalclockwork/crt-drive">
+                CRT Drive
+              </Ext>{" "}
+              — open firmware for analog CRTs.{" "}
               <Ext href="https://github.com/fractalclockwork/RadarModule">
                 Radar Module
               </Ext>{" "}
-              pairs a Linux kernel driver with Docker and Yocto for
-              BeagleBone-class targets.{" "}
-              <Ext href="https://github.com/fractalclockwork/fpga-kit">
-                FPGA Kit
+              — Linux kernel driver with Docker and Yocto for BeagleBone-class
+              targets.{" "}
+              <Ext href="https://github.com/fractalclockwork/core-memory">
+                Core Memory
               </Ext>{" "}
-              archives bring-up notes and manuals for retired Digilent Spartan
-              boards — lab memory, not a product pitch.{" "}
+              — drive and sense a real 9″ 64×64 ferrite plane.{" "}
               <Ext href="https://github.com/fractalclockwork/biofeedback_emg">
                 Biofeedback EMG
               </Ext>{" "}
-              is an early Arduino and Processing sensing build that still earns
-              stars. <em>Retro Compute</em> (Chu, 1962) stays private until it
-              is ready to publish; the empty slot is deliberate.
+              — early closed-loop bioelectrical acquisition.{" "}
+              <em>Retro Compute</em> (Chu, 1962) stays private until ready.
             </p>
           </section>
 
@@ -134,45 +132,38 @@ export default function FromTheBenchPost() {
               <Ext href="https://github.com/fractalclockwork/sci-slurm">
                 sci-slurm
               </Ext>{" "}
-              is a multi-container Slurm image for development and teaching.{" "}
+              — multi-container Slurm for development and teaching.{" "}
               <Ext href="https://github.com/astr400/mesa-docker">MESA Docker</Ext>{" "}
-              supports remote stellar-evolution work with SSH and pgstar, next
-              to the{" "}
+              — remote stellar-evolution work with SSH and pgstar, next to the{" "}
               <Ext href="https://astr400.github.io/">ASTR 400</Ext> setup
               guides.{" "}
               <Ext href="https://github.com/fractalclockwork/molecularSim">
                 molecularSim
               </Ext>{" "}
-              turns Sadus’s <em>Molecular Simulation of Fluids</em> examples
-              into runnable C++.{" "}
-              <Ext href="https://github.com/fractalclockwork/cede">CEDE</Ext> is
-              a containerized multi-MCU embedded lab so bring-up is not tied to
+              — Sadus’s <em>Molecular Simulation of Fluids</em> examples as
+              runnable C++.{" "}
+              <Ext href="https://github.com/fractalclockwork/cede">CEDE</Ext> —
+              containerized multi-MCU embedded lab so bring-up is not tied to
               one laptop.
             </p>
           </section>
 
           <section>
             <h2 className="font-display text-xl font-semibold tracking-tight text-foreground sm:text-2xl">
-              Tooling and agents
+              Lab tooling
             </h2>
             <p className="mt-4">
               Infrastructure earns space only when it removes friction.{" "}
               <Ext href="https://github.com/fractalclockwork/tftp-boot-docker">
                 tftp-boot-docker
               </Ext>{" "}
-              — Docker TFTP and HTTP for UEFI PXE boot of Ubuntu Desktop LTS
-              with OpenWrt DHCP.{" "}
+              — Docker TFTP and HTTP for UEFI PXE boot.{" "}
               <Ext href="https://github.com/fractalclockwork/voice2srt">
                 voice2srt
               </Ext>{" "}
-              — a small CLI for sentence-aligned subtitles from long audio.{" "}
+              — sentence-aligned subtitles from long audio.{" "}
               <Ext href="https://astr400.github.io/">ASTR 400 setup</Ext> —
               Python, Git, Docker, and the VM path, written for clarity.
-            </p>
-            <p className="mt-4">
-              Agents are scaffolding, not spectacle. Cursor and local tooling
-              speed docs and CI; they do not replace SPICE ladders, board
-              bring-up, or cluster regressions. The repos are the proof.
             </p>
           </section>
 
@@ -181,8 +172,9 @@ export default function FromTheBenchPost() {
               Follow along
             </h2>
             <p className="mt-4">
-              Bench-first: CRT Drive, then the core-memory pair. Compute-first:
-              HPC Runner and sci-slurm. Public links live on the{" "}
+              Methodology-first: rad-lab and FPGA Kit. Bench-first: CRT Drive and
+              the core-memory pair. Compute-first: HPC Runner and sci-slurm.
+              Public links live on the{" "}
               <Link
                 href="/"
                 className="text-signal underline-offset-4 hover:text-signal-bright hover:underline"
@@ -193,15 +185,17 @@ export default function FromTheBenchPost() {
             </p>
             <ul className="mt-4 space-y-2 font-tech text-sm tracking-[0.04em]">
               <li>
-                <Ext href={about.github}>{about.github.replace("https://", "")}</Ext>
+                <Ext href={about.github}>
+                  {about.github.replace("https://", "")}
+                </Ext>
               </li>
             </ul>
           </section>
         </div>
 
         <footer className="mt-14 border-t border-signal/12 pt-8 font-tech text-[11px] tracking-[0.14em] text-steel/60">
-          {about.name} · {about.brand} · curated public work. Old Man Tech is
-          retired from this surface; remotes are not deleted.
+          {about.name} · curated public work. Classroom dumps and retired joke
+          branding stay off this surface; remotes are not deleted.
           <div className="mt-4">
             <Link
               href="/"

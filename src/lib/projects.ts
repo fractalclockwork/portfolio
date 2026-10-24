@@ -20,50 +20,58 @@ export type ProjectSection = {
   projects: Project[];
 };
 
+export type ExperienceEntry = {
+  title: string;
+  org: string;
+  location: string;
+  dates: string;
+  highlights: string[];
+};
+
 /** Curated from inventory yes-items; maybe used sparingly; classroom dumps omitted. */
 export const featured: Project[] = [
   {
-    slug: "crt-drive",
-    title: "CRT Drive",
+    slug: "rad-lab",
+    title: "rad-lab",
     blurb:
-      "Programmable CRT drive: sync and video from a microcontroller for analog CRTs and TVs — open firmware that replaces sealed drive ASICs on the bench.",
-    tags: ["Firmware", "Retrocompute", "Hardware"],
-    lang: "C",
+      "Containerized SDR and hardware-in-the-loop lab: role-structured toolset with human assent before TX, SIL→HWIL stages, and evidence reports for RF bring-up.",
+    tags: ["SDR", "HWIL", "RF"],
+    lang: "Python",
     status: "public",
-    href: "https://github.com/fractalclockwork/crt-drive",
+    href: "https://github.com/fractalclockwork/rad-lab",
     cta: "Open repo",
   },
   {
-    slug: "core-memory-redux",
-    title: "Core Memory Redux",
+    slug: "fpga-kit",
+    title: "FPGA Kit",
     blurb:
-      "Reimplementation of a 64×64 coincident-current core-memory driver with a fidelity-gated SIL ladder from SPICE through ideal N×N models.",
-    tags: ["Hardware", "Electronics", "Simulation"],
+      "Reproducible FPGA bring-up archive for Digilent Spartan boards — toolchain notes, board memory, and lab continuity so firmware work survives tool churn.",
+    tags: ["FPGA", "Bring-up", "Lab"],
     lang: "Python",
     status: "public",
-    href: "https://github.com/fractalclockwork/core-memory-redux",
-    cta: "Open repo",
-  },
-  {
-    slug: "core-memory",
-    title: "Core Memory",
-    blurb:
-      "Driver electronics for sensing and writing an existing 9″ ferrite core plane — a 64×64 array (4,096 bits) brought back under software control.",
-    tags: ["Hardware", "Electronics"],
-    lang: "Python",
-    status: "public",
-    href: "https://github.com/fractalclockwork/core-memory",
+    href: "https://github.com/fractalclockwork/fpga-kit",
     cta: "Open repo",
   },
   {
     slug: "hpc-runner",
     title: "HPC Runner",
     blurb:
-      "Modular, execution-agnostic regression testing for HPC workloads — same suite across local, container, and cluster backends.",
-    tags: ["HPC", "Testing", "Scientific computing"],
+      "Execution-agnostic benchmarking and regression for HPC workloads — same suite across local, container, and cluster backends (GROMACS, LAMMPS, OpenMM).",
+    tags: ["HPC", "Testing", "CUDA"],
     lang: "Python",
     status: "public",
     href: "https://github.com/fractalclockwork/hpc-runner",
+    cta: "Open repo",
+  },
+  {
+    slug: "core-memory-redux",
+    title: "Core Memory Redux",
+    blurb:
+      "Fidelity-gated SIL ladder for a 64×64 coincident-current core-memory driver — from SPICE through ideal N×N models before physical bring-up.",
+    tags: ["Hardware", "Simulation", "SIL"],
+    lang: "Python",
+    status: "public",
+    href: "https://github.com/fractalclockwork/core-memory-redux",
     cta: "Open repo",
   },
 ];
@@ -71,11 +79,22 @@ export const featured: Project[] = [
 export const sections: ProjectSection[] = [
   {
     id: "hardware",
-    label: "Hardware & retrocompute",
-    title: "Boards, planes, and old iron",
+    label: "Hardware & sensing",
+    title: "Boards, drivers, and instrumentation",
     intro:
-      "Physical systems and vintage computing — kernels, planes, FPGA archives, and sensing hardware that ship as public repos.",
+      "Physical systems and sensing stacks — kernel drivers, CRT drive, ferrite planes, and bioelectrical acquisition that ship as public repos.",
     projects: [
+      {
+        slug: "crt-drive",
+        title: "CRT Drive",
+        blurb:
+          "Programmable CRT drive: sync and video from a microcontroller for analog CRTs and TVs — open firmware that replaces sealed drive ASICs on the bench.",
+        tags: ["Firmware", "Retrocompute", "Hardware"],
+        lang: "C",
+        status: "public",
+        href: "https://github.com/fractalclockwork/crt-drive",
+        cta: "Open repo",
+      },
       {
         slug: "radar-module",
         title: "Radar Module",
@@ -88,21 +107,21 @@ export const sections: ProjectSection[] = [
         cta: "Open repo",
       },
       {
-        slug: "fpga-kit",
-        title: "FPGA Kit",
+        slug: "core-memory",
+        title: "Core Memory",
         blurb:
-          "Bring-up notes, lessons, and archived manuals for retired Digilent Spartan boards on Xilinx toolchains — lab archive, not a product pitch.",
-        tags: ["FPGA", "Archive"],
+          "Driver electronics for sensing and writing an existing 9″ ferrite core plane — a 64×64 array (4,096 bits) brought back under software control.",
+        tags: ["Hardware", "Electronics"],
         lang: "Python",
         status: "public",
-        href: "https://github.com/fractalclockwork/fpga-kit",
-        cta: "Open archive",
+        href: "https://github.com/fractalclockwork/core-memory",
+        cta: "Open repo",
       },
       {
         slug: "biofeedback-emg",
         title: "Biofeedback EMG",
         blurb:
-          "Early EMG sensor stack using Arduino and Processing — still one of the more-starred public hardware pieces from the bench.",
+          "EMG sensor stack with Arduino and Processing — early closed-loop bioelectrical acquisition still used as a sensing reference.",
         tags: ["Sensing", "Arduino"],
         lang: "Java",
         status: "public",
@@ -113,7 +132,7 @@ export const sections: ProjectSection[] = [
         slug: "retro-compute",
         title: "Retro Compute",
         blurb:
-          "Study guide for Yaohan Chu, Digital Computer Design Fundamentals (McGraw-Hill, 1962) — strong retrocomputing fit, still private.",
+          "Study guide for Yaohan Chu, Digital Computer Design Fundamentals (McGraw-Hill, 1962) — still private until ready to publish.",
         tags: ["Retrocompute", "Study"],
         lang: "Python",
         status: "private",
@@ -126,7 +145,7 @@ export const sections: ProjectSection[] = [
     label: "Scientific computing",
     title: "Clusters, containers, and numerics",
     intro:
-      "Reproducible HPC and simulation tooling — Slurm images, MESA remote-dev, molecular examples, and embedded lab environments.",
+      "Reproducible HPC and simulation tooling — Slurm images, MESA remote-dev, molecular examples, and containerized embedded labs.",
     projects: [
       {
         slug: "sci-slurm",
@@ -165,8 +184,8 @@ export const sections: ProjectSection[] = [
         slug: "cede",
         title: "CEDE",
         blurb:
-          "Modular, reproducible, containerized embedded systems development environment for multi-MCU hardware labs.",
-        tags: ["Embedded", "Containers"],
+          "Containerized embedded systems lab for multi-MCU hardware — reproducible bring-up that does not depend on one laptop.",
+        tags: ["Embedded", "HWIL", "Containers"],
         lang: "Python",
         status: "public",
         href: "https://github.com/fractalclockwork/cede",
@@ -176,10 +195,10 @@ export const sections: ProjectSection[] = [
   },
   {
     id: "tooling",
-    label: "Tooling & agent workflows",
+    label: "Lab tooling",
     title: "Infrastructure that stays out of the way",
     intro:
-      "PXE boot stacks, subtitle tooling, and courseware gateways — plus how modern agents fit into serious engineering without the theater.",
+      "PXE boot stacks, subtitle tooling, and courseware gateways — friction removal for the bench and the classroom.",
     projects: [
       {
         slug: "tftp-boot-docker",
@@ -218,6 +237,59 @@ export const sections: ProjectSection[] = [
   },
 ];
 
+export const experience: ExperienceEntry[] = [
+  {
+    title: "Research Engineer / Scientific & Systems Consultant",
+    org: "Freelance / Independent R&D",
+    location: "San Francisco, CA",
+    dates: "Dec 2018 – Present",
+    highlights: [
+      "Build computational systems bridging instrumentation, embedded hardware, imaging, and high-performance software.",
+      "GPU-accelerated C++/CUDA and Python pipelines for CT/radio reconstruction and signal analysis; ECAD/PCB and MCAD fixtures for firmware validation.",
+      "Containerized SDR and multi-MCU HWIL labs (rad-lab, CEDE); CI/CD and cross-compilation for heterogeneous targets.",
+    ],
+  },
+  {
+    title: "Senior HW/SW Research & Development Engineer",
+    org: "GridNet",
+    location: "San Francisco, CA",
+    dates: "Oct 2013 – Nov 2018",
+    highlights: [
+      "Embedded radio modem firmware and Linux kernel networking drivers for sub-GHz smart-grid telemetry and LTE M2M platforms.",
+      "SDR protocol analysis and cross-layer debugging across custom RF hardware, firmware, and embedded Linux runtimes.",
+    ],
+  },
+  {
+    title: "Computer Scientist, Design Engineer & Inventor",
+    org: "Freelance Consultant",
+    location: "San Francisco, CA",
+    dates: "May 2011 – Oct 2013",
+    highlights: [
+      "Mechatronic product development: CAD/CAM, CNC, PCB layout, and embedded software.",
+      "Bioelectrical acquisition front-ends and wavelet analysis for real-time physiological feedback (US Patent Application 61834836).",
+    ],
+  },
+  {
+    title: "Operating Systems & Integration Engineer",
+    org: "OpenTV",
+    location: "San Francisco, CA & Amsterdam, NL",
+    dates: "Oct 2004 – May 2011",
+    highlights: [
+      "Embedded Linux device drivers, networking stacks, and FAT/Ethernet subsystems for global digital television hardware.",
+      "Global software releases and on-site driver integration with vendors and operators across Europe, Australia, and the Americas.",
+    ],
+  },
+  {
+    title: "Systems Engineer & Hardware Developer",
+    org: "Freelance / SFSU / EngineX / Net.World",
+    location: "San Francisco Bay Area",
+    dates: "1998 – 2004",
+    highlights: [
+      "Low-level C and ARM Assembly for hardware TCP/IP TOE ASICs (Iready); observatory computing at SFSU; enterprise networking and VoIP infrastructure.",
+    ],
+  },
+];
+
 /** Prefix absolute site paths for GitHub Pages project basePath. */
 export function withBasePath(path: string): string {
   const base =
@@ -228,29 +300,23 @@ export function withBasePath(path: string): string {
 }
 
 export const about = {
-  /**
-   * Public studio identity — renamed La Playa → “La Playa bug” → La La Playa.
-   * Mark: fractalclockwork → \frac (display-only; GitHub handle unchanged).
-   * Personal legal name is not shown on this surface.
-   */
-  name: "La La Playa",
-  /** LaTeX-styled public mark (literal backslash + frac). */
-  brand: "\\frac",
-  brandPlain: "frac",
-  brandLegacy: "fractalclockwork",
-  email: "bathorne@berkeley.edu",
+  name: "Brent A. Thorne",
+  email: "brentathorne@gmail.com",
   github: "https://github.com/fractalclockwork",
+  linkedin: "https://linkedin.com/in/brent-thorne-a581554",
   resumePath: "/resume.pdf",
-  bio: "La La Playa (née La Playa, briefly La Playa bug) is the studio face for \\frac — formerly fractalclockwork — reproducible, high-performance frameworks for scientific problems, topological data analysis, hypergraphs, and accelerator-aware algorithms, plus a hardware bench for systems that still need solder, cores, and CRTs.",
+  bio: "Research Engineer with over 20 years of experience in hardware–software co-design, high-performance computing, and real-time embedded systems. M.S. graduate from UC Berkeley’s Molecular Science and Software Engineering (MSSE) program with expertise in CUDA, parallel algorithms, and reproducible simulation frameworks — and a long track record bringing up Linux drivers, DMA pipelines, and RF/sensing hardware at the bench.",
   focus: [
-    "Embedded Linux drivers, BSP bring-up, and real-time sensing pipelines",
-    "HPC regression, containerized clusters, and scientific DevOps",
-    "Retrocompute and research hardware: CRT drive, core memory, FPGA archives",
-    "Agentic engineering with Cursor and local tooling — production workflows, not demos",
+    "High-performance computing & AI: CUDA, MPI, OpenMP, molecular dynamics, PyTorch/TensorFlow",
+    "Embedded systems: C/C++, Embedded Linux, kernel drivers, RTOS, board bring-up, SPI/I2C/UART/CAN",
+    "Imaging, signal processing & sensing: CT/radio reconstruction, V4L2/GStreamer, OpenCV, SDR",
+    "Mechatronics & field infrastructure: CAD/CAM, CNC, FPGA prototyping, remote telemetry",
   ],
   education: [
     "M.S., Molecular Science & Software Engineering — UC Berkeley (2026)",
     "Certificate, Applied Data Science — MIT (2023)",
     "B.S., Electronics Engineering Technology — Hamilton Technical College (1993)",
   ],
+  patent:
+    "US Patent Application 61834836 — System for Optimal Physical Exercise and Training (Inventor): closed-loop biometric monitoring and adaptive control with real-time bioelectrical signal processing.",
 };

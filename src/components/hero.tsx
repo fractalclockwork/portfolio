@@ -2,8 +2,7 @@
 
 import { AtmosphereField } from "@/components/atmosphere-field";
 import { Button } from "@/components/ui/button";
-import { WordSalad } from "@/components/word-salad";
-import { about } from "@/lib/projects";
+import { about, withBasePath } from "@/lib/projects";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 
@@ -20,8 +19,6 @@ const fade = {
   }),
 };
 
-const brandAria = `${about.brandPlain}, formerly ${about.brandLegacy}`;
-
 export function Hero() {
   return (
     <section className="relative isolate min-h-[100svh] overflow-hidden">
@@ -36,10 +33,9 @@ export function Hero() {
         >
           <a
             href="#top"
-            aria-label={brandAria}
-            className="font-tech text-[13px] tracking-[0.12em] text-steel transition-colors hover:text-signal"
+            className="font-tech text-[13px] tracking-[0.08em] text-steel transition-colors hover:text-signal"
           >
-            {about.brand}
+            {about.name}
           </a>
           <nav className="flex items-center gap-5" aria-label="Main">
             <a
@@ -49,82 +45,75 @@ export function Hero() {
               Work
             </a>
             <a
+              href="#experience"
+              className="hidden font-tech text-[11px] tracking-[0.2em] text-steel uppercase transition-colors hover:text-signal md:inline"
+            >
+              Experience
+            </a>
+            <a
               href="#about"
               className="hidden font-tech text-[11px] tracking-[0.2em] text-steel uppercase transition-colors hover:text-signal md:inline"
             >
               About
             </a>
             <a
-              href={about.github}
+              href={withBasePath(about.resumePath)}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 font-tech text-[11px] tracking-[0.2em] text-steel uppercase transition-colors hover:text-signal"
             >
-              GitHub
+              Resume
             </a>
           </nav>
         </motion.header>
 
         <div className="flex flex-1 flex-col justify-end gap-6 pt-24 sm:justify-center sm:pt-8 lg:max-w-2xl">
           <motion.p
-            className="font-tech text-[clamp(3rem,12vw,6.5rem)] leading-[0.9] font-medium tracking-tight text-signal signal-glow"
+            className="font-tech text-[11px] tracking-[0.24em] text-brass uppercase"
             custom={0}
             variants={fade}
             initial="hidden"
             animate="show"
-            aria-label={brandAria}
           >
-            {about.brand}
-            <span className="sr-only">
-              {" "}
-              ({about.brandPlain}, formerly {about.brandLegacy})
-            </span>
+            Research Engineer
           </motion.p>
 
-          <motion.p
-            className="font-tech text-[11px] tracking-[0.24em] text-brass uppercase"
+          <motion.h1
+            className="font-display text-[clamp(2.5rem,10vw,5.5rem)] leading-[0.95] font-semibold tracking-tight text-signal signal-glow"
             custom={1}
             variants={fade}
             initial="hidden"
             animate="show"
           >
             {about.name}
-          </motion.p>
+          </motion.h1>
 
-          <motion.div
+          <motion.p
+            className="max-w-xl font-display text-[clamp(1.25rem,3vw,1.85rem)] leading-tight font-medium tracking-tight text-foreground text-balance"
             custom={2}
             variants={fade}
             initial="hidden"
             animate="show"
           >
-            <WordSalad />
-          </motion.div>
+            Hardware–software co-design, high-performance computing, and
+            real-time embedded systems.
+          </motion.p>
 
-          <motion.h1
-            className="max-w-xl font-display text-[clamp(1.25rem,3vw,1.85rem)] leading-tight font-medium tracking-tight text-foreground text-balance"
+          <motion.p
+            className="max-w-md text-base leading-relaxed text-steel sm:text-lg"
             custom={3}
             variants={fade}
             initial="hidden"
             animate="show"
           >
-            Hardware research, scientific computing, and agentic engineering —
-            curated, not cluttered.
-          </motion.h1>
-
-          <motion.p
-            className="max-w-md text-base leading-relaxed text-steel sm:text-lg"
-            custom={4}
-            variants={fade}
-            initial="hidden"
-            animate="show"
-          >
-            Public work from the bench and the cluster: CRT drive, core memory,
-            HPC tooling, and reproducible lab infrastructure.
+            Public proof from the bench and the cluster: SDR hardware-in-the-loop
+            (rad-lab), FPGA bring-up archives, Linux drivers, and HPC regression
+            tooling (hpc-runner).
           </motion.p>
 
           <motion.div
             className="flex flex-wrap items-center gap-3 pt-1"
-            custom={5}
+            custom={4}
             variants={fade}
             initial="hidden"
             animate="show"
@@ -136,6 +125,22 @@ export function Hero() {
               className="h-11 rounded-md bg-signal px-5 font-tech text-xs tracking-[0.18em] text-primary-foreground uppercase hover:bg-signal-bright"
             >
               Featured work
+            </Button>
+            <Button
+              nativeButton={false}
+              render={
+                <a
+                  href={withBasePath(about.resumePath)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                />
+              }
+              variant="outline"
+              size="lg"
+              className="h-11 rounded-md border-signal/25 bg-transparent px-5 font-tech text-xs tracking-[0.18em] text-signal uppercase hover:bg-signal/10 hover:text-signal-bright"
+            >
+              Resume
+              <ArrowUpRight data-icon="inline-end" />
             </Button>
             <Button
               nativeButton={false}

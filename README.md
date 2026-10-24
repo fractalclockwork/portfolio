@@ -1,10 +1,10 @@
-# `\frac` — portfolio
+# Brent A. Thorne — portfolio
 
-Professional portfolio for **La La Playa** — public mark **`\frac`** (frac), formerly displayed as fractalclockwork.
+Professional portfolio for **Brent A. Thorne**, Research Engineer: hardware–software co-design, high-performance computing, and real-time embedded systems.
 
 **Live:** [fractalclockwork.github.io/portfolio](https://fractalclockwork.github.io/portfolio/)
 
-GitHub account / Pages hostname remain `fractalclockwork` (display-only rebrand).
+GitHub account / Pages hostname: `fractalclockwork` (hosting only).
 
 ## Stack
 
@@ -32,8 +32,6 @@ npm run lint
 
 Push to `main` runs [.github/workflows/deploy-pages.yml](.github/workflows/deploy-pages.yml) (Next static export → GitHub Pages).
 
-This repo previously used Jekyll + the Hacker theme; that workflow is replaced by the Next.js deploy above.
-
 ## Curation
 
-Featured work is drawn from the professional inventory (**yes** items heavily; **maybe** sparingly). Classroom homework dumps and Old Man Tech joke branding are not the public face here. Remotes are not deleted.
+Featured work emphasizes methodology-in-practice (**rad-lab**, **FPGA Kit**) alongside HPC regression and hardware bench anchors. Classroom homework dumps and retired joke branding are not the public face here. Remotes are not deleted.
