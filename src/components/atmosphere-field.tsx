@@ -69,7 +69,7 @@ export function AtmosphereField() {
         animate={{ opacity: 1 }}
         transition={{ delay: 1.05, duration: 0.8 }}
       >
-        Bench · Agents · Research
+        Hardware · HPC · Embedded
       </motion.div>
     </div>
   );
