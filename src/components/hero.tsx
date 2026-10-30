@@ -2,7 +2,7 @@
 
 import { AtmosphereField } from "@/components/atmosphere-field";
 import { Button } from "@/components/ui/button";
-import { about, withBasePath } from "@/lib/projects";
+import { about, identity, withBasePath } from "@/lib/projects";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 
@@ -38,6 +38,12 @@ export function Hero() {
             {about.name}
           </a>
           <nav className="flex items-center gap-5" aria-label="Main">
+            <a
+              href="#areas"
+              className="hidden font-tech text-[11px] tracking-[0.2em] text-steel uppercase transition-colors hover:text-signal sm:inline"
+            >
+              Areas
+            </a>
             <a
               href="#featured"
               className="hidden font-tech text-[11px] tracking-[0.2em] text-steel uppercase transition-colors hover:text-signal sm:inline"
@@ -75,7 +81,7 @@ export function Hero() {
             initial="hidden"
             animate="show"
           >
-            Research Engineer
+            {identity.eyebrow}
           </motion.p>
 
           <motion.h1
@@ -95,8 +101,7 @@ export function Hero() {
             initial="hidden"
             animate="show"
           >
-            Hardware–software co-design, high-performance computing,
-            computational imaging, and real-time embedded systems.
+            {identity.lead}
           </motion.p>
 
           <motion.p
@@ -106,10 +111,7 @@ export function Hero() {
             initial="hidden"
             animate="show"
           >
-            Public proof from the bench and the cluster: SDR hardware-in-the-loop
-            (rad-lab), optical spectrometer acquisition (spectrometer-lab), FPGA
-            bring-up archives, Linux drivers, and HPC regression tooling
-            (hpc-runner).
+            {identity.support}
           </motion.p>
 
           <motion.div

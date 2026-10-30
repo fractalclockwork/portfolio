@@ -1,11 +1,11 @@
-import { about } from "@/lib/projects";
+import { about, identity } from "@/lib/projects";
 import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
   title: `From the bench and the cluster — ${about.name}`,
   description:
-    "Curated public work: rad-lab, spectrometer-lab, FPGA Kit, HPC Runner, core memory, and reproducible lab infrastructure.",
+    "Research Engineer building intelligent computational systems that transform measurements into insight — curated public work across scientific computing, imaging, and embedded platforms.",
 };
 
 function Ext({
@@ -49,10 +49,8 @@ export default function FromTheBenchPost() {
             2026-10-30 · {about.name}
           </p>
           <p className="mt-6 text-base leading-relaxed text-steel sm:text-lg">
-            A short tour of curated public work — hardware research, scientific
-            instrumentation, high-performance computing, and reproducible lab
-            infrastructure. Classroom dumps stay off this page. Source lives
-            under{" "}
+            {identity.lead} {identity.support} Classroom dumps stay off this
+            page. Source lives under{" "}
             <Ext href={about.github}>github.com/fractalclockwork</Ext>.
           </p>
         </header>
@@ -67,73 +65,40 @@ export default function FromTheBenchPost() {
                 <Ext href="https://github.com/fractalclockwork/rad-lab">
                   rad-lab
                 </Ext>{" "}
-                — Containerized SDR and hardware-in-the-loop lab: role-structured
-                toolset, human assent before TX, SIL→HWIL stages, and evidence
-                reports for RF bring-up.
+                — Host-gated RF bring-up you can trust: containerized SDR and
+                multi-MCU labs with human assent before TX, SIL→HWIL stages, and
+                evidence reports.
               </li>
               <li>
                 <Ext href="https://github.com/fractalclockwork/spectrometer-lab">
                   spectrometer-lab
                 </Ext>{" "}
-                — Python RS-232 control and acquisition for a PerkinElmer LS 55
-                fluorescence spectrometer: prompted DC1 protocol flow,
-                monochromator/slit positioning, serial-glitch taxonomy, and
-                Stage 1–3 verified emission scans.
+                — Turn a fluorescence spectrometer into a reproducible
+                acquisition system: RS-232 control for a PerkinElmer LS 55 with
+                prompted protocol flow, glitch taxonomy, and Stage 1–3 verified
+                emission scans.
               </li>
               <li>
                 <Ext href="https://github.com/fractalclockwork/fpga-kit">
                   FPGA Kit
                 </Ext>{" "}
-                — Reproducible FPGA bring-up archive for Digilent Spartan boards:
-                toolchain notes, board memory, and lab continuity so firmware
-                work survives tool churn.
+                — Keep firmware work alive across tool churn: bring-up archive
+                for Digilent Spartan boards with toolchain memory and lab
+                continuity.
               </li>
               <li>
                 <Ext href="https://github.com/fractalclockwork/hpc-runner">
                   HPC Runner
                 </Ext>{" "}
-                — Execution-agnostic regression for HPC workloads: the same suite
-                locally, in containers, or on a real scheduler.
+                — Same regression suite across laptop, container, and cluster for
+                molecular dynamics workloads on heterogeneous hardware.
               </li>
             </ul>
           </section>
 
           <section>
             <h2 className="font-display text-xl font-semibold tracking-tight text-foreground sm:text-2xl">
-              Hardware and sensing
-            </h2>
-            <p className="mt-4">
-              Beyond featured:{" "}
-              <Ext href="https://github.com/fractalclockwork/core-memory-redux">
-                Core Memory Redux
-              </Ext>{" "}
-              — fidelity-gated SIL ladder for a 64×64 coincident-current
-              core-memory driver (from SPICE through ideal N×N models before
-              physical bring-up), paired with{" "}
-              <Ext href="https://github.com/fractalclockwork/core-memory">
-                Core Memory
-              </Ext>{" "}
-              to drive and sense a real 9″ 64×64 ferrite plane.{" "}
-              <Ext href="https://github.com/fractalclockwork/crt-drive">
-                CRT Drive
-              </Ext>{" "}
-              — open firmware for analog CRTs.{" "}
-              <Ext href="https://github.com/fractalclockwork/RadarModule">
-                Radar Module
-              </Ext>{" "}
-              — Linux kernel driver with Docker and Yocto for BeagleBone-class
-              targets.{" "}
-              <Ext href="https://github.com/fractalclockwork/biofeedback_emg">
-                Biofeedback EMG
-              </Ext>{" "}
-              — early closed-loop bioelectrical acquisition.{" "}
-              <em>Retro Compute</em> (Chu, 1962) stays private until ready.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="font-display text-xl font-semibold tracking-tight text-foreground sm:text-2xl">
-              Scientific computing
+              Scientific Computing &amp; AI
             </h2>
             <p className="mt-4">
               Prefer environments you can recreate.{" "}
@@ -141,10 +106,6 @@ export default function FromTheBenchPost() {
                 sci-slurm
               </Ext>{" "}
               — multi-container Slurm for development and teaching.{" "}
-              <Ext href="https://github.com/astr400/mesa-docker">MESA Docker</Ext>{" "}
-              — remote stellar-evolution work with SSH and pgstar, next to the{" "}
-              <Ext href="https://astr400.github.io/">ASTR 400</Ext> setup
-              guides.{" "}
               <Ext href="https://github.com/fractalclockwork/molecularSim">
                 molecularSim
               </Ext>{" "}
@@ -153,27 +114,67 @@ export default function FromTheBenchPost() {
               <Ext href="https://github.com/fractalclockwork/cede">
                 CEDE / cede-labgrid
               </Ext>{" "}
-              — containerized multi-MCU embedded lab and Labgrid HIL port so
-              bring-up is not tied to one laptop.
+              — containerized multi-MCU lab and Labgrid HIL port.{" "}
+              <Ext href="https://github.com/astr400/mesa-docker">MESA Docker</Ext>{" "}
+              and the{" "}
+              <Ext href="https://astr400.github.io/">ASTR 400</Ext> setup guides
+              support remote stellar-evolution work.
             </p>
           </section>
 
           <section>
             <h2 className="font-display text-xl font-semibold tracking-tight text-foreground sm:text-2xl">
-              Lab tooling
+              Imaging, Instrumentation &amp; Sensing
             </h2>
             <p className="mt-4">
-              Infrastructure earns space only when it removes friction.{" "}
+              Featured spectrometer-lab and freelance CT/radio reconstruction
+              pipelines turn measurements into quantitative insight. Public
+              sensing reference:{" "}
+              <Ext href="https://github.com/fractalclockwork/biofeedback_emg">
+                Biofeedback EMG
+              </Ext>{" "}
+              — early closed-loop bioelectrical acquisition.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="font-display text-xl font-semibold tracking-tight text-foreground sm:text-2xl">
+              Embedded &amp; Hardware Systems
+            </h2>
+            <p className="mt-4">
+              Featured rad-lab and FPGA Kit carry HWIL and FPGA continuity.{" "}
+              <Ext href="https://github.com/fractalclockwork/RadarModule">
+                Radar Module
+              </Ext>{" "}
+              — Linux kernel driver with Docker and Yocto for BeagleBone-class
+              targets.{" "}
               <Ext href="https://github.com/fractalclockwork/tftp-boot-docker">
                 tftp-boot-docker
               </Ext>{" "}
-              — Docker TFTP and HTTP for UEFI PXE boot.{" "}
-              <Ext href="https://github.com/fractalclockwork/voice2srt">
-                voice2srt
+              — lab netboot without ceremony.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="font-display text-xl font-semibold tracking-tight text-foreground sm:text-2xl">
+              Experimental &amp; Archival Computing
+            </h2>
+            <p className="mt-4">
+              Depth at the bench — craft that supports the Research Engineer
+              story, not the primary identity.{" "}
+              <Ext href="https://github.com/fractalclockwork/core-memory-redux">
+                Core Memory Redux
               </Ext>{" "}
-              — sentence-aligned subtitles from long audio.{" "}
-              <Ext href="https://astr400.github.io/">ASTR 400 setup</Ext> —
-              Python, Git, Docker, and the VM path, written for clarity.
+              and{" "}
+              <Ext href="https://github.com/fractalclockwork/core-memory">
+                Core Memory
+              </Ext>{" "}
+              — SIL ladder into a real 9″ 64×64 ferrite plane.{" "}
+              <Ext href="https://github.com/fractalclockwork/crt-drive">
+                CRT Drive
+              </Ext>{" "}
+              — open firmware for analog CRTs. <em>Retro Compute</em> (Chu, 1962)
+              stays private until ready.
             </p>
           </section>
 
@@ -182,9 +183,10 @@ export default function FromTheBenchPost() {
               Follow along
             </h2>
             <p className="mt-4">
-              Methodology and instrumentation first: rad-lab, spectrometer-lab,
-              and FPGA Kit. Bench-first: CRT Drive and the core-memory pair.
-              Compute-first: HPC Runner and sci-slurm. Public links live on the{" "}
+              Identity first: systems that transform measurements into insight.
+              Then featured anchors — rad-lab, spectrometer-lab, FPGA Kit, HPC
+              Runner. Compute shelf next; experimental hardware last. Public
+              links live on the{" "}
               <Link
                 href="/"
                 className="text-signal underline-offset-4 hover:text-signal-bright hover:underline"

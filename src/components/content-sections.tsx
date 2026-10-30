@@ -4,9 +4,12 @@ import { ProjectList } from "@/components/project-list";
 import { Button } from "@/components/ui/button";
 import {
   about,
+  achievements,
   experience,
   featured,
+  researchAreas,
   sections,
+  trajectory,
   withBasePath,
 } from "@/lib/projects";
 import { motion } from "framer-motion";
@@ -55,6 +58,109 @@ export function ContentSections() {
   return (
     <>
       <section
+        id="achievements"
+        className="relative border-t border-signal/10 px-5 py-20 sm:px-8 sm:py-28"
+      >
+        <div className="mx-auto max-w-6xl">
+          <SectionHeader
+            label="Highlights"
+            title="Selected achievements"
+            intro="Immediate credibility — commercial scale, scientific tooling, imaging systems, IP, and graduate research. Full detail is in the resume."
+          />
+          <motion.ul
+            className="mt-12 max-w-3xl space-y-4"
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, margin: "-60px" }}
+            variants={reveal}
+          >
+            {achievements.map((item) => (
+              <li
+                key={item}
+                className="border-l border-signal/20 pl-4 text-[15px] leading-relaxed text-steel sm:text-base"
+              >
+                {item}
+              </li>
+            ))}
+          </motion.ul>
+        </div>
+      </section>
+
+      <section
+        id="trajectory"
+        className="relative border-t border-signal/10 px-5 py-20 sm:px-8 sm:py-28"
+      >
+        <div className="mx-auto max-w-6xl">
+          <SectionHeader
+            label="Trajectory"
+            title="How the work connects"
+            intro="A progression across eras — not a grab bag of unrelated interests. Each step compounds the next."
+          />
+          <ol className="mt-12 max-w-xl space-y-0">
+            {trajectory.map((step, index) => (
+              <motion.li
+                key={step.label}
+                className="relative border-l border-signal/20 pb-10 pl-6 last:pb-0"
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true, margin: "-40px" }}
+                variants={reveal}
+                transition={{ delay: index * 0.04 }}
+              >
+                <span
+                  className="absolute top-1.5 -left-[5px] size-2.5 rounded-full bg-signal/80"
+                  aria-hidden
+                />
+                <p className="font-display text-xl font-semibold tracking-tight text-foreground sm:text-2xl">
+                  {step.label}
+                </p>
+                {step.era ? (
+                  <p className="mt-1 font-tech text-[11px] tracking-[0.16em] text-steel/80 uppercase">
+                    {step.era}
+                  </p>
+                ) : null}
+              </motion.li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      <section
+        id="areas"
+        className="relative border-t border-signal/10 px-5 py-20 sm:px-8 sm:py-28"
+      >
+        <div className="mx-auto max-w-6xl">
+          <SectionHeader
+            label="Research areas"
+            title="Intellectual map"
+            intro="Three pillars that unify the public work. Technologies support the problems — not the other way around."
+          />
+          <div className="mt-12 grid gap-10 md:grid-cols-3">
+            {researchAreas.map((area) => (
+              <motion.div
+                key={area.title}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true, margin: "-40px" }}
+                variants={reveal}
+              >
+                <h3 className="font-display text-xl font-semibold tracking-tight text-foreground sm:text-2xl">
+                  {area.title}
+                </h3>
+                <ul className="mt-4 space-y-2 text-[15px] leading-relaxed text-steel">
+                  {area.topics.map((topic) => (
+                    <li key={topic} className="border-l border-signal/20 pl-3">
+                      {topic}
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section
         id="featured"
         className="relative border-t border-signal/10 px-5 py-20 sm:px-8 sm:py-28"
       >
@@ -62,7 +168,7 @@ export function ContentSections() {
           <SectionHeader
             label="Featured"
             title="Selected public work"
-            intro="rad-lab, spectrometer-lab, and FPGA Kit show how RF, optical instrumentation, and board bring-up are practiced; HPC Runner covers execution-agnostic cluster regression. Classroom dumps are filtered out on purpose."
+            intro="Four anchors for the Research Engineer story: RF HWIL (rad-lab), optical instrumentation (spectrometer-lab), FPGA bring-up continuity (FPGA Kit), and HPC regression (HPC Runner). Classroom dumps stay off this surface."
           />
           <ProjectList projects={featured} />
         </div>
@@ -93,7 +199,7 @@ export function ContentSections() {
           <SectionHeader
             label="Experience"
             title="Professional history"
-            intro="Condensed timeline across embedded firmware, wireless systems, and independent R&D. Full detail is in the resume."
+            intro="Industry depth across embedded firmware, wireless systems, and independent R&D. Reviewers care about this before degrees — full detail is in the resume."
           />
           <ol className="mt-12 space-y-10">
             {experience.map((job) => (

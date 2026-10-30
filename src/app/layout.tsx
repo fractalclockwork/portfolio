@@ -24,11 +24,11 @@ const plexMono = IBM_Plex_Mono({
 export const metadata: Metadata = {
   title: "Brent A. Thorne — Research Engineer",
   description:
-    "Hardware–software co-design, high-performance computing, computational imaging, and real-time embedded systems. Portfolio of public work: SDR HWIL, spectrometer acquisition, FPGA bring-up, Linux drivers, and HPC tooling.",
+    "Research Engineer building intelligent computational systems that bridge scientific computing, imaging, embedded platforms, and high-performance computing — systems that transform measurements into insight.",
   openGraph: {
     title: "Brent A. Thorne — Research Engineer",
     description:
-      "Selected work: rad-lab, spectrometer-lab, FPGA Kit, HPC Runner, core memory, and reproducible lab infrastructure.",
+      "From molecular simulation and computational imaging to embedded sensing and scientific instrumentation. Featured: rad-lab, spectrometer-lab, FPGA Kit, HPC Runner.",
     type: "website",
     url: "https://fractalclockwork.github.io/portfolio/",
   },

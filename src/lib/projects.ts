@@ -28,13 +28,82 @@ export type ExperienceEntry = {
   highlights: string[];
 };
 
-/** Curated from inventory yes-items; maybe used sparingly; classroom dumps omitted. */
+export type ResearchArea = {
+  title: string;
+  topics: string[];
+};
+
+export type TrajectoryStep = {
+  label: string;
+  era?: string;
+};
+
+/** Unifying identity for the hero — who, and why it matters. */
+export const identity = {
+  eyebrow: "Research Engineer",
+  lead: "Building intelligent computational systems that bridge scientific computing, imaging, embedded platforms, and high-performance computing.",
+  support:
+    "From molecular simulation and computational imaging to embedded sensing and scientific instrumentation, I develop systems that transform measurements into insight.",
+};
+
+/** SOURCE-grounded credibility near the top of the page. */
+export const achievements: string[] = [
+  "Shipped commercial firmware deployed across millions of consumer and utility endpoints (OpenTV, GridNet).",
+  "Built an execution-agnostic HPC validation framework (hpc-runner) for molecular dynamics workloads across GROMACS, LAMMPS, and OpenMM.",
+  "Developed CT and radio imaging systems with custom reconstruction algorithms and automated artifact correction.",
+  "Inventor on US Patent Application 61834836 — closed-loop biometric monitoring and adaptive physiological feedback.",
+  "Graduate research in scientific computing and parallel algorithms (CUDA, MPI, OpenMP, UPC++) at UC Berkeley MSSE / CS267.",
+];
+
+/** Career progression visitors should not have to infer. */
+export const trajectory: TrajectoryStep[] = [
+  { label: "Embedded Systems", era: "Early career" },
+  { label: "Wireless Communications", era: "OpenTV → GridNet" },
+  { label: "Sensing & Measurement", era: "Field & lab" },
+  { label: "Imaging Systems", era: "Freelance R&D" },
+  { label: "Scientific Computing", era: "UC Berkeley MSSE" },
+  { label: "AI-Assisted Engineering", era: "Present" },
+];
+
+/** Intellectual map — before project lists. */
+export const researchAreas: ResearchArea[] = [
+  {
+    title: "Scientific Computing & AI",
+    topics: [
+      "HPC",
+      "Molecular simulation",
+      "CUDA",
+      "Numerical methods",
+      "AI-assisted engineering",
+    ],
+  },
+  {
+    title: "Imaging & Signal Processing",
+    topics: [
+      "CT / radio reconstruction",
+      "Computational imaging",
+      "Sensor systems",
+      "Fluorescence instrumentation",
+    ],
+  },
+  {
+    title: "Embedded & Intelligent Systems",
+    topics: [
+      "Embedded Linux",
+      "Real-time acquisition",
+      "Scientific instrumentation",
+      "Hardware integration",
+    ],
+  },
+];
+
+/** Curated featured anchors — methodology and instrumentation in practice. */
 export const featured: Project[] = [
   {
     slug: "rad-lab",
     title: "rad-lab",
     blurb:
-      "Containerized SDR and hardware-in-the-loop lab: role-structured toolset with human assent before TX, SIL→HWIL stages, and evidence reports for RF bring-up.",
+      "Host-gated RF bring-up you can trust: containerized SDR and multi-MCU labs with human assent before TX, SIL→HWIL stages, and evidence reports — not an ad-hoc bench script.",
     tags: ["SDR", "HWIL", "RF"],
     lang: "Python",
     status: "public",
@@ -45,7 +114,7 @@ export const featured: Project[] = [
     slug: "spectrometer-lab",
     title: "spectrometer-lab",
     blurb:
-      "Python RS-232 control and acquisition for a PerkinElmer LS 55 fluorescence spectrometer — prompted DC1 protocol flow, monochromator/slit positioning, serial-glitch taxonomy, and Stage 1–3 verified emission scans.",
+      "Turn a fluorescence spectrometer into a reproducible acquisition system: RS-232 control for a PerkinElmer LS 55 with prompted protocol flow, glitch taxonomy, and Stage 1–3 verified emission scans.",
     tags: ["Instrumentation", "Spectroscopy", "RS-232"],
     lang: "Python",
     status: "public",
@@ -56,7 +125,7 @@ export const featured: Project[] = [
     slug: "fpga-kit",
     title: "FPGA Kit",
     blurb:
-      "Reproducible FPGA bring-up archive for Digilent Spartan boards — toolchain notes, board memory, and lab continuity so firmware work survives tool churn.",
+      "Keep firmware work alive across tool churn: a bring-up archive for Digilent Spartan boards with toolchain memory and lab continuity notes.",
     tags: ["FPGA", "Bring-up", "Lab"],
     lang: "Python",
     status: "public",
@@ -67,7 +136,7 @@ export const featured: Project[] = [
     slug: "hpc-runner",
     title: "HPC Runner",
     blurb:
-      "Execution-agnostic benchmarking and regression for HPC workloads — same suite across local, container, and cluster backends (GROMACS, LAMMPS, OpenMM).",
+      "Same regression suite across laptop, container, and cluster: execution-agnostic benchmarking for molecular dynamics workloads so scientists can trust results on heterogeneous hardware.",
     tags: ["HPC", "Testing", "CUDA"],
     lang: "Python",
     status: "public",
@@ -78,17 +147,132 @@ export const featured: Project[] = [
 
 export const sections: ProjectSection[] = [
   {
-    id: "hardware",
-    label: "Hardware & sensing",
-    title: "Boards, drivers, and instrumentation",
+    id: "science",
+    label: "Scientific Computing & AI",
+    title: "Clusters, numerics, and reproducible environments",
     intro:
-      "Physical systems and sensing stacks — fidelity-gated simulation ladders, ferrite planes, kernel drivers, CRT drive, and bioelectrical acquisition that ship as public repos.",
+      "Public compute tooling that makes scientific software portable — schedulers you can recreate, runnable molecular examples, and containerized bring-up for multi-MCU labs.",
+    projects: [
+      {
+        slug: "sci-slurm",
+        title: "sci-slurm",
+        blurb:
+          "Bring a scheduler stack without a bare-metal cluster — a multi-container Slurm image for development and teaching.",
+        tags: ["HPC", "Docker", "Teaching"],
+        lang: "Dockerfile",
+        status: "public",
+        href: "https://github.com/fractalclockwork/sci-slurm",
+        cta: "Open repo",
+      },
+      {
+        slug: "molecular-sim",
+        title: "molecularSim",
+        blurb:
+          "Make textbook numerical methods runnable — worked C++ examples from Molecular Simulation of Fluids by Richard J. Sadus.",
+        tags: ["Molecular simulation", "C++"],
+        lang: "C++",
+        status: "public",
+        href: "https://github.com/fractalclockwork/molecularSim",
+        cta: "Open repo",
+      },
+      {
+        slug: "cede",
+        title: "CEDE / cede-labgrid",
+        blurb:
+          "Reproducible multi-MCU bring-up that does not depend on one laptop — containerized embedded lab with a Labgrid hardware-in-the-loop port.",
+        tags: ["Embedded", "HWIL", "Labgrid"],
+        lang: "Python",
+        status: "public",
+        href: "https://github.com/fractalclockwork/cede",
+        cta: "Open repo",
+      },
+      {
+        slug: "mesa-docker",
+        title: "MESA Docker",
+        blurb:
+          "Remote stellar-evolution work without fighting the host — Docker image for MESA with SSH and pgstar, paired with ASTR 400 setup guides.",
+        tags: ["Astrophysics", "Docker"],
+        lang: "Shell",
+        status: "public",
+        href: "https://github.com/astr400/mesa-docker",
+        cta: "Open repo",
+      },
+      {
+        slug: "astr400",
+        title: "ASTR 400 setup guide",
+        blurb:
+          "Get students to a working scientific environment fast — practical Python, Git, Docker, and VM setup for SFSU Astrophysics.",
+        tags: ["Courseware", "Reproducibility"],
+        lang: "Python",
+        status: "public",
+        href: "https://astr400.github.io/",
+        cta: "Open site",
+      },
+    ],
+  },
+  {
+    id: "imaging",
+    label: "Imaging, Instrumentation & Sensing",
+    title: "From measurements to quantitative insight",
+    intro:
+      "Featured spectrometer-lab and freelance CT/radio reconstruction pipelines sit here in spirit; public repos below cover closed-loop bioelectrical sensing. Reconstruction math and artifact correction live in the resume and experience narrative.",
+    projects: [
+      {
+        slug: "biofeedback-emg",
+        title: "Biofeedback EMG",
+        blurb:
+          "Closed-loop physiological feedback from the body — early EMG acquisition still used as a sensing reference for adaptive control ideas.",
+        tags: ["Sensing", "Arduino"],
+        lang: "Java",
+        status: "public",
+        href: "https://github.com/fractalclockwork/biofeedback_emg",
+        cta: "Open repo",
+      },
+    ],
+  },
+  {
+    id: "embedded",
+    label: "Embedded & Hardware Systems",
+    title: "Drivers, board bring-up, and lab infrastructure",
+    intro:
+      "Featured rad-lab and FPGA Kit carry the HWIL and FPGA story; this shelf holds kernel drivers and netboot infrastructure that keep the bench reachable.",
+    projects: [
+      {
+        slug: "radar-module",
+        title: "Radar Module",
+        blurb:
+          "Put a radar module under Linux control — kernel driver with Docker image and Yocto environment for BeagleBone-class targets.",
+        tags: ["Kernel", "Yocto", "Drivers"],
+        lang: "Shell / C",
+        status: "public",
+        href: "https://github.com/fractalclockwork/RadarModule",
+        cta: "Open repo",
+      },
+      {
+        slug: "tftp-boot-docker",
+        title: "tftp-boot-docker",
+        blurb:
+          "Lab netboot without ceremony — Docker TFTP and HTTP for UEFI PXE boot of Ubuntu Desktop LTS with OpenWrt DHCP.",
+        tags: ["Infra", "PXE", "Docker"],
+        lang: "Shell",
+        status: "public",
+        href: "https://github.com/fractalclockwork/tftp-boot-docker",
+        cta: "Open repo",
+      },
+    ],
+  },
+  {
+    id: "experimental",
+    label: "Experimental & Archival Computing",
+    title: "Depth at the bench — not the primary identity",
+    intro:
+      "Fascinating hardware research that shows craft and curiosity. It supports the Research Engineer story; it does not redefine it.",
     projects: [
       {
         slug: "core-memory-redux",
         title: "Core Memory Redux",
         blurb:
-          "Fidelity-gated SIL ladder for a 64×64 coincident-current core-memory driver — from SPICE through ideal N×N models before physical bring-up.",
+          "Prove the driver in simulation before physical risk — fidelity-gated SIL ladder for a 64×64 coincident-current core-memory plane, from SPICE through ideal N×N models.",
         tags: ["Hardware", "Simulation", "SIL"],
         lang: "Python",
         status: "public",
@@ -99,7 +283,7 @@ export const sections: ProjectSection[] = [
         slug: "core-memory",
         title: "Core Memory",
         blurb:
-          "Driver electronics for sensing and writing an existing 9″ ferrite core plane — a 64×64 array (4,096 bits) brought back under software control.",
+          "Bring a real 9″ ferrite plane back under software control — drive and sense a 64×64 array (4,096 bits).",
         tags: ["Hardware", "Electronics"],
         lang: "Python",
         status: "public",
@@ -110,33 +294,11 @@ export const sections: ProjectSection[] = [
         slug: "crt-drive",
         title: "CRT Drive",
         blurb:
-          "Programmable CRT drive: sync and video from a microcontroller for analog CRTs and TVs — open firmware that replaces sealed drive ASICs on the bench.",
+          "Replace sealed drive ASICs on the bench — open firmware that generates sync and video for analog CRTs and TVs from a microcontroller.",
         tags: ["Firmware", "Retrocompute", "Hardware"],
         lang: "C",
         status: "public",
         href: "https://github.com/fractalclockwork/crt-drive",
-        cta: "Open repo",
-      },
-      {
-        slug: "radar-module",
-        title: "Radar Module",
-        blurb:
-          "Linux kernel driver for a radar module with Docker image and Yocto build environment for BeagleBone-class targets.",
-        tags: ["Kernel", "Yocto", "Drivers"],
-        lang: "Shell / C",
-        status: "public",
-        href: "https://github.com/fractalclockwork/RadarModule",
-        cta: "Open repo",
-      },
-      {
-        slug: "biofeedback-emg",
-        title: "Biofeedback EMG",
-        blurb:
-          "EMG sensor stack with Arduino and Processing — early closed-loop bioelectrical acquisition still used as a sensing reference.",
-        tags: ["Sensing", "Arduino"],
-        lang: "Java",
-        status: "public",
-        href: "https://github.com/fractalclockwork/biofeedback_emg",
         cta: "Open repo",
       },
       {
@@ -151,101 +313,6 @@ export const sections: ProjectSection[] = [
       },
     ],
   },
-  {
-    id: "science",
-    label: "Scientific computing",
-    title: "Clusters, containers, and numerics",
-    intro:
-      "Reproducible HPC and simulation tooling — Slurm images, MESA remote-dev, molecular examples, and containerized embedded labs.",
-    projects: [
-      {
-        slug: "sci-slurm",
-        title: "sci-slurm",
-        blurb:
-          "Multi-container Slurm image for development and teaching — bring a scheduler stack without a full bare-metal cluster.",
-        tags: ["HPC", "Docker", "Teaching"],
-        lang: "Dockerfile",
-        status: "public",
-        href: "https://github.com/fractalclockwork/sci-slurm",
-        cta: "Open repo",
-      },
-      {
-        slug: "mesa-docker",
-        title: "MESA Docker",
-        blurb:
-          "Remote-dev Docker image for MESA stellar simulations with SSH and pgstar — used with the ASTR 400 setup guides.",
-        tags: ["Astrophysics", "Docker"],
-        lang: "Shell",
-        status: "public",
-        href: "https://github.com/astr400/mesa-docker",
-        cta: "Open repo",
-      },
-      {
-        slug: "molecular-sim",
-        title: "molecularSim",
-        blurb:
-          "Worked examples from Molecular Simulation of Fluids by Richard J. Sadus — numerical methods made runnable.",
-        tags: ["Molecular simulation", "C++"],
-        lang: "C++",
-        status: "public",
-        href: "https://github.com/fractalclockwork/molecularSim",
-        cta: "Open repo",
-      },
-      {
-        slug: "cede",
-        title: "CEDE / cede-labgrid",
-        blurb:
-          "Containerized embedded systems lab and Labgrid hardware-in-the-loop port for multi-MCU hardware — reproducible bring-up that does not depend on one laptop.",
-        tags: ["Embedded", "HWIL", "Labgrid"],
-        lang: "Python",
-        status: "public",
-        href: "https://github.com/fractalclockwork/cede",
-        cta: "Open repo",
-      },
-    ],
-  },
-  {
-    id: "tooling",
-    label: "Lab tooling",
-    title: "Infrastructure that stays out of the way",
-    intro:
-      "PXE boot stacks, subtitle tooling, and courseware gateways — friction removal for the bench and the classroom.",
-    projects: [
-      {
-        slug: "tftp-boot-docker",
-        title: "tftp-boot-docker",
-        blurb:
-          "Docker TFTP+HTTP server for UEFI PXE boot of Ubuntu Desktop LTS with OpenWrt DHCP — lab netboot without ceremony.",
-        tags: ["Infra", "PXE", "Docker"],
-        lang: "Shell",
-        status: "public",
-        href: "https://github.com/fractalclockwork/tftp-boot-docker",
-        cta: "Open repo",
-      },
-      {
-        slug: "voice2srt",
-        title: "voice2srt",
-        blurb:
-          "Lightweight CLI for clean, sentence-aligned subtitles from long-form audio — small tool, sharp edge.",
-        tags: ["CLI", "Audio"],
-        lang: "Python",
-        status: "public",
-        href: "https://github.com/fractalclockwork/voice2srt",
-        cta: "Open repo",
-      },
-      {
-        slug: "astr400",
-        title: "ASTR 400 setup guide",
-        blurb:
-          "Practical Python, Git, Docker, and VM setup for SFSU Astrophysics — structure and clarity over marketing copy.",
-        tags: ["Courseware", "Reproducibility"],
-        lang: "Python",
-        status: "public",
-        href: "https://astr400.github.io/",
-        cta: "Open site",
-      },
-    ],
-  },
 ];
 
 export const experience: ExperienceEntry[] = [
@@ -255,9 +322,9 @@ export const experience: ExperienceEntry[] = [
     location: "San Francisco, CA",
     dates: "Dec 2018 – Present",
     highlights: [
-      "Build computational systems bridging physical instrumentation, embedded hardware, imaging modalities, and high-performance software.",
-      "GPU-accelerated C++/CUDA and Python pipelines for CT/radio image reconstruction, automated artifact correction, and microwave resonant substrate analysis; ECAD/PCB and MCAD fixtures for firmware validation.",
-      "Containerized SDR and multi-MCU HWIL labs (rad-lab, CEDE/cede-labgrid), fluorescence spectrometer RS-232 acquisition (spectrometer-lab), V4L2/OpenCV high-rate sensor pipelines, and CI/CD for heterogeneous targets.",
+      "Build computational systems that bridge physical instrumentation, embedded hardware, imaging modalities, and high-performance software.",
+      "GPU-accelerated C++/CUDA and Python pipelines for CT/radio reconstruction and artifact correction; microwave resonant substrate analysis; ECAD/PCB and MCAD fixtures for firmware validation.",
+      "Containerized SDR and multi-MCU HWIL labs (rad-lab, CEDE/cede-labgrid), fluorescence spectrometer acquisition (spectrometer-lab), and high-rate sensor pipelines for synchronized telemetry.",
     ],
   },
   {
@@ -266,8 +333,8 @@ export const experience: ExperienceEntry[] = [
     location: "San Francisco, CA",
     dates: "Oct 2013 – Nov 2018",
     highlights: [
-      "Embedded radio modem firmware and Linux kernel networking drivers for sub-GHz smart-grid telemetry and LTE CAT-4/CAT-M M2M communication platforms.",
-      "SDR protocol analysis and cross-layer debugging across custom RF hardware, firmware, and embedded Linux runtimes in high-interference industrial environments.",
+      "Embedded radio modem firmware and Linux kernel networking drivers for sub-GHz smart-grid telemetry and LTE CAT-4/CAT-M M2M platforms.",
+      "SDR protocol analysis and cross-layer debugging across custom RF hardware, firmware, and embedded Linux runtimes in high-interference environments.",
     ],
   },
   {
@@ -286,7 +353,7 @@ export const experience: ExperienceEntry[] = [
     location: "San Francisco, CA",
     dates: "May 2011 – Oct 2013",
     highlights: [
-      "Mechatronic product development: CAD/CAM, CNC, PCB layout, and embedded software across multidisciplinary engineering teams.",
+      "Mechatronic product development spanning CAD/CAM, CNC, PCB layout, and embedded software across multidisciplinary teams.",
       "Bioelectrical acquisition front-ends and wavelet analysis for real-time physiological feedback (US Patent Application 61834836).",
     ],
   },
@@ -296,7 +363,7 @@ export const experience: ExperienceEntry[] = [
     location: "San Francisco, CA & Amsterdam, NL",
     dates: "Oct 2004 – May 2011",
     highlights: [
-      "Embedded Linux device drivers, networking stacks (TCP/IP, UDP, HTTP, PPP), and FAT/Ethernet subsystems for global digital television hardware.",
+      "Embedded Linux device drivers and networking stacks for global digital television hardware deployed at consumer scale.",
       "Global software releases and on-site driver integration with vendors and operators across Europe, Australia, and the Americas.",
     ],
   },
@@ -326,11 +393,11 @@ export const about = {
   github: "https://github.com/fractalclockwork",
   linkedin: "https://linkedin.com/in/brent-thorne-a581554",
   resumePath: "/resume.pdf",
-  bio: "Research Engineer with over 20 years of experience in hardware–software co-design, high-performance computing, computational imaging, and real-time embedded systems. M.S. graduate from UC Berkeley’s Molecular Science and Software Engineering (MSSE) program with expertise in C++/CUDA optimization, parallel algorithms (MPI, OpenMP, UPC++), and reproducible simulation frameworks — and a long track record bringing up Linux kernel drivers, DMA pipelines, scientific instrumentation, and RF/sensing hardware at the bench.",
+  bio: "Research Engineer developing intelligent computational systems that bridge physical hardware and advanced software. Over 20 years across embedded Linux, wireless stacks, computational imaging, and high-performance scientific computing — with graduate work at UC Berkeley (MSSE) in CUDA, parallel algorithms, and reproducible simulation frameworks.",
   focus: [
-    "High-performance computing & AI: CUDA, MPI, OpenMP, UPC++, multi-GPU scaling; molecular dynamics (GROMACS, LAMMPS, OpenMM); PyTorch, TensorFlow, SciPy, NumPy",
+    "Scientific computing & AI: CUDA, MPI, OpenMP, UPC++, multi-GPU scaling; molecular dynamics (GROMACS, LAMMPS, OpenMM); PyTorch, TensorFlow, SciPy, NumPy",
+    "Imaging, instrumentation & sensing: CT/radio reconstruction, cellular image analysis, automated artifact correction, fluorescence spectroscopy (RS-232/DAQ), V4L2/GStreamer, OpenCV, SDR",
     "Embedded systems & Linux drivers: C/C++, Embedded Linux, kernel drivers, Device Trees, DMA, RTOS (ThreadX), Yocto, board bring-up, SPI/I2C/UART/CAN, sub-GHz RF, LTE CAT-M",
-    "Computational imaging, instrumentation & sensing: CT/radio reconstruction, cellular image analysis, automated artifact correction, fluorescence spectroscopy (RS-232/DAQ), V4L2/GStreamer, OpenCV, FFTW, SDR",
     "Mechatronics & field infrastructure: CAD/CAM, CNC, ECAD/PCB, FPGA prototyping (Verilog, Quartus), remote observatories, RF link budgets & telemetry",
   ],
   education: [
