@@ -42,7 +42,7 @@ export function Hero() {
               href="#areas"
               className="hidden font-tech text-[11px] tracking-[0.2em] text-steel uppercase transition-colors hover:text-signal sm:inline"
             >
-              Areas
+              Domains
             </a>
             <a
               href="#featured"

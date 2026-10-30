@@ -1,6 +1,6 @@
 # Brent A. Thorne — portfolio
 
-Professional portfolio for **Brent A. Thorne**, Research Engineer: building intelligent computational systems that bridge scientific computing, imaging, embedded platforms, and high-performance computing — systems that transform measurements into insight.
+Professional portfolio for **Brent A. Thorne**, Research Engineer: bridging physical hardware constraints with high-performance scientific software.
 
 **Live:** [fractalclockwork.github.io/portfolio](https://fractalclockwork.github.io/portfolio/)
 
@@ -34,4 +34,4 @@ Push to `main` runs [.github/workflows/deploy-pages.yml](.github/workflows/deplo
 
 ## Curation
 
-Positioning leads with identity, then research areas, then featured anchors (**rad-lab**, **spectrometer-lab**, **FPGA Kit**, **HPC Runner**). Domain sections put Scientific Computing first and Experimental / archival hardware last. Classroom dumps and retired joke branding stay off this surface. Remotes are not deleted.
+Landing hub: identity → achievements → trajectory → four Dream-JD **domain cards** (in-page anchors) → constraint-first flagships (**hpc-runner**, **rad-lab**, **spectrometer-lab**, **FPGA Kit**) → domain shelves → Hardware Archive last. Contact: brentathorne@gmail.com. Classroom dumps stay off this surface. Remotes are not deleted.

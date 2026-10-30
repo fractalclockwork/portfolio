@@ -4,48 +4,48 @@
 
 ---
 
-Building intelligent computational systems that bridge scientific computing, imaging, embedded platforms, and high-performance computing. From molecular simulation and computational imaging to embedded sensing and scientific instrumentation, the work transforms measurements into insight. Classroom dumps stay offstage. Source lives under [github.com/fractalclockwork](https://github.com/fractalclockwork).
+Bridging physical hardware constraints with high-performance scientific software. Over two decades at the hardware–software boundary — from oscilloscope bench bring-up and Linux drivers to GPU-accelerated parallel algorithms for reproducible scientific simulation. The [portfolio](https://fractalclockwork.github.io/portfolio/) routes visitors through four engineering domains; classroom dumps stay offstage. Source lives under [github.com/fractalclockwork](https://github.com/fractalclockwork).
 
-What follows is the portfolio in prose — the same anchors you will find on [the site](https://fractalclockwork.github.io/portfolio/), written for reading rather than scanning a list.
+## Domains
 
-## Featured anchors
+1. **High-Performance Computing & Scientific Software** — reproducibility across local, container, and cluster backends. Flagship: [hpc-runner](https://github.com/fractalclockwork/hpc-runner).
+2. **Embedded Firmware & Sensing Systems** — board bring-up, HWIL, high-rate acquisition. Flagships: [rad-lab](https://github.com/fractalclockwork/rad-lab), [CEDE / cede-labgrid](https://github.com/fractalclockwork/cede).
+3. **Computational Imaging & Instrumentation** — instrument control and reconstruction. Flagship: [spectrometer-lab](https://github.com/fractalclockwork/spectrometer-lab) (Stages 1–3 PASS; Gate D open).
+4. **Scientific Field & Lab Infrastructure** — fixtures, telemetry, bioelectrical IP; historical bench craft in the Hardware Archive.
 
-Four projects carry most of the weight.
+## Featured flagships
 
-**[rad-lab](https://github.com/fractalclockwork/rad-lab)** is host-gated RF bring-up you can trust: containerized SDR and multi-MCU labs with human assent before TX, SIL→HWIL stages, and evidence reports.
+**[HPC Runner](https://github.com/fractalclockwork/hpc-runner)** — execution-agnostic regression for MD workloads (GROMACS, LAMMPS, OpenMM) across heterogeneous backends.
 
-**[spectrometer-lab](https://github.com/fractalclockwork/spectrometer-lab)** turns a fluorescence spectrometer into a reproducible acquisition system — RS-232 control for a PerkinElmer LS 55 with prompted protocol flow, glitch taxonomy, and Stage 1–3 verified emission scans.
+**[rad-lab](https://github.com/fractalclockwork/rad-lab)** — host-gated RF HWIL with human assent before TX, SIL→HWIL stages, and evidence reports.
 
-**[FPGA Kit](https://github.com/fractalclockwork/fpga-kit)** keeps firmware work alive across tool churn — a bring-up archive for Digilent Spartan boards with toolchain memory and lab continuity.
+**[spectrometer-lab](https://github.com/fractalclockwork/spectrometer-lab)** — RS-232 DAQ and control for a PerkinElmer LS 55; Stages 1–3 PASS (2026-10-28); Gate D optical validation open.
 
-**[HPC Runner](https://github.com/fractalclockwork/hpc-runner)** runs the same regression suite across laptop, container, and cluster for molecular dynamics workloads on heterogeneous hardware.
+**[FPGA Kit](https://github.com/fractalclockwork/fpga-kit)** — bring-up archive for Digilent Spartan boards so firmware work survives tool churn.
 
-## Scientific Computing & AI
+## High-Performance Computing & Scientific Software
 
-Prefer environments you can recreate.
+[sci-slurm](https://github.com/fractalclockwork/sci-slurm) packs a multi-container Slurm image for development and teaching. [molecularSim](https://github.com/fractalclockwork/molecularSim) turns Sadus’s *Molecular Simulation of Fluids* examples into runnable C++. [MESA Docker](https://github.com/astr400/mesa-docker) and [ASTR 400](https://astr400.github.io/) support remote stellar-evolution work.
 
-[sci-slurm](https://github.com/fractalclockwork/sci-slurm) packs a multi-container Slurm image for development and teaching. [molecularSim](https://github.com/fractalclockwork/molecularSim) turns examples from Sadus’s *Molecular Simulation of Fluids* into runnable C++. [CEDE / cede-labgrid](https://github.com/fractalclockwork/cede) is a containerized multi-MCU lab and Labgrid HIL port. [MESA Docker](https://github.com/astr400/mesa-docker) and the [ASTR 400](https://astr400.github.io/) setup guides support remote stellar-evolution work.
+## Embedded Firmware & Sensing Systems
 
-## Imaging, Instrumentation & Sensing
+[CEDE / cede-labgrid](https://github.com/fractalclockwork/cede) — containerized multi-MCU lab and Labgrid HIL port. [Radar Module](https://github.com/fractalclockwork/RadarModule) — Linux kernel driver with Docker and Yocto. [tftp-boot-docker](https://github.com/fractalclockwork/tftp-boot-docker) — lab netboot without ceremony.
 
-Featured spectrometer-lab and freelance CT/radio reconstruction pipelines turn measurements into quantitative insight. Public sensing reference: [Biofeedback EMG](https://github.com/fractalclockwork/biofeedback_emg) — early closed-loop bioelectrical acquisition.
+## Computational Imaging & Instrumentation
 
-## Embedded & Hardware Systems
+Featured spectrometer-lab and freelance CT/radio reconstruction pipelines. Public sensing reference: [Biofeedback EMG](https://github.com/fractalclockwork/biofeedback_emg).
 
-Featured rad-lab and FPGA Kit carry HWIL and FPGA continuity. [Radar Module](https://github.com/fractalclockwork/RadarModule) pairs a Linux kernel driver with Docker and Yocto for BeagleBone-class targets. [tftp-boot-docker](https://github.com/fractalclockwork/tftp-boot-docker) is lab netboot without ceremony.
+## Hardware Archive
 
-## Experimental & Archival Computing
-
-Depth at the bench — craft that supports the Research Engineer story, not the primary identity.
-
-[Core Memory Redux](https://github.com/fractalclockwork/core-memory-redux) and [Core Memory](https://github.com/fractalclockwork/core-memory) — SIL ladder into a real 9″ 64×64 ferrite plane. [CRT Drive](https://github.com/fractalclockwork/crt-drive) is open firmware for analog CRTs. *Retro Compute*, a study guide for Yaohan Chu’s 1962 *Digital Computer Design Fundamentals*, stays private until it is ready to publish.
+Secondary to the Research Engineer story. [Core Memory Redux](https://github.com/fractalclockwork/core-memory-redux) and [Core Memory](https://github.com/fractalclockwork/core-memory) — SIL into a real 9″ ferrite plane. [CRT Drive](https://github.com/fractalclockwork/crt-drive) — open CRT firmware. *Retro Compute* (Chu, 1962) stays private until ready.
 
 ## How to follow along
 
-Identity first: systems that transform measurements into insight. Then featured anchors — rad-lab, spectrometer-lab, FPGA Kit, HPC Runner. Compute shelf next; experimental hardware last. Everything listed as public is linked from the portfolio; private work stays unmarked until it ships.
+Start on the portfolio domain cards, then the four flagships. Compute and embedded shelves next; Hardware Archive last. Public links live on the site; private work stays unmarked until it ships.
 
 **Portfolio:** [fractalclockwork.github.io/portfolio](https://fractalclockwork.github.io/portfolio/)  
-**GitHub:** [github.com/fractalclockwork](https://github.com/fractalclockwork)
+**GitHub:** [github.com/fractalclockwork](https://github.com/fractalclockwork)  
+**Contact:** brentathorne@gmail.com
 
 ---
 

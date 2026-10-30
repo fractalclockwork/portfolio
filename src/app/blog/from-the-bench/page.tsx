@@ -5,7 +5,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: `From the bench and the cluster — ${about.name}`,
   description:
-    "Research Engineer building intelligent computational systems that transform measurements into insight — curated public work across scientific computing, imaging, and embedded platforms.",
+    "Research Engineer bridging physical hardware constraints with high-performance scientific software — domain hub and flagship public work.",
 };
 
 function Ext({
@@ -49,8 +49,8 @@ export default function FromTheBenchPost() {
             2026-10-30 · {about.name}
           </p>
           <p className="mt-6 text-base leading-relaxed text-steel sm:text-lg">
-            {identity.lead} {identity.support} Classroom dumps stay off this
-            page. Source lives under{" "}
+            {identity.lead} The portfolio routes through four engineering
+            domains; classroom dumps stay off this page. Source lives under{" "}
             <Ext href={about.github}>github.com/fractalclockwork</Ext>.
           </p>
         </header>
@@ -58,50 +58,93 @@ export default function FromTheBenchPost() {
         <div className="prose-portfolio mt-10 space-y-10 text-[15px] leading-relaxed text-steel sm:text-base">
           <section>
             <h2 className="font-display text-xl font-semibold tracking-tight text-foreground sm:text-2xl">
-              Featured
+              Domains
+            </h2>
+            <ol className="mt-4 list-decimal space-y-3 pl-5">
+              <li>
+                <strong className="text-foreground">
+                  High-Performance Computing &amp; Scientific Software
+                </strong>{" "}
+                — reproducibility across backends. Flagship:{" "}
+                <Ext href="https://github.com/fractalclockwork/hpc-runner">
+                  hpc-runner
+                </Ext>
+                .
+              </li>
+              <li>
+                <strong className="text-foreground">
+                  Embedded Firmware &amp; Sensing Systems
+                </strong>{" "}
+                — board bring-up and HWIL. Flagships:{" "}
+                <Ext href="https://github.com/fractalclockwork/rad-lab">
+                  rad-lab
+                </Ext>
+                ,{" "}
+                <Ext href="https://github.com/fractalclockwork/cede">
+                  CEDE / cede-labgrid
+                </Ext>
+                .
+              </li>
+              <li>
+                <strong className="text-foreground">
+                  Computational Imaging &amp; Instrumentation
+                </strong>{" "}
+                — instrument control and reconstruction. Flagship:{" "}
+                <Ext href="https://github.com/fractalclockwork/spectrometer-lab">
+                  spectrometer-lab
+                </Ext>{" "}
+                (Stages 1–3 PASS; Gate D open).
+              </li>
+              <li>
+                <strong className="text-foreground">
+                  Scientific Field &amp; Lab Infrastructure
+                </strong>{" "}
+                — fixtures, telemetry, bioelectrical IP; historical craft in the
+                Hardware Archive.
+              </li>
+            </ol>
+          </section>
+
+          <section>
+            <h2 className="font-display text-xl font-semibold tracking-tight text-foreground sm:text-2xl">
+              Featured flagships
             </h2>
             <ul className="mt-4 space-y-4">
+              <li>
+                <Ext href="https://github.com/fractalclockwork/hpc-runner">
+                  HPC Runner
+                </Ext>{" "}
+                — execution-agnostic regression for MD workloads across local,
+                container, and cluster backends.
+              </li>
               <li>
                 <Ext href="https://github.com/fractalclockwork/rad-lab">
                   rad-lab
                 </Ext>{" "}
-                — Host-gated RF bring-up you can trust: containerized SDR and
-                multi-MCU labs with human assent before TX, SIL→HWIL stages, and
-                evidence reports.
+                — host-gated RF HWIL with human assent before TX, SIL→HWIL
+                stages, and evidence reports.
               </li>
               <li>
                 <Ext href="https://github.com/fractalclockwork/spectrometer-lab">
                   spectrometer-lab
                 </Ext>{" "}
-                — Turn a fluorescence spectrometer into a reproducible
-                acquisition system: RS-232 control for a PerkinElmer LS 55 with
-                prompted protocol flow, glitch taxonomy, and Stage 1–3 verified
-                emission scans.
+                — RS-232 DAQ for a PerkinElmer LS 55; Stages 1–3 PASS
+                (2026-10-28); Gate D optical validation open.
               </li>
               <li>
                 <Ext href="https://github.com/fractalclockwork/fpga-kit">
                   FPGA Kit
                 </Ext>{" "}
-                — Keep firmware work alive across tool churn: bring-up archive
-                for Digilent Spartan boards with toolchain memory and lab
-                continuity.
-              </li>
-              <li>
-                <Ext href="https://github.com/fractalclockwork/hpc-runner">
-                  HPC Runner
-                </Ext>{" "}
-                — Same regression suite across laptop, container, and cluster for
-                molecular dynamics workloads on heterogeneous hardware.
+                — bring-up archive so firmware work survives tool churn.
               </li>
             </ul>
           </section>
 
           <section>
             <h2 className="font-display text-xl font-semibold tracking-tight text-foreground sm:text-2xl">
-              Scientific Computing &amp; AI
+              High-Performance Computing &amp; Scientific Software
             </h2>
             <p className="mt-4">
-              Prefer environments you can recreate.{" "}
               <Ext href="https://github.com/fractalclockwork/sci-slurm">
                 sci-slurm
               </Ext>{" "}
@@ -109,45 +152,27 @@ export default function FromTheBenchPost() {
               <Ext href="https://github.com/fractalclockwork/molecularSim">
                 molecularSim
               </Ext>{" "}
-              — Sadus’s <em>Molecular Simulation of Fluids</em> examples as
-              runnable C++.{" "}
+              — Sadus examples as runnable C++.{" "}
+              <Ext href="https://github.com/astr400/mesa-docker">MESA Docker</Ext>{" "}
+              and{" "}
+              <Ext href="https://astr400.github.io/">ASTR 400</Ext> for remote
+              stellar-evolution work.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="font-display text-xl font-semibold tracking-tight text-foreground sm:text-2xl">
+              Embedded Firmware &amp; Sensing Systems
+            </h2>
+            <p className="mt-4">
               <Ext href="https://github.com/fractalclockwork/cede">
                 CEDE / cede-labgrid
               </Ext>{" "}
-              — containerized multi-MCU lab and Labgrid HIL port.{" "}
-              <Ext href="https://github.com/astr400/mesa-docker">MESA Docker</Ext>{" "}
-              and the{" "}
-              <Ext href="https://astr400.github.io/">ASTR 400</Ext> setup guides
-              support remote stellar-evolution work.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="font-display text-xl font-semibold tracking-tight text-foreground sm:text-2xl">
-              Imaging, Instrumentation &amp; Sensing
-            </h2>
-            <p className="mt-4">
-              Featured spectrometer-lab and freelance CT/radio reconstruction
-              pipelines turn measurements into quantitative insight. Public
-              sensing reference:{" "}
-              <Ext href="https://github.com/fractalclockwork/biofeedback_emg">
-                Biofeedback EMG
-              </Ext>{" "}
-              — early closed-loop bioelectrical acquisition.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="font-display text-xl font-semibold tracking-tight text-foreground sm:text-2xl">
-              Embedded &amp; Hardware Systems
-            </h2>
-            <p className="mt-4">
-              Featured rad-lab and FPGA Kit carry HWIL and FPGA continuity.{" "}
+              — multi-MCU lab and Labgrid HIL.{" "}
               <Ext href="https://github.com/fractalclockwork/RadarModule">
                 Radar Module
               </Ext>{" "}
-              — Linux kernel driver with Docker and Yocto for BeagleBone-class
-              targets.{" "}
+              — Linux kernel driver with Docker and Yocto.{" "}
               <Ext href="https://github.com/fractalclockwork/tftp-boot-docker">
                 tftp-boot-docker
               </Ext>{" "}
@@ -157,11 +182,24 @@ export default function FromTheBenchPost() {
 
           <section>
             <h2 className="font-display text-xl font-semibold tracking-tight text-foreground sm:text-2xl">
-              Experimental &amp; Archival Computing
+              Computational Imaging &amp; Instrumentation
             </h2>
             <p className="mt-4">
-              Depth at the bench — craft that supports the Research Engineer
-              story, not the primary identity.{" "}
+              Featured spectrometer-lab and freelance CT/radio reconstruction.
+              Public sensing reference:{" "}
+              <Ext href="https://github.com/fractalclockwork/biofeedback_emg">
+                Biofeedback EMG
+              </Ext>
+              .
+            </p>
+          </section>
+
+          <section>
+            <h2 className="font-display text-xl font-semibold tracking-tight text-foreground sm:text-2xl">
+              Hardware Archive
+            </h2>
+            <p className="mt-4">
+              Secondary to the Research Engineer story.{" "}
               <Ext href="https://github.com/fractalclockwork/core-memory-redux">
                 Core Memory Redux
               </Ext>{" "}
@@ -169,12 +207,12 @@ export default function FromTheBenchPost() {
               <Ext href="https://github.com/fractalclockwork/core-memory">
                 Core Memory
               </Ext>{" "}
-              — SIL ladder into a real 9″ 64×64 ferrite plane.{" "}
+              — SIL into a real 9″ ferrite plane.{" "}
               <Ext href="https://github.com/fractalclockwork/crt-drive">
                 CRT Drive
               </Ext>{" "}
-              — open firmware for analog CRTs. <em>Retro Compute</em> (Chu, 1962)
-              stays private until ready.
+              — open CRT firmware. <em>Retro Compute</em> (Chu, 1962) stays
+              private until ready.
             </p>
           </section>
 
@@ -183,17 +221,15 @@ export default function FromTheBenchPost() {
               Follow along
             </h2>
             <p className="mt-4">
-              Identity first: systems that transform measurements into insight.
-              Then featured anchors — rad-lab, spectrometer-lab, FPGA Kit, HPC
-              Runner. Compute shelf next; experimental hardware last. Public
-              links live on the{" "}
+              Start with the portfolio{" "}
               <Link
-                href="/"
+                href="/#areas"
                 className="text-signal underline-offset-4 hover:text-signal-bright hover:underline"
               >
-                portfolio
+                domain cards
               </Link>
-              ; private work stays unmarked until it ships.
+              , then the four flagships. Compute and embedded shelves next;
+              Hardware Archive last. Contact: {about.email}.
             </p>
             <ul className="mt-4 space-y-2 font-tech text-sm tracking-[0.04em]">
               <li>

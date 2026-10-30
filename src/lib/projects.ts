@@ -28,9 +28,12 @@ export type ExperienceEntry = {
   highlights: string[];
 };
 
-export type ResearchArea = {
+export type DomainCard = {
   title: string;
-  topics: string[];
+  blurb: string;
+  stack: string;
+  featured: string[];
+  href: string;
 };
 
 export type TrajectoryStep = {
@@ -41,9 +44,9 @@ export type TrajectoryStep = {
 /** Unifying identity for the hero — who, and why it matters. */
 export const identity = {
   eyebrow: "Research Engineer",
-  lead: "Building intelligent computational systems that bridge scientific computing, imaging, embedded platforms, and high-performance computing.",
+  lead: "Bridging physical hardware constraints with high-performance scientific software.",
   support:
-    "From molecular simulation and computational imaging to embedded sensing and scientific instrumentation, I develop systems that transform measurements into insight.",
+    "With over two decades across embedded systems and computational modeling, I engineer solutions at the full hardware–software boundary — from oscilloscope bench bring-up and Linux device drivers to GPU-accelerated parallel algorithms for reproducible scientific simulation. I build deterministic infrastructure that lets domain scientists and hardware engineers trust their data.",
 };
 
 /** SOURCE-grounded credibility near the top of the page. */
@@ -65,45 +68,65 @@ export const trajectory: TrajectoryStep[] = [
   { label: "AI-Assisted Engineering", era: "Present" },
 ];
 
-/** Intellectual map — before project lists. */
-export const researchAreas: ResearchArea[] = [
+/**
+ * Dream-JD routing hub — four clickable domain cards (in-page anchors).
+ * Stack lines are secondary; constraint/outcome blurbs lead.
+ */
+export const domainCards: DomainCard[] = [
   {
-    title: "Scientific Computing & AI",
-    topics: [
-      "HPC",
-      "Molecular simulation",
-      "CUDA",
-      "Numerical methods",
-      "AI-assisted engineering",
-    ],
+    title: "High-Performance Computing & Scientific Software",
+    blurb:
+      "Reproducibility and parallel correctness across heterogeneous backends are the bottleneck. Automated regression, benchmarking, and parallel algorithm work for numerical workloads on local, container, and cluster environments.",
+    stack:
+      "C++ · CUDA · MPI / OpenMP · Slurm · Docker · GROMACS / LAMMPS / OpenMM",
+    featured: ["hpc-runner"],
+    href: "#science",
   },
   {
-    title: "Imaging & Signal Processing",
-    topics: [
-      "CT / radio reconstruction",
-      "Computational imaging",
-      "Sensor systems",
-      "Fluorescence instrumentation",
-    ],
+    title: "Embedded Firmware & Sensing Systems",
+    blurb:
+      "Board bring-up, hardware-in-the-loop lab automation, and high-rate sensor acquisition — firmware and drivers that survive the path from bench to commercial utility and telemetry endpoints.",
+    stack:
+      "Embedded Linux · Device Drivers · DMA · V4L2 · GStreamer · OpenCV",
+    featured: ["rad-lab", "CEDE / cede-labgrid"],
+    href: "#embedded",
   },
   {
-    title: "Embedded & Intelligent Systems",
-    topics: [
-      "Embedded Linux",
-      "Real-time acquisition",
-      "Scientific instrumentation",
-      "Hardware integration",
-    ],
+    title: "Computational Imaging & Instrumentation R&D",
+    blurb:
+      "End-to-end optical and RF instrument control: bridge raw multi-channel measurements to GPU-accelerated reconstruction and artifact correction. Public proof includes fluorescence spectrometer DAQ bring-up.",
+    stack: "CUDA · Signal Processing · OpenCV · DAQ · RS-232 / Serial",
+    featured: ["spectrometer-lab", "CT / Radio Reconstruction"],
+    href: "#imaging",
+  },
+  {
+    title: "Scientific Field & Lab Infrastructure",
+    blurb:
+      "Fixtures, telemetry, and lab automation that isolate physical ambiguity from software behavior — remote observatory and sensor context, RF link discipline, and bioelectrical IP. Historical bench craft lives in the Hardware Archive.",
+    stack: "Telemetry · RF Link Budgets · CAD/CAM · CNC · AC/DC Power",
+    featured: ["Observatory / telemetry", "Bioelectrical IP"],
+    href: "#archive",
   },
 ];
 
-/** Curated featured anchors — methodology and instrumentation in practice. */
+/** Curated featured anchors — constraint-first flagships. */
 export const featured: Project[] = [
+  {
+    slug: "hpc-runner",
+    title: "HPC Runner",
+    blurb:
+      "Guarantee reproducibility across backends: an execution-agnostic regression and benchmarking engine for molecular dynamics workloads (GROMACS, LAMMPS, OpenMM) on local CUDA, containers, and Slurm clusters — without rewriting the application for each target.",
+    tags: ["HPC", "Testing", "CUDA"],
+    lang: "Python",
+    status: "public",
+    href: "https://github.com/fractalclockwork/hpc-runner",
+    cta: "Open repo",
+  },
   {
     slug: "rad-lab",
     title: "rad-lab",
     blurb:
-      "Host-gated RF bring-up you can trust: containerized SDR and multi-MCU labs with human assent before TX, SIL→HWIL stages, and evidence reports — not an ad-hoc bench script.",
+      "RF and sensing bring-up you can evidence: containerized SDR and multi-MCU HWIL with human assent before TX, SIL→HWIL stages, and structured reports — host-gated lab automation, not an ad-hoc bench script.",
     tags: ["SDR", "HWIL", "RF"],
     lang: "Python",
     status: "public",
@@ -114,7 +137,7 @@ export const featured: Project[] = [
     slug: "spectrometer-lab",
     title: "spectrometer-lab",
     blurb:
-      "Turn a fluorescence spectrometer into a reproducible acquisition system: RS-232 control for a PerkinElmer LS 55 with prompted protocol flow, glitch taxonomy, and Stage 1–3 verified emission scans.",
+      "Bridge optical hardware to quantitative spectra: RS-232 DAQ and control for a PerkinElmer LS 55. Stages 1–3 PASS (2026-10-28) for electrical bring-up, protocol validation, and empty-compartment emission scans; Gate D optical validation remains open.",
     tags: ["Instrumentation", "Spectroscopy", "RS-232"],
     lang: "Python",
     status: "public",
@@ -125,22 +148,11 @@ export const featured: Project[] = [
     slug: "fpga-kit",
     title: "FPGA Kit",
     blurb:
-      "Keep firmware work alive across tool churn: a bring-up archive for Digilent Spartan boards with toolchain memory and lab continuity notes.",
+      "Keep firmware work alive when toolchains churn: a bring-up archive for Digilent Spartan boards — toolchain memory, board notes, and lab continuity so board work stays portable.",
     tags: ["FPGA", "Bring-up", "Lab"],
     lang: "Python",
     status: "public",
     href: "https://github.com/fractalclockwork/fpga-kit",
-    cta: "Open repo",
-  },
-  {
-    slug: "hpc-runner",
-    title: "HPC Runner",
-    blurb:
-      "Same regression suite across laptop, container, and cluster: execution-agnostic benchmarking for molecular dynamics workloads so scientists can trust results on heterogeneous hardware.",
-    tags: ["HPC", "Testing", "CUDA"],
-    lang: "Python",
-    status: "public",
-    href: "https://github.com/fractalclockwork/hpc-runner",
     cta: "Open repo",
   },
 ];
@@ -148,10 +160,10 @@ export const featured: Project[] = [
 export const sections: ProjectSection[] = [
   {
     id: "science",
-    label: "Scientific Computing & AI",
+    label: "High-Performance Computing & Scientific Software",
     title: "Clusters, numerics, and reproducible environments",
     intro:
-      "Public compute tooling that makes scientific software portable — schedulers you can recreate, runnable molecular examples, and containerized bring-up for multi-MCU labs.",
+      "Public compute tooling that makes scientific software portable — schedulers you can recreate, runnable molecular examples, and teaching environments. Flagship: hpc-runner (featured above).",
     projects: [
       {
         slug: "sci-slurm",
@@ -173,17 +185,6 @@ export const sections: ProjectSection[] = [
         lang: "C++",
         status: "public",
         href: "https://github.com/fractalclockwork/molecularSim",
-        cta: "Open repo",
-      },
-      {
-        slug: "cede",
-        title: "CEDE / cede-labgrid",
-        blurb:
-          "Reproducible multi-MCU bring-up that does not depend on one laptop — containerized embedded lab with a Labgrid hardware-in-the-loop port.",
-        tags: ["Embedded", "HWIL", "Labgrid"],
-        lang: "Python",
-        status: "public",
-        href: "https://github.com/fractalclockwork/cede",
         cta: "Open repo",
       },
       {
@@ -211,32 +212,23 @@ export const sections: ProjectSection[] = [
     ],
   },
   {
-    id: "imaging",
-    label: "Imaging, Instrumentation & Sensing",
-    title: "From measurements to quantitative insight",
+    id: "embedded",
+    label: "Embedded Firmware & Sensing Systems",
+    title: "Drivers, HIL labs, and board bring-up",
     intro:
-      "Featured spectrometer-lab and freelance CT/radio reconstruction pipelines sit here in spirit; public repos below cover closed-loop bioelectrical sensing. Reconstruction math and artifact correction live in the resume and experience narrative.",
+      "Featured rad-lab and FPGA Kit carry HWIL and FPGA continuity. Below: containerized multi-MCU labs, kernel drivers, and netboot infrastructure that keep the bench reachable.",
     projects: [
       {
-        slug: "biofeedback-emg",
-        title: "Biofeedback EMG",
+        slug: "cede",
+        title: "CEDE / cede-labgrid",
         blurb:
-          "Closed-loop physiological feedback from the body — early EMG acquisition still used as a sensing reference for adaptive control ideas.",
-        tags: ["Sensing", "Arduino"],
-        lang: "Java",
+          "Reproducible multi-MCU bring-up that does not depend on one laptop — containerized embedded lab with a Labgrid hardware-in-the-loop port.",
+        tags: ["Embedded", "HWIL", "Labgrid"],
+        lang: "Python",
         status: "public",
-        href: "https://github.com/fractalclockwork/biofeedback_emg",
+        href: "https://github.com/fractalclockwork/cede",
         cta: "Open repo",
       },
-    ],
-  },
-  {
-    id: "embedded",
-    label: "Embedded & Hardware Systems",
-    title: "Drivers, board bring-up, and lab infrastructure",
-    intro:
-      "Featured rad-lab and FPGA Kit carry the HWIL and FPGA story; this shelf holds kernel drivers and netboot infrastructure that keep the bench reachable.",
-    projects: [
       {
         slug: "radar-module",
         title: "Radar Module",
@@ -262,11 +254,31 @@ export const sections: ProjectSection[] = [
     ],
   },
   {
-    id: "experimental",
-    label: "Experimental & Archival Computing",
-    title: "Depth at the bench — not the primary identity",
+    id: "imaging",
+    label: "Computational Imaging & Instrumentation",
+    title: "From measurements to quantitative insight",
     intro:
-      "Fascinating hardware research that shows craft and curiosity. It supports the Research Engineer story; it does not redefine it.",
+      "Featured spectrometer-lab covers optical DAQ bring-up (Stages 1–3 PASS; Gate D open). Freelance CT/radio reconstruction and artifact correction live in the resume. Public sensing reference below.",
+    projects: [
+      {
+        slug: "biofeedback-emg",
+        title: "Biofeedback EMG",
+        blurb:
+          "Closed-loop physiological feedback from the body — early EMG acquisition still used as a sensing reference for adaptive control ideas.",
+        tags: ["Sensing", "Arduino"],
+        lang: "Java",
+        status: "public",
+        href: "https://github.com/fractalclockwork/biofeedback_emg",
+        cta: "Open repo",
+      },
+    ],
+  },
+  {
+    id: "archive",
+    label: "Hardware Archive",
+    title: "R&D bench & studio — secondary to the Research Engineer story",
+    intro:
+      "Historical retro-computing, ferrite planes, and CRT drive work show craft and curiosity. They support the identity above; they do not redefine it.",
     projects: [
       {
         slug: "core-memory-redux",
@@ -393,7 +405,7 @@ export const about = {
   github: "https://github.com/fractalclockwork",
   linkedin: "https://linkedin.com/in/brent-thorne-a581554",
   resumePath: "/resume.pdf",
-  bio: "Research Engineer developing intelligent computational systems that bridge physical hardware and advanced software. Over 20 years across embedded Linux, wireless stacks, computational imaging, and high-performance scientific computing — with graduate work at UC Berkeley (MSSE) in CUDA, parallel algorithms, and reproducible simulation frameworks.",
+  bio: "Research Engineer bridging physical hardware constraints with high-performance scientific software. Over 20 years across embedded Linux, wireless stacks, computational imaging, and reproducible HPC — with graduate work at UC Berkeley (MSSE) in CUDA, parallel algorithms, and simulation frameworks.",
   focus: [
     "Scientific computing & AI: CUDA, MPI, OpenMP, UPC++, multi-GPU scaling; molecular dynamics (GROMACS, LAMMPS, OpenMM); PyTorch, TensorFlow, SciPy, NumPy",
     "Imaging, instrumentation & sensing: CT/radio reconstruction, cellular image analysis, automated artifact correction, fluorescence spectroscopy (RS-232/DAQ), V4L2/GStreamer, OpenCV, SDR",

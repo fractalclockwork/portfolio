@@ -5,9 +5,9 @@ import { Button } from "@/components/ui/button";
 import {
   about,
   achievements,
+  domainCards,
   experience,
   featured,
-  researchAreas,
   sections,
   trajectory,
   withBasePath,
@@ -131,30 +131,34 @@ export function ContentSections() {
       >
         <div className="mx-auto max-w-6xl">
           <SectionHeader
-            label="Research areas"
-            title="Intellectual map"
-            intro="Three pillars that unify the public work. Technologies support the problems — not the other way around."
+            label="Core engineering domains"
+            title="Where to go next"
+            intro="Four pathways aligned to the work I do. Each card jumps to that domain’s projects. Stack lines are secondary — problems and outcomes lead."
           />
-          <div className="mt-12 grid gap-10 md:grid-cols-3">
-            {researchAreas.map((area) => (
-              <motion.div
-                key={area.title}
+          <div className="mt-12 grid gap-6 sm:grid-cols-2">
+            {domainCards.map((card) => (
+              <motion.a
+                key={card.href}
+                href={card.href}
+                className="block border border-signal/15 px-5 py-6 transition-colors hover:border-signal/40 hover:bg-signal/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-signal/40"
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: true, margin: "-40px" }}
                 variants={reveal}
               >
                 <h3 className="font-display text-xl font-semibold tracking-tight text-foreground sm:text-2xl">
-                  {area.title}
+                  {card.title}
                 </h3>
-                <ul className="mt-4 space-y-2 text-[15px] leading-relaxed text-steel">
-                  {area.topics.map((topic) => (
-                    <li key={topic} className="border-l border-signal/20 pl-3">
-                      {topic}
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
+                <p className="mt-3 text-[15px] leading-relaxed text-steel">
+                  {card.blurb}
+                </p>
+                <p className="mt-4 font-tech text-[11px] leading-relaxed tracking-[0.06em] text-steel/80 uppercase">
+                  {card.stack}
+                </p>
+                <p className="mt-4 font-tech text-[11px] tracking-[0.14em] text-brass uppercase">
+                  Featured: {card.featured.join(" · ")}
+                </p>
+              </motion.a>
             ))}
           </div>
         </div>
@@ -167,8 +171,8 @@ export function ContentSections() {
         <div className="mx-auto max-w-6xl">
           <SectionHeader
             label="Featured"
-            title="Selected public work"
-            intro="Four anchors for the Research Engineer story: RF HWIL (rad-lab), optical instrumentation (spectrometer-lab), FPGA bring-up continuity (FPGA Kit), and HPC regression (HPC Runner). Classroom dumps stay off this surface."
+            title="Flagship public work"
+            intro="Constraint-first systems that define the Research Engineer story: HPC regression (hpc-runner), RF HWIL (rad-lab), optical DAQ (spectrometer-lab), and FPGA bring-up continuity (FPGA Kit). Pick a domain above to see the rest of the shelf."
           />
           <ProjectList projects={featured} />
         </div>
