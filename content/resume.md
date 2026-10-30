@@ -6,34 +6,37 @@ Portfolio: https://fractalclockwork.github.io/portfolio · GitHub: https://githu
 
 ## Executive Profile
 
-Research Engineer with over 20 years of experience in hardware–software co-design, high-performance computing (HPC), and real-time embedded systems. M.S. graduate from UC Berkeley’s Molecular Science and Software Engineering (MSSE) program with expertise in CUDA optimization, parallel algorithms (MPI, OpenMP, UPC++), and reproducible simulation frameworks (GROMACS, LAMMPS, OpenMM). Proven track record in board bring-up, Linux kernel drivers, DMA data paths, wireless stacks, and electro-mechanical system integration — including commercial firmware deployed at scale across consumer and utility endpoints.
+Research Engineer with over 20 years of experience in hardware–software co-design, high-performance computing (HPC), computational imaging, and real-time embedded systems. M.S. graduate from UC Berkeley’s Molecular Science and Software Engineering (MSSE) program with expertise in CUDA optimization, parallel algorithms (MPI, OpenMP, UPC++), and reproducible simulation frameworks (GROMACS, LAMMPS, OpenMM). Proven track record in board bring-up, Linux kernel drivers, DMA data paths, scientific instrumentation, wireless stacks, and electro-mechanical system integration — including commercial firmware deployed at scale across consumer and utility endpoints.
 
 ## Core Competencies
 
-**High-Performance Computing & AI:** CUDA, MPI, OpenMP, UPC++, multi-GPU scaling; molecular dynamics (GROMACS, LAMMPS, OpenMM); PyTorch, TensorFlow, SciPy, NumPy, Pandas.
+**High-Performance Computing & AI:** CUDA, MPI, OpenMP, UPC++, multi-GPU scaling; molecular dynamics (GROMACS, LAMMPS, OpenMM); PyTorch, TensorFlow, Computer Vision, SciPy, NumPy, Pandas, Jupyter.
 
-**Embedded Systems & Hardware:** C, C++, Embedded Linux, kernel drivers, RTOS (ThreadX), bare-metal, Yocto, device trees; oscilloscopes, logic analyzers, JTAG; SPI, I2C, UART, CAN, Ethernet, USB, sub-GHz RF, SDR.
+**Embedded Systems & Hardware:** C, C++, Embedded Linux, kernel drivers, RTOS (ThreadX), bare-metal, Yocto, device trees; oscilloscopes, logic analyzers, JTAG; SPI, I2C, UART, CAN, Ethernet, USB, PCI-X, sub-GHz RF, LTE CAT-M, SDR.
 
-**Imaging, Signal Processing & Sensing:** CT/radio reconstruction, V4L2, GStreamer, FFmpeg; FFTW, OpenCV, wavelet analysis; bioelectrical / EMG closed-loop sensing.
+**Imaging, Signal Processing & Sensing:** CT/radio reconstruction, cellular image analysis, automated artifact correction, fluorescence spectroscopy (RS-232/DAQ); V4L2, GStreamer, FFmpeg; FFTW, OpenCV, wavelet analysis; bioelectrical / EMG closed-loop sensing.
 
-**Mechatronics & Field Infrastructure:** CNC, CAD/CAM, FPGA (Verilog, Quartus), motor controllers, AC/DC power; remote observatories, telemetry, RF link budgets.
+**Mechatronics & Field Infrastructure:** CNC, CAD/CAM, ECAD/PCB, FPGA (Verilog, Quartus), motor controllers, AC/DC power; remote observatories, telemetry, RF link budgets.
 
 ## Representative Technical Projects
 
-**HPC Regression & Validation Framework | UC Berkeley**  
+**HPC Regression & Validation Framework (`hpc-runner`) | UC Berkeley**  
 Architected an execution-agnostic benchmarking and automated regression engine (`hpc-runner`) supporting molecular dynamics workloads across heterogeneous cluster environments. Built containerized CUDA-enabled environments and validation scripts for parallel correctness, memory usage, and compute scalability.
 
 **Parallel Scientific Computing Optimization | UC Berkeley (CS267)**  
 Implemented and benchmarked parallel algorithms using CUDA, MPI, OpenMP, and UPC++. Analyzed memory bandwidth saturation, thread divergence, and inter-node communication latency.
 
-**Hardware-in-the-Loop SDR & Real-Time Sensing Lab (`rad-lab`)**  
+**Hardware-in-the-Loop SDR & Real-Time Sensing Lab (`rad-lab` / `cede-labgrid`)**  
 Designed containerized Software-Defined Radio and multi-MCU test environments for host-gated HWIL RF testing and protocol verification, with human assent gates, SIL→HWIL stages, and evidence reports.
+
+**Optical Spectrometer Control & Acquisition (`spectrometer-lab`)**  
+Engineered Python RS-232 instrument control and acquisition software for a PerkinElmer LS 55 fluorescence spectrometer, implementing prompted DC1 protocol pacing, monochromator/slit positioning, serial-glitch taxonomy analysis, and Stage 1–3 verified emission scans.
 
 **FPGA Bring-Up Archive (`fpga-kit`)**  
 Reproducible FPGA bring-up notes and toolchain continuity for Digilent Spartan boards on Xilinx toolchains — lab memory that keeps firmware work portable across tool churn.
 
 **Computational CT & Radio Imaging Reconstruction Pipeline | Freelance R&D**  
-End-to-end CT and radio imaging workflows with custom reconstruction math and artifact correction; C++/CUDA acceleration of matrix transforms and signal processing loops.
+End-to-end CT and radio imaging workflows with custom reconstruction math and automated artifact correction; C++/CUDA acceleration of matrix transforms and signal processing loops converting raw multi-channel measurements into quantitative scientific visualizations.
 
 ## Professional Experience
 
@@ -49,7 +52,7 @@ End-to-end CT and radio imaging workflows with custom reconstruction math and ar
 ### Senior HW/SW Research & Development Engineer  
 **GridNet · San Francisco, CA | Oct 2013 – Nov 2018**
 
-- Developed embedded radio modem firmware and Linux kernel networking drivers for sub-GHz smart-grid telemetry and LTE M2M communication platforms.
+- Developed embedded radio modem firmware and Linux kernel networking drivers for sub-GHz smart-grid telemetry and LTE CAT-4/CAT-M M2M communication platforms.
 - Architected SDR protocol analysis and signal processing tools to verify device interoperability and RF link reliability in high-interference industrial environments.
 - Conducted cross-layer system debugging across custom RF hardware, firmware targets, and embedded Linux application runtimes.
 

@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "NEXT_PUBLIC_BASE_PATH=/portfolio next dev --port 43217 --hostname 127.0.0.1",
-    "build": "NEXT_PUBLIC_BASE_PATH=/portfolio next build",
+    "build": "NEXT_PUBLIC_BASE_PATH=/portfolio next build && touch out/.nojekyll",
     "start": "next start --port 43217",
     "lint": "eslint"
   },

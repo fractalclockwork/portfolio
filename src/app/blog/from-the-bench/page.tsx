@@ -5,7 +5,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: `From the bench and the cluster — ${about.name}`,
   description:
-    "Curated public work: rad-lab, FPGA Kit, HPC Runner, core memory, and reproducible lab infrastructure.",
+    "Curated public work: rad-lab, spectrometer-lab, FPGA Kit, HPC Runner, core memory, and reproducible lab infrastructure.",
 };
 
 function Ext({
@@ -46,12 +46,13 @@ export default function FromTheBenchPost() {
             From the bench and the cluster
           </h1>
           <p className="mt-3 font-tech text-[11px] tracking-[0.16em] text-steel/80 uppercase">
-            2026-10-24 · {about.name}
+            2026-10-30 · {about.name}
           </p>
           <p className="mt-6 text-base leading-relaxed text-steel sm:text-lg">
             A short tour of curated public work — hardware research, scientific
-            computing, and reproducible lab infrastructure. Classroom dumps stay
-            off this page. Source lives under{" "}
+            instrumentation, high-performance computing, and reproducible lab
+            infrastructure. Classroom dumps stay off this page. Source lives
+            under{" "}
             <Ext href={about.github}>github.com/fractalclockwork</Ext>.
           </p>
         </header>
@@ -71,6 +72,15 @@ export default function FromTheBenchPost() {
                 reports for RF bring-up.
               </li>
               <li>
+                <Ext href="https://github.com/fractalclockwork/spectrometer-lab">
+                  spectrometer-lab
+                </Ext>{" "}
+                — Python RS-232 control and acquisition for a PerkinElmer LS 55
+                fluorescence spectrometer: prompted DC1 protocol flow,
+                monochromator/slit positioning, serial-glitch taxonomy, and
+                Stage 1–3 verified emission scans.
+              </li>
+              <li>
                 <Ext href="https://github.com/fractalclockwork/fpga-kit">
                   FPGA Kit
                 </Ext>{" "}
@@ -85,14 +95,6 @@ export default function FromTheBenchPost() {
                 — Execution-agnostic regression for HPC workloads: the same suite
                 locally, in containers, or on a real scheduler.
               </li>
-              <li>
-                <Ext href="https://github.com/fractalclockwork/core-memory-redux">
-                  Core Memory Redux
-                </Ext>{" "}
-                — Fidelity-gated SIL ladder for a 64×64 coincident-current
-                core-memory driver, from SPICE through ideal N×N models before
-                physical bring-up.
-              </li>
             </ul>
           </section>
 
@@ -102,6 +104,16 @@ export default function FromTheBenchPost() {
             </h2>
             <p className="mt-4">
               Beyond featured:{" "}
+              <Ext href="https://github.com/fractalclockwork/core-memory-redux">
+                Core Memory Redux
+              </Ext>{" "}
+              — fidelity-gated SIL ladder for a 64×64 coincident-current
+              core-memory driver (from SPICE through ideal N×N models before
+              physical bring-up), paired with{" "}
+              <Ext href="https://github.com/fractalclockwork/core-memory">
+                Core Memory
+              </Ext>{" "}
+              to drive and sense a real 9″ 64×64 ferrite plane.{" "}
               <Ext href="https://github.com/fractalclockwork/crt-drive">
                 CRT Drive
               </Ext>{" "}
@@ -111,10 +123,6 @@ export default function FromTheBenchPost() {
               </Ext>{" "}
               — Linux kernel driver with Docker and Yocto for BeagleBone-class
               targets.{" "}
-              <Ext href="https://github.com/fractalclockwork/core-memory">
-                Core Memory
-              </Ext>{" "}
-              — drive and sense a real 9″ 64×64 ferrite plane.{" "}
               <Ext href="https://github.com/fractalclockwork/biofeedback_emg">
                 Biofeedback EMG
               </Ext>{" "}
@@ -142,9 +150,11 @@ export default function FromTheBenchPost() {
               </Ext>{" "}
               — Sadus’s <em>Molecular Simulation of Fluids</em> examples as
               runnable C++.{" "}
-              <Ext href="https://github.com/fractalclockwork/cede">CEDE</Ext> —
-              containerized multi-MCU embedded lab so bring-up is not tied to
-              one laptop.
+              <Ext href="https://github.com/fractalclockwork/cede">
+                CEDE / cede-labgrid
+              </Ext>{" "}
+              — containerized multi-MCU embedded lab and Labgrid HIL port so
+              bring-up is not tied to one laptop.
             </p>
           </section>
 
@@ -172,9 +182,9 @@ export default function FromTheBenchPost() {
               Follow along
             </h2>
             <p className="mt-4">
-              Methodology-first: rad-lab and FPGA Kit. Bench-first: CRT Drive and
-              the core-memory pair. Compute-first: HPC Runner and sci-slurm.
-              Public links live on the{" "}
+              Methodology and instrumentation first: rad-lab, spectrometer-lab,
+              and FPGA Kit. Bench-first: CRT Drive and the core-memory pair.
+              Compute-first: HPC Runner and sci-slurm. Public links live on the{" "}
               <Link
                 href="/"
                 className="text-signal underline-offset-4 hover:text-signal-bright hover:underline"

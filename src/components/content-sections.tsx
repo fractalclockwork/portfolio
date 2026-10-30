@@ -62,7 +62,7 @@ export function ContentSections() {
           <SectionHeader
             label="Featured"
             title="Selected public work"
-            intro="rad-lab and FPGA Kit show how bring-up is practiced; HPC Runner and Core Memory Redux cover cluster regression and fidelity-gated simulation. Classroom dumps are filtered out on purpose."
+            intro="rad-lab, spectrometer-lab, and FPGA Kit show how RF, optical instrumentation, and board bring-up are practiced; HPC Runner covers execution-agnostic cluster regression. Classroom dumps are filtered out on purpose."
           />
           <ProjectList projects={featured} />
         </div>

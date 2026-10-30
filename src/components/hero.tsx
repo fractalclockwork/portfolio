@@ -95,8 +95,8 @@ export function Hero() {
             initial="hidden"
             animate="show"
           >
-            Hardware–software co-design, high-performance computing, and
-            real-time embedded systems.
+            Hardware–software co-design, high-performance computing,
+            computational imaging, and real-time embedded systems.
           </motion.p>
 
           <motion.p
@@ -107,8 +107,9 @@ export function Hero() {
             animate="show"
           >
             Public proof from the bench and the cluster: SDR hardware-in-the-loop
-            (rad-lab), FPGA bring-up archives, Linux drivers, and HPC regression
-            tooling (hpc-runner).
+            (rad-lab), optical spectrometer acquisition (spectrometer-lab), FPGA
+            bring-up archives, Linux drivers, and HPC regression tooling
+            (hpc-runner).
           </motion.p>
 
           <motion.div
