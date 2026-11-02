@@ -89,11 +89,15 @@ export default function FromTheBenchPost() {
                 <strong className="text-foreground">
                   Computational Imaging &amp; Instrumentation
                 </strong>{" "}
-                — instrument control and reconstruction. Flagship:{" "}
+                — instrument control and reconstruction. Flagships:{" "}
                 <Ext href="https://github.com/fractalclockwork/spectrometer-lab">
                   spectrometer-lab
                 </Ext>{" "}
-                (Stages 1–3 PASS; Gate D open).
+                (Stages 1–3 PASS; Gate D open),{" "}
+                <Ext href="https://github.com/fractalclockwork/photomultipler-tube">
+                  PMT soft X-ray
+                </Ext>{" "}
+                (Stage 1; Gate 0 PASS; no HV yet).
               </li>
               <li>
                 <strong className="text-foreground">
@@ -136,6 +140,13 @@ export default function FromTheBenchPost() {
                   FPGA Kit
                 </Ext>{" "}
                 — bring-up archive so firmware work survives tool churn.
+              </li>
+              <li>
+                <Ext href="https://github.com/fractalclockwork/photomultipler-tube">
+                  PMT soft X-ray
+                </Ext>{" "}
+                — Photonis XP3312/SQ Stage 1 HV-bias and anode-sense bring-up;
+                pin map PASS, Gate 0 design/sch/SPICE PASS; no HV applied yet.
               </li>
             </ul>
           </section>
@@ -185,8 +196,8 @@ export default function FromTheBenchPost() {
               Computational Imaging &amp; Instrumentation
             </h2>
             <p className="mt-4">
-              Featured spectrometer-lab and freelance CT/radio reconstruction.
-              Public sensing reference:{" "}
+              Featured spectrometer-lab and PMT soft X-ray Stage 1; freelance
+              CT/radio reconstruction. Public sensing reference:{" "}
               <Ext href="https://github.com/fractalclockwork/biofeedback_emg">
                 Biofeedback EMG
               </Ext>
@@ -228,7 +239,7 @@ export default function FromTheBenchPost() {
               >
                 domain cards
               </Link>
-              , then the four flagships. Compute and embedded shelves next;
+              , then the five flagships. Compute and embedded shelves next;
               Hardware Archive last. Contact: {about.email}.
             </p>
             <ul className="mt-4 space-y-2 font-tech text-sm tracking-[0.04em]">

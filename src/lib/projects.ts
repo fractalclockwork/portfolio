@@ -94,9 +94,9 @@ export const domainCards: DomainCard[] = [
   {
     title: "Computational Imaging & Instrumentation R&D",
     blurb:
-      "End-to-end optical and RF instrument control: bridge raw multi-channel measurements to GPU-accelerated reconstruction and artifact correction. Public proof includes fluorescence spectrometer DAQ bring-up.",
+      "End-to-end optical and RF instrument control: bridge raw multi-channel measurements to GPU-accelerated reconstruction and artifact correction. Public proof includes fluorescence spectrometer DAQ and soft X-ray PMT Stage 1 bring-up.",
     stack: "CUDA · Signal Processing · OpenCV · DAQ · RS-232 / Serial",
-    featured: ["spectrometer-lab", "CT / Radio Reconstruction"],
+    featured: ["spectrometer-lab", "PMT soft X-ray", "CT / Radio Reconstruction"],
     href: "#imaging",
   },
   {
@@ -153,6 +153,17 @@ export const featured: Project[] = [
     lang: "Python",
     status: "public",
     href: "https://github.com/fractalclockwork/fpga-kit",
+    cta: "Open repo",
+  },
+  {
+    slug: "photomultiplier-tube",
+    title: "PMT soft X-ray",
+    blurb:
+      "Soft X-ray detector Stage 1 before HV: Photonis XP3312/SQ pin map and continuity PASS, KiCad filter board plus Type A divider, Gate 0 design/sch/SPICE PASS — no HV applied yet; Gate A on hold pending divider build.",
+    tags: ["PMT", "Soft X-ray", "Bring-up"],
+    lang: "Python",
+    status: "public",
+    href: "https://github.com/fractalclockwork/photomultipler-tube",
     cta: "Open repo",
   },
 ];
@@ -258,7 +269,7 @@ export const sections: ProjectSection[] = [
     label: "Computational Imaging & Instrumentation",
     title: "From measurements to quantitative insight",
     intro:
-      "Featured spectrometer-lab covers optical DAQ bring-up (Stages 1–3 PASS; Gate D open). Freelance CT/radio reconstruction and artifact correction live in the resume. Public sensing reference below.",
+      "Featured spectrometer-lab (Stages 1–3 PASS; Gate D open) and PMT soft X-ray Stage 1 (Gate 0 PASS; no HV yet) cover optical DAQ and detector bring-up. Freelance CT/radio reconstruction and artifact correction live in the resume. Public sensing reference below.",
     projects: [
       {
         slug: "biofeedback-emg",

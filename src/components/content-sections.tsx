@@ -172,7 +172,7 @@ export function ContentSections() {
           <SectionHeader
             label="Featured"
             title="Flagship public work"
-            intro="Constraint-first systems that define the Research Engineer story: HPC regression (hpc-runner), RF HWIL (rad-lab), optical DAQ (spectrometer-lab), and FPGA bring-up continuity (FPGA Kit). Pick a domain above to see the rest of the shelf."
+            intro="Constraint-first systems that define the Research Engineer story: HPC regression (hpc-runner), RF HWIL (rad-lab), optical DAQ (spectrometer-lab), FPGA bring-up continuity (FPGA Kit), and soft X-ray PMT Stage 1. Pick a domain above to see the rest of the shelf."
           />
           <ProjectList projects={featured} />
         </div>
