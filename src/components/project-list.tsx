@@ -69,8 +69,9 @@ export function ProjectList({
                 <img
                   src={withBasePath(project.diagramUrl)}
                   alt={project.diagramAlt ?? `${project.title} Architecture Diagram`}
-                  className="w-full object-cover opacity-90 transition-opacity hover:opacity-100"
-                  loading="lazy"
+                  className="h-auto w-full opacity-90 transition-opacity hover:opacity-100"
+                  loading="eager"
+                  decoding="async"
                 />
               </div>
             )}
