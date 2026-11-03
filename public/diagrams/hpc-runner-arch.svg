@@ -1,4 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 220" width="800" height="220" fill="none">
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 220" width="800" height="220" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">HPC Runner architecture</title>
+  <desc id="desc">Execution-agnostic MD validation pipeline from workload engines through hpc-runner to heterogeneous backends and verification.</desc>
   <defs>
     <pattern id="grid-hpc" width="24" height="24" patternUnits="userSpaceOnUse">
       <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#3dcfbf" stroke-opacity="0.06" stroke-width="1"/>
@@ -11,16 +14,14 @@
   <rect width="800" height="220" fill="#070b12"/>
   <rect width="800" height="220" fill="url(#grid-hpc)"/>
 
-  <!-- Top Header Bar -->
   <text x="24" y="26" fill="#c4a574" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="10" letter-spacing="2">
     ARCHITECTURE // EXECUTION-AGNOSTIC MD VALIDATION HARNESS
   </text>
   <line x1="24" y1="36" x2="776" y2="36" stroke="#3dcfbf" stroke-opacity="0.18" stroke-width="1"/>
 
-  <!-- Column 1: Workloads -->
   <g transform="translate(24, 54)">
     <rect width="156" height="142" rx="4" fill="#0e1520" stroke="#3dcfbf" stroke-opacity="0.28" stroke-width="1"/>
-    <text x="14" y="22" fill="#c4a574" font-family="ui-monospace, monospace" font-size="9" letter-spacing="1.5">01 · MD ENGINES</text>
+    <text x="14" y="22" fill="#c4a574" font-family="ui-monospace, monospace" font-size="9" letter-spacing="1.5">01 / MD ENGINES</text>
     <rect x="14" y="34" width="128" height="28" rx="3" fill="#121a26" stroke="#3dcfbf" stroke-opacity="0.2"/>
     <text x="24" y="52" fill="#e4eaf2" font-family="ui-monospace, monospace" font-size="11" font-weight="600">GROMACS</text>
     <rect x="14" y="68" width="128" height="28" rx="3" fill="#121a26" stroke="#3dcfbf" stroke-opacity="0.2"/>
@@ -29,28 +30,24 @@
     <text x="24" y="120" fill="#e4eaf2" font-family="ui-monospace, monospace" font-size="11" font-weight="600">OpenMM</text>
   </g>
 
-  <!-- Connector 1 -> 2 -->
   <line x1="180" y1="125" x2="216" y2="125" stroke="#3dcfbf" stroke-width="1.5" marker-end="url(#arrow-cyan)"/>
 
-  <!-- Column 2: HPC-Runner Core -->
   <g transform="translate(222, 54)">
     <rect width="174" height="142" rx="4" fill="#0e1520" stroke="#3dcfbf" stroke-opacity="0.55" stroke-width="1.25"/>
-    <text x="14" y="22" fill="#3dcfbf" font-family="ui-monospace, monospace" font-size="9" letter-spacing="1.5">02 · HPC-RUNNER CORE</text>
+    <text x="14" y="22" fill="#3dcfbf" font-family="ui-monospace, monospace" font-size="9" letter-spacing="1.5">02 / HPC-RUNNER CORE</text>
     <text x="14" y="46" fill="#e4eaf2" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="600">Declarative Spec</text>
-    <text x="14" y="64" fill="#8a96a8" font-family="ui-monospace, monospace" font-size="10">· Input / topology hash</text>
-    <text x="14" y="82" fill="#8a96a8" font-family="ui-monospace, monospace" font-size="10">· Seed &amp; precision lock</text>
-    <text x="14" y="100" fill="#8a96a8" font-family="ui-monospace, monospace" font-size="10">· Target adapter router</text>
+    <text x="14" y="64" fill="#8a96a8" font-family="ui-monospace, monospace" font-size="10">- Input / topology hash</text>
+    <text x="14" y="82" fill="#8a96a8" font-family="ui-monospace, monospace" font-size="10">- Seed and precision lock</text>
+    <text x="14" y="100" fill="#8a96a8" font-family="ui-monospace, monospace" font-size="10">- Target adapter router</text>
     <rect x="14" y="112" width="146" height="18" rx="2" fill="#14202e"/>
     <text x="22" y="124" fill="#7aefe0" font-family="ui-monospace, monospace" font-size="9" letter-spacing="1">ZERO APP REWRITE</text>
   </g>
 
-  <!-- Connector 2 -> 3 -->
   <line x1="396" y1="125" x2="432" y2="125" stroke="#3dcfbf" stroke-width="1.5" marker-end="url(#arrow-cyan)"/>
 
-  <!-- Column 3: Compute Backends -->
   <g transform="translate(438, 54)">
     <rect width="156" height="142" rx="4" fill="#0e1520" stroke="#3dcfbf" stroke-opacity="0.28" stroke-width="1"/>
-    <text x="14" y="22" fill="#c4a574" font-family="ui-monospace, monospace" font-size="9" letter-spacing="1.5">03 · BACKENDS</text>
+    <text x="14" y="22" fill="#c4a574" font-family="ui-monospace, monospace" font-size="9" letter-spacing="1.5">03 / BACKENDS</text>
     <rect x="14" y="34" width="128" height="28" rx="3" fill="#121a26" stroke="#3dcfbf" stroke-opacity="0.2"/>
     <text x="22" y="52" fill="#e4eaf2" font-family="ui-monospace, monospace" font-size="10">Local CUDA GPU</text>
     <rect x="14" y="68" width="128" height="28" rx="3" fill="#121a26" stroke="#3dcfbf" stroke-opacity="0.2"/>
@@ -59,17 +56,15 @@
     <text x="22" y="120" fill="#e4eaf2" font-family="ui-monospace, monospace" font-size="10">Slurm Cluster</text>
   </g>
 
-  <!-- Connector 3 -> 4 -->
   <line x1="594" y1="125" x2="630" y2="125" stroke="#3dcfbf" stroke-width="1.5" marker-end="url(#arrow-cyan)"/>
 
-  <!-- Column 4: Regression & Telemetry -->
   <g transform="translate(636, 54)">
     <rect width="140" height="142" rx="4" fill="#0e1520" stroke="#c4a574" stroke-opacity="0.45" stroke-width="1"/>
-    <text x="12" y="22" fill="#c4a574" font-family="ui-monospace, monospace" font-size="9" letter-spacing="1.5">04 · VERIFICATION</text>
-    <text x="12" y="46" fill="#e4eaf2" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="600">Parity &amp; Perf</text>
-    <text x="12" y="66" fill="#8a96a8" font-family="ui-monospace, monospace" font-size="10">· Energy drift ”E</text>
-    <text x="12" y="84" fill="#8a96a8" font-family="ui-monospace, monospace" font-size="10">· Force RMS tol</text>
-    <text x="12" y="102" fill="#8a96a8" font-family="ui-monospace, monospace" font-size="10">· ns/day scaling</text>
+    <text x="12" y="22" fill="#c4a574" font-family="ui-monospace, monospace" font-size="9" letter-spacing="1.5">04 / VERIFICATION</text>
+    <text x="12" y="46" fill="#e4eaf2" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="600">Parity and Perf</text>
+    <text x="12" y="66" fill="#8a96a8" font-family="ui-monospace, monospace" font-size="10">- Energy drift dE</text>
+    <text x="12" y="84" fill="#8a96a8" font-family="ui-monospace, monospace" font-size="10">- Force RMS tol</text>
+    <text x="12" y="102" fill="#8a96a8" font-family="ui-monospace, monospace" font-size="10">- ns/day scaling</text>
     <rect x="12" y="112" width="116" height="18" rx="2" fill="#14202e"/>
     <text x="20" y="124" fill="#3dcfbf" font-family="ui-monospace, monospace" font-size="9" letter-spacing="1">REPRODUCIBLE CI</text>
   </g>
