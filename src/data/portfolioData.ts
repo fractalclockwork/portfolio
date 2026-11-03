@@ -48,9 +48,27 @@ export interface DomainCard {
   href: string;
 }
 
+export type CapabilityTierId = "foundation" | "bridge" | "scale";
+
+export interface CapabilityTier {
+  id: CapabilityTierId;
+  index: string;
+  name: string;
+  subtitle: string;
+  accent: "emerald" | "brass" | "cyan";
+}
+
 export interface TrajectoryStep {
+  id: string;
+  phase: string;
+  tier: CapabilityTierId;
   label: string;
-  era?: string;
+  era: string;
+  constraint: string;
+  capability: string;
+  substrate: string;
+  href: string;
+  targetLabel: string;
 }
 
 /** Unifying identity for the hero — who, and why it matters. */
@@ -114,14 +132,105 @@ export const achievements: string[] = [
   "Graduate research in scientific computing and parallel algorithms (CUDA, MPI, OpenMP, UPC++) at UC Berkeley MSSE / CS267.",
 ];
 
-/** Career progression across eras. */
+/** 3-Tier Capability Compounding Layer definitions. */
+export const capabilityTiers: CapabilityTier[] = [
+  {
+    id: "foundation",
+    index: "TIER 01",
+    name: "Foundational Layer",
+    subtitle: "Low-Level Hardware & Kernel Craft",
+    accent: "emerald",
+  },
+  {
+    id: "bridge",
+    index: "TIER 02",
+    name: "Bridge Layer",
+    subtitle: "HWIL Infrastructure & Instrumentation",
+    accent: "brass",
+  },
+  {
+    id: "scale",
+    index: "TIER 03",
+    name: "Scale & Application Layer",
+    subtitle: "Parallel Compute & AI Synthesis",
+    accent: "cyan",
+  },
+];
+
+/** Capability compounding nodes across the 3-tier system architecture. */
 export const trajectory: TrajectoryStep[] = [
-  { label: "Embedded Systems", era: "Early career" },
-  { label: "Wireless Communications", era: "OpenTV → GridNet" },
-  { label: "Sensing & Measurement", era: "Field & lab" },
-  { label: "Imaging Systems", era: "Freelance R&D" },
-  { label: "Scientific Computing", era: "UC Berkeley MSSE" },
-  { label: "AI-Assisted Engineering", era: "Present" },
+  {
+    id: "bare-metal-craft",
+    phase: "01",
+    tier: "foundation",
+    label: "Bare-Metal & Physical Hardware",
+    era: "1998–2004 · Bench & ASIC Bring-up",
+    constraint: "Timing-critical hardware and sealed legacy silicon with zero OS abstraction.",
+    capability: "Cycle-accurate C/ARM assembly, TOE ASIC bring-up, and magnetic/CRT drive electronics.",
+    substrate: "C / ARM ASM · Oscilloscope Bring-up · ECAD / PCB · Timing Logic",
+    href: "#archive",
+    targetLabel: "Hardware Archive",
+  },
+  {
+    id: "wireless-kernel",
+    phase: "02",
+    tier: "foundation",
+    label: "Wireless Systems & Kernel Drivers",
+    era: "2004–2018 · OpenTV & GridNet",
+    constraint: "Consumer and utility endpoints in high-interference RF and resource-constrained environments.",
+    capability: "Commercial Embedded Linux drivers, network stacks, and sub-GHz / LTE CAT-M firmware at scale.",
+    substrate: "Embedded Linux · Kernel Drivers · Sub-GHz RF · LTE CAT-M · DMA",
+    href: "#embedded",
+    targetLabel: "Embedded Shelf",
+  },
+  {
+    id: "sensing-hwil",
+    phase: "03",
+    tier: "bridge",
+    label: "Sensing, Telemetry & HWIL Labs",
+    era: "Field, Observatory & Lab R&D",
+    constraint: "Non-repeatable bench scripts and physical ambiguity between sensors and test software.",
+    capability: "Containerized multi-MCU Labgrid HIL, host-gated SDR rigs (rad-lab), and closed-loop telemetry.",
+    substrate: "SDR · Labgrid HWIL · RS-232 / SPI / CAN · Docker · Bioelectrical IP",
+    href: "#embedded",
+    targetLabel: "Embedded & HIL",
+  },
+  {
+    id: "imaging-instrumentation",
+    phase: "04",
+    tier: "bridge",
+    label: "Computational Imaging & DAQ",
+    era: "2018–Present · Independent R&D",
+    constraint: "Raw optical, X-ray, and RF measurements degraded by analog noise and instrument artifacts.",
+    capability: "Optical DAQ (spectrometer-lab), low-noise PMT front-ends (soft-xray-pmt), and GPU CT reconstruction.",
+    substrate: "CUDA · Signal Processing · OpenCV · Optical DAQ · KiCad / SPICE",
+    href: "#imaging",
+    targetLabel: "Imaging Shelf",
+  },
+  {
+    id: "hpc-numerics",
+    phase: "05",
+    tier: "scale",
+    label: "HPC & Parallel Numerics",
+    era: "UC Berkeley MSSE · CS267",
+    constraint: "Numerical drift and backend divergence across local GPUs, containers, and Slurm clusters.",
+    capability: "Multi-GPU parallel algorithms and execution-agnostic MD validation (hpc-runner).",
+    substrate: "C++ · CUDA · MPI / OpenMP / UPC++ · Slurm · GROMACS / LAMMPS",
+    href: "#science",
+    targetLabel: "HPC & Science",
+  },
+  {
+    id: "ai-scientific-eng",
+    phase: "06",
+    tier: "scale",
+    label: "AI-Assisted Scientific Systems",
+    era: "Present · Full-Boundary Synthesis",
+    constraint: "High iteration cost across coupled hardware bring-up, simulation, and verification loops.",
+    capability: "Fidelity-gated SIL-to-HWIL pipelines, reproducible benchmarks, and agentic engineering workflows.",
+    substrate: "PyTorch / SciPy · Gated SIL->HWIL · Reproducible CI · Agentic Tooling",
+    href: "#featured",
+    targetLabel: "Flagship Work",
+  },
 ];
 
 /** Four primary technical domains (in-page anchors). */

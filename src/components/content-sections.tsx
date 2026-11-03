@@ -1,6 +1,7 @@
 "use client";
 
 import { ProjectList } from "@/components/project-list";
+import { TrajectoryTopology } from "@/components/trajectory-topology";
 import { Button } from "@/components/ui/button";
 import {
   about,
@@ -10,7 +11,6 @@ import {
   featured,
   sectionMeta,
   sections,
-  trajectory,
   withBasePath,
 } from "@/data/portfolioData";
 import { motion } from "framer-motion";
@@ -97,32 +97,7 @@ export function ContentSections() {
             title={sectionMeta.trajectory.title}
             intro={sectionMeta.trajectory.description}
           />
-          <ol className="mt-12 max-w-xl space-y-0">
-            {trajectory.map((step, index) => (
-              <motion.li
-                key={step.label}
-                className="relative border-l border-signal/20 pb-10 pl-6 last:pb-0"
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: true, margin: "-40px" }}
-                variants={reveal}
-                transition={{ delay: index * 0.04 }}
-              >
-                <span
-                  className="absolute top-1.5 -left-[5px] size-2.5 rounded-full bg-signal/80"
-                  aria-hidden
-                />
-                <p className="font-display text-xl font-semibold tracking-tight text-foreground sm:text-2xl">
-                  {step.label}
-                </p>
-                {step.era ? (
-                  <p className="mt-1 font-tech text-[11px] tracking-[0.16em] text-steel/80 uppercase">
-                    {step.era}
-                  </p>
-                ) : null}
-              </motion.li>
-            ))}
-          </ol>
+          <TrajectoryTopology />
         </div>
       </section>
 

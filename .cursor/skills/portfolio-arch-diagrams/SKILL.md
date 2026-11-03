@@ -2,14 +2,15 @@
 name: portfolio-arch-diagrams
 description: >-
   Design, generate, wire up, and validate dark-theme precision-lab SVG
-  architecture and topology diagrams for flagship portfolio projects. Use when
-  creating or updating SVG diagrams in public/diagrams/ or adding visual
-  artifacts to projects in src/data/portfolioData.ts.
+  architecture and topology diagrams for portfolio projects and capability
+  compounding sections. Use when creating or updating SVG diagrams in
+  public/diagrams/, building interactive SVG capability topologies in
+  src/components/, or adding visual artifacts to src/data/portfolioData.ts.
 ---
 
 # Portfolio Architecture & Topology SVG Diagrams
 
-This skill defines the visual design system, 4-stage horizontal geometry, strict UTF-8/XML encoding rules, and local browser validation loop for flagship project diagrams in `public/diagrams/`.
+This skill defines the visual design system, 4-stage horizontal project diagram geometry, 3-Tier Capability Compounding Topology pattern, strict UTF-8/XML encoding rules, and local browser validation loop for the portfolio.
 
 ## 1. Visual Design System & Geometry
 
@@ -123,3 +124,28 @@ python3 .cursor/skills/portfolio-arch-diagrams/scripts/validate_svg.py
 ```
 
 Only proceed once all SVGs report `PASS` (valid UTF-8, strict XML, `800x220` viewBox, no forbidden elements, and rasterizer verification).
+
+---
+
+## 4. Capability Compounding 3-Tier Topology Pattern (Trajectory Section)
+
+When visualizing career or engineering progression (e.g., `src/components/trajectory-topology.tsx` backed by `capabilityTiers` and `trajectory` in `src/data/portfolioData.ts`), use a **Capability Compounding Model** rather than a linear chronological list.
+
+### A. 3-Tier Layer Architecture
+1. **Tier 01 — Foundational Layer (`emerald` / `#34d399`)**: Low-level craft, bare-metal bring-up, kernel drivers, wireless protocol stacks, and physical hardware intuition.
+2. **Tier 02 — Bridge Layer (`brass` / `#c4a574`)**: Systems integration, Labgrid/SDR HWIL automation, synchronized telemetry, and optical/RF instrument DAQ.
+3. **Tier 03 — Scale & Application Layer (`cyan` / `#3dcfbf`)**: GPU/CUDA parallel numerics, distributed HPC validation (`hpc-runner`), and AI-assisted scientific workflows.
+
+### B. Node Anatomy & Messaging Rules
+- **Paradigm Titles**: Title nodes by transferable core engineering paradigms (e.g., *Wireless Systems & Kernel Drivers*, *HPC & Parallel Numerics*), not job titles.
+- **Constraint -> Capability Microcopy**: Frame each node around:
+  - `constraint`: Physical or computational bottleneck solved.
+  - `capability`: Compounded engineering system or outcome.
+  - `substrate`: Key protocols, languages, and hardware interfaces.
+- **Downstream Navigation (`href` + `targetLabel`)**: Wrap each SVG `<g>` node (and mobile card) in an `<a href="#...">` anchor that jumps directly to the corresponding project shelf (`#archive`, `#embedded`, `#imaging`, `#science`, `#featured`).
+- **Non-Linear Feedback Loop**: Include a dashed return bus at the bottom of the SVG showing how Tier 03 modeling constraints feed back into Tier 02/01 custom sensor, PMT, and HWIL bench design.
+
+### C. Responsive Dual-Mode Rendering
+- **Desktop (`hidden md:block`, `>= 768px`)**: Render a full interactive inline `<svg viewBox="0 0 1080 590">` with 3 tier columns, vertical intra-tier arrows, horizontal/diagonal cross-tier arrows, and the bottom feedback loop bus.
+- **Mobile (`md:hidden`, `< 768px`)**: Render a structured 3-tier CSS Grid (`grid gap-4 sm:grid-cols-2`) of clickable cards so text and substrates remain legible on small screens without horizontal overflow.
+
