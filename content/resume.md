@@ -35,7 +35,7 @@ Engineered Python RS-232 instrument control and acquisition software for a Perki
 **FPGA Bring-Up Archive (`fpga-kit`)**  
 Reproducible FPGA bring-up notes and toolchain continuity for Digilent Spartan boards on Xilinx toolchains — lab memory that keeps firmware work portable across tool churn.
 
-**Soft X-ray PMT Detector Stage 1 (`photomultipler-tube`)**  
+**Soft X-ray PMT Detector Stage 1 (`soft-xray-pmt`)**  
 Photonis XP3312/SQ HV-bias and anode-sense bring-up: verified pin map and continuity, KiCad filter board and Type A divider, Gate 0 design/schematic/SPICE PASS. No HV applied yet; Gate A on hold pending divider build.
 
 **Computational CT & Radio Imaging Reconstruction Pipeline | Freelance R&D**  

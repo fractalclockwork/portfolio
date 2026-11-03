@@ -34,4 +34,4 @@ Push to `main` runs [.github/workflows/deploy-pages.yml](.github/workflows/deplo
 
 ## Curation
 
-Landing hub: identity → achievements → trajectory → four Dream-JD **domain cards** (in-page anchors) → constraint-first flagships (**hpc-runner**, **rad-lab**, **spectrometer-lab**, **FPGA Kit**, **PMT soft X-ray**) → domain shelves → Hardware Archive last. Contact: brentathorne@gmail.com. Classroom dumps stay off this surface. Remotes are not deleted.
+Landing hub: identity → achievements → trajectory → four Dream-JD **domain cards** (in-page anchors) → constraint-first flagships (**hpc-runner**, **rad-lab**, **spectrometer-lab**, **FPGA Kit**, **Soft X-ray PMT**) → domain shelves → Hardware Archive last. Contact: brentathorne@gmail.com. Classroom dumps stay off this surface. Remotes are not deleted.

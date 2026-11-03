@@ -94,8 +94,8 @@ export default function FromTheBenchPost() {
                   spectrometer-lab
                 </Ext>{" "}
                 (Stages 1–3 PASS; Gate D open),{" "}
-                <Ext href="https://github.com/fractalclockwork/photomultipler-tube">
-                  PMT soft X-ray
+                <Ext href="https://github.com/fractalclockwork/soft-xray-pmt">
+                  Soft X-ray PMT
                 </Ext>{" "}
                 (Stage 1; Gate 0 PASS; no HV yet).
               </li>
@@ -142,8 +142,8 @@ export default function FromTheBenchPost() {
                 — bring-up archive so firmware work survives tool churn.
               </li>
               <li>
-                <Ext href="https://github.com/fractalclockwork/photomultipler-tube">
-                  PMT soft X-ray
+                <Ext href="https://github.com/fractalclockwork/soft-xray-pmt">
+                  Soft X-ray PMT
                 </Ext>{" "}
                 — Photonis XP3312/SQ Stage 1 HV-bias and anode-sense bring-up;
                 pin map PASS, Gate 0 design/sch/SPICE PASS; no HV applied yet.
@@ -196,7 +196,7 @@ export default function FromTheBenchPost() {
               Computational Imaging &amp; Instrumentation
             </h2>
             <p className="mt-4">
-              Featured spectrometer-lab and PMT soft X-ray Stage 1; freelance
+              Featured spectrometer-lab and Soft X-ray PMT Stage 1; freelance
               CT/radio reconstruction. Public sensing reference:{" "}
               <Ext href="https://github.com/fractalclockwork/biofeedback_emg">
                 Biofeedback EMG
