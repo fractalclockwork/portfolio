@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 220" width="800" height="220" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">molecularSim architecture</title>
+  <desc id="desc">Runnable C++ implementations of numerical fluid simulation algorithms from Sadus covering intermolecular potentials, Monte Carlo and MD ensembles, thermodynamic observables, and reproducible outputs.</desc>
+  <defs>
+    <pattern id="grid-molsim" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#3dcfbf" stroke-opacity="0.06" stroke-width="1"/>
+    </pattern>
+    <marker id="arrow-cyan-molsim" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8.5 5 L 0 8.5 z" fill="#3dcfbf"/>
+    </marker>
+  </defs>
+
+  <rect width="800" height="220" fill="#070b12"/>
+  <rect width="800" height="220" fill="url(#grid-molsim)"/>
+
+  <text x="24" y="26" fill="#c4a574" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="10" letter-spacing="2">
+    ARCHITECTURE // RUNNABLE C++ MOLECULAR SIMULATION NUMERICS (SADUS)
+  </text>
+  <line x1="24" y1="36" x2="776" y2="36" stroke="#3dcfbf" stroke-opacity="0.18" stroke-width="1"/>
+
+  <g transform="translate(24, 54)">
+    <rect width="158" height="142" rx="4" fill="#0e1520" stroke="#3dcfbf" stroke-opacity="0.28" stroke-width="1"/>
+    <text x="14" y="22" fill="#c4a574" font-family="ui-monospace, monospace" font-size="9" letter-spacing="1.5">01 / POTENTIALS</text>
+    <rect x="14" y="34" width="130" height="28" rx="3" fill="#121a26" stroke="#3dcfbf" stroke-opacity="0.2"/>
+    <text x="22" y="52" fill="#e4eaf2" font-family="ui-monospace, monospace" font-size="10">Lennard-Jones 12-6</text>
+    <rect x="14" y="68" width="130" height="28" rx="3" fill="#121a26" stroke="#3dcfbf" stroke-opacity="0.2"/>
+    <text x="22" y="86" fill="#e4eaf2" font-family="ui-monospace, monospace" font-size="10">2-Body / 3-Body</text>
+    <rect x="14" y="102" width="130" height="28" rx="3" fill="#121a26" stroke="#3dcfbf" stroke-opacity="0.2"/>
+    <text x="22" y="120" fill="#e4eaf2" font-family="ui-monospace, monospace" font-size="10">Tail Corrections</text>
+  </g>
+
+  <line x1="182" y1="125" x2="216" y2="125" stroke="#3dcfbf" stroke-width="1.5" marker-end="url(#arrow-cyan-molsim)"/>
+
+  <g transform="translate(222, 54)">
+    <rect width="172" height="142" rx="4" fill="#0e1520" stroke="#3dcfbf" stroke-opacity="0.55" stroke-width="1.25"/>
+    <text x="14" y="22" fill="#3dcfbf" font-family="ui-monospace, monospace" font-size="9" letter-spacing="1.5">02 / ENSEMBLE SOLVERS</text>
+    <text x="14" y="46" fill="#e4eaf2" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="600">MC and MD Kernels</text>
+    <text x="14" y="66" fill="#8a96a8" font-family="ui-monospace, monospace" font-size="10">- Metropolis MC</text>
+    <text x="14" y="84" fill="#8a96a8" font-family="ui-monospace, monospace" font-size="10">- NVT / NPT dynamics</text>
+    <text x="14" y="102" fill="#8a96a8" font-family="ui-monospace, monospace" font-size="10">- Gear integrator</text>
+    <rect x="14" y="112" width="144" height="18" rx="2" fill="#14202e"/>
+    <text x="20" y="124" fill="#7aefe0" font-family="ui-monospace, monospace" font-size="9" letter-spacing="1">MODERN C++ BUILD</text>
+  </g>
+
+  <line x1="394" y1="125" x2="428" y2="125" stroke="#3dcfbf" stroke-width="1.5" marker-end="url(#arrow-cyan-molsim)"/>
+
+  <g transform="translate(434, 54)">
+    <rect width="162" height="142" rx="4" fill="#0e1520" stroke="#3dcfbf" stroke-opacity="0.28" stroke-width="1"/>
+    <text x="14" y="22" fill="#c4a574" font-family="ui-monospace, monospace" font-size="9" letter-spacing="1.5">03 / OBSERVABLES</text>
+    <text x="14" y="46" fill="#e4eaf2" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="600">Thermodynamics</text>
+    <text x="14" y="66" fill="#8a96a8" font-family="ui-monospace, monospace" font-size="10">- Radial dist g(r)</text>
+    <text x="14" y="84" fill="#8a96a8" font-family="ui-monospace, monospace" font-size="10">- Virial pressure</text>
+    <text x="14" y="102" fill="#8a96a8" font-family="ui-monospace, monospace" font-size="10">- Phase equilibria</text>
+    <rect x="14" y="112" width="134" height="18" rx="2" fill="#121a26" stroke="#3dcfbf" stroke-opacity="0.25"/>
+    <text x="20" y="124" fill="#3dcfbf" font-family="ui-monospace, monospace" font-size="9" letter-spacing="1">TEXTBOOK TO CODE</text>
+  </g>
+
+  <line x1="596" y1="125" x2="630" y2="125" stroke="#3dcfbf" stroke-width="1.5" marker-end="url(#arrow-cyan-molsim)"/>
+
+  <g transform="translate(636, 54)">
+    <rect width="140" height="142" rx="4" fill="#0e1520" stroke="#c4a574" stroke-opacity="0.45" stroke-width="1"/>
+    <text x="12" y="22" fill="#c4a574" font-family="ui-monospace, monospace" font-size="9" letter-spacing="1.5">04 / VERIFICATION</text>
+    <text x="12" y="46" fill="#e4eaf2" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="600">Worked Examples</text>
+    <text x="12" y="66" fill="#8a96a8" font-family="ui-monospace, monospace" font-size="10">- Energy conservation</text>
+    <text x="12" y="84" fill="#8a96a8" font-family="ui-monospace, monospace" font-size="10">- Ensemble averages</text>
+    <text x="12" y="102" fill="#8a96a8" font-family="ui-monospace, monospace" font-size="10">- Portable CMake</text>
+    <rect x="12" y="112" width="116" height="18" rx="2" fill="#14202e"/>
+    <text x="20" y="124" fill="#3dcfbf" font-family="ui-monospace, monospace" font-size="9" letter-spacing="1">REPRODUCIBLE</text>
+  </g>
+</svg>

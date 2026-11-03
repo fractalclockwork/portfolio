@@ -208,6 +208,9 @@ export const featured: Project[] = [
     badgeLabel: "Active Calibration",
     href: "https://github.com/fractalclockwork/spectrometer-lab",
     cta: "Open repo",
+    diagramUrl: "/diagrams/spectrometer-lab-arch.svg",
+    diagramAlt:
+      "spectrometer-lab optical DAQ architecture from PerkinElmer LS 55 xenon flash source and monochromators through RS-232 protocol driver and baseline scans to full optical calibration",
   },
   {
     slug: "fpga-kit",
@@ -221,6 +224,9 @@ export const featured: Project[] = [
     badgeLabel: "Public",
     href: "https://github.com/fractalclockwork/fpga-kit",
     cta: "Open repo",
+    diagramUrl: "/diagrams/fpga-kit-arch.svg",
+    diagramAlt:
+      "FPGA Kit bring-up continuity architecture from Verilog RTL and UCF pin constraints through archived ISE synthesis toolchain to Digilent Spartan JTAG target and reproducible bench reference",
   },
   {
     slug: "soft-xray-pmt",
@@ -234,6 +240,9 @@ export const featured: Project[] = [
     badgeLabel: "Active Bring-up",
     href: "https://github.com/fractalclockwork/soft-xray-pmt",
     cta: "Open repo",
+    diagramUrl: "/diagrams/soft-xray-pmt-arch.svg",
+    diagramAlt:
+      "Soft X-ray PMT front-end topology from Photonis XP3312/SQ socket pinout verification through Type A dynode divider and low-noise KiCad HV filter board to anode pulse readout",
   },
 ];
 
@@ -257,6 +266,9 @@ export const sections: ProjectSection[] = [
         badgeLabel: "Public",
         href: "https://github.com/fractalclockwork/sci-slurm",
         cta: "Open repo",
+        diagramUrl: "/diagrams/sci-slurm-arch.svg",
+        diagramAlt:
+          "sci-slurm multi-container Slurm cluster architecture with slurmctld master, slurmdbd accounting, shared Munge fabric, and slurmd compute workers",
       },
       {
         slug: "molecular-sim",
@@ -270,6 +282,9 @@ export const sections: ProjectSection[] = [
         badgeLabel: "Public",
         href: "https://github.com/fractalclockwork/molecularSim",
         cta: "Open repo",
+        diagramUrl: "/diagrams/molecular-sim-arch.svg",
+        diagramAlt:
+          "molecularSim C++ numerical architecture covering intermolecular potentials, Monte Carlo and MD ensemble solvers, thermodynamic observables, and reproducible verification",
       },
       {
         slug: "mesa-docker",
@@ -283,6 +298,9 @@ export const sections: ProjectSection[] = [
         badgeLabel: "Public",
         href: "https://github.com/astr400/mesa-docker",
         cta: "Open repo",
+        diagramUrl: "/diagrams/mesa-docker-arch.svg",
+        diagramAlt:
+          "MESA Docker architecture showing pinned MESA SDK container image, OpenSSH and X11 forwarding bridge, 1D stellar evolution solver, and live pgstar H-R diagnostics",
       },
       {
         slug: "astr400",
@@ -296,6 +314,9 @@ export const sections: ProjectSection[] = [
         badgeLabel: "Public",
         href: "https://astr400.github.io/",
         cta: "Open site",
+        diagramUrl: "/diagrams/astr400-arch.svg",
+        diagramAlt:
+          "ASTR 400 reproducible computational astrophysics onboarding workflow across OS bootstrap, Docker and VM runtimes, Python/Astropy/MESA stack, and student deliverables",
       },
     ],
   },
@@ -318,6 +339,9 @@ export const sections: ProjectSection[] = [
         badgeLabel: "Public",
         href: "https://github.com/fractalclockwork/cede",
         cta: "Open repo",
+        diagramUrl: "/diagrams/cede-arch.svg",
+        diagramAlt:
+          "CEDE / cede-labgrid topology from containerized cross-toolchains and OpenOCD through Labgrid resource router to multi-MCU bench nodes and automated HIL regression",
       },
       {
         slug: "radar-module",
@@ -331,6 +355,9 @@ export const sections: ProjectSection[] = [
         badgeLabel: "Public",
         href: "https://github.com/fractalclockwork/RadarModule",
         cta: "Open repo",
+        diagramUrl: "/diagrams/radar-module-arch.svg",
+        diagramAlt:
+          "Radar Module Embedded Linux architecture from Dockerized Yocto build and Device Tree overlay through loadable kernel driver to BeagleBone SPI/IRQ radar front-end and userland API",
       },
       {
         slug: "tftp-boot-docker",
@@ -344,6 +371,9 @@ export const sections: ProjectSection[] = [
         badgeLabel: "Public",
         href: "https://github.com/fractalclockwork/tftp-boot-docker",
         cta: "Open repo",
+        diagramUrl: "/diagrams/tftp-boot-docker-arch.svg",
+        diagramAlt:
+          "tftp-boot-docker UEFI PXE netboot topology connecting OpenWrt DHCP discovery, Dockerized TFTP and HTTP ISO servers, GRUB EFI chainload, and diskless lab targets",
       },
     ],
   },
@@ -366,6 +396,9 @@ export const sections: ProjectSection[] = [
         badgeLabel: "Reference",
         href: "https://github.com/fractalclockwork/biofeedback_emg",
         cta: "Open repo",
+        diagramUrl: "/diagrams/biofeedback-emg-arch.svg",
+        diagramAlt:
+          "Biofeedback EMG closed-loop sensing topology from surface electrodes and differential analog front-end through Arduino ADC digitization to Java signal processing and visual feedback",
       },
     ],
   },
@@ -388,6 +421,9 @@ export const sections: ProjectSection[] = [
         badgeLabel: "Public",
         href: "https://github.com/fractalclockwork/core-memory-redux",
         cta: "Open repo",
+        diagramUrl: "/diagrams/core-memory-redux-arch.svg",
+        diagramAlt:
+          "Core Memory Redux fidelity-gated SIL simulation ladder from behavioral 64x64 matrix through square-loop B-H hysteresis model and SPICE H-bridge transients to hardware parity verification",
       },
       {
         slug: "core-memory",
@@ -401,6 +437,9 @@ export const sections: ProjectSection[] = [
         badgeLabel: "Archive",
         href: "https://github.com/fractalclockwork/core-memory",
         cta: "Open repo",
+        diagramUrl: "/diagrams/core-memory-arch.svg",
+        diagramAlt:
+          "Core Memory physical 9-inch 64x64 ferrite plane topology from address decode logic and coincident-current H-bridge drivers to 4096-bit toroid matrix and differential sense amplifier",
       },
       {
         slug: "crt-drive",
@@ -414,6 +453,9 @@ export const sections: ProjectSection[] = [
         badgeLabel: "Archive",
         href: "https://github.com/fractalclockwork/crt-drive",
         cta: "Open repo",
+        diagramUrl: "/diagrams/crt-drive-arch.svg",
+        diagramAlt:
+          "CRT Drive microcontroller video generator topology from cycle-accurate C timer ISR through 15.7 kHz H-sync and 60 Hz V-blanking framing to 75-ohm analog DAC and CRT raster lock",
       },
       {
         slug: "retro-compute",
@@ -426,6 +468,9 @@ export const sections: ProjectSection[] = [
         badgeVariant: "private",
         badgeLabel: "Private",
         note: "Repository in preparation for public release.",
+        diagramUrl: "/diagrams/retro-compute-arch.svg",
+        diagramAlt:
+          "Retro Compute study architecture for Yaohan Chu (1962) covering Boolean logic minimization, serial and parallel arithmetic units, micro-operation control matrix, and Python register-transfer simulation",
       },
     ],
   },

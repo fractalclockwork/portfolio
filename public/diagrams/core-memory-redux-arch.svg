@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 220" width="800" height="220" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">Core Memory Redux architecture</title>
+  <desc id="desc">Fidelity-gated software-in-the-loop simulation ladder for a 64x64 coincident-current core-memory plane from behavioral array through hysteresis physics to SPICE driver circuits and parity tests.</desc>
+  <defs>
+    <pattern id="grid-cmredux" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#3dcfbf" stroke-opacity="0.06" stroke-width="1"/>
+    </pattern>
+    <marker id="arrow-cyan-cmredux" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8.5 5 L 0 8.5 z" fill="#3dcfbf"/>
+    </marker>
+    <marker id="arrow-brass-cmredux" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8.5 5 L 0 8.5 z" fill="#c4a574"/>
+    </marker>
+  </defs>
+
+  <rect width="800" height="220" fill="#070b12"/>
+  <rect width="800" height="220" fill="url(#grid-cmredux)"/>
+
+  <text x="24" y="26" fill="#c4a574" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="10" letter-spacing="2">
+    ARCHITECTURE // FIDELITY-GATED SIL LADDER FOR 64X64 COINCIDENT-CURRENT CORE MEMORY
+  </text>
+  <line x1="24" y1="36" x2="776" y2="36" stroke="#3dcfbf" stroke-opacity="0.18" stroke-width="1"/>
+
+  <g transform="translate(24, 54)">
+    <rect width="158" height="142" rx="4" fill="#0e1520" stroke="#3dcfbf" stroke-opacity="0.28" stroke-width="1"/>
+    <text x="14" y="22" fill="#c4a574" font-family="ui-monospace, monospace" font-size="9" letter-spacing="1.5">01 / IDEAL N X N</text>
+    <text x="14" y="46" fill="#e4eaf2" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="600">Behavioral Array</text>
+    <text x="14" y="66" fill="#8a96a8" font-family="ui-monospace, monospace" font-size="10">- 64x64 bit matrix</text>
+    <text x="14" y="84" fill="#8a96a8" font-family="ui-monospace, monospace" font-size="10">- X / Y decode API</text>
+    <text x="14" y="102" fill="#8a96a8" font-family="ui-monospace, monospace" font-size="10">- Destructive read</text>
+    <rect x="14" y="112" width="130" height="18" rx="2" fill="#121a26" stroke="#3dcfbf" stroke-opacity="0.25"/>
+    <text x="20" y="124" fill="#3dcfbf" font-family="ui-monospace, monospace" font-size="9" letter-spacing="1">STAGE 1 LOGIC</text>
+  </g>
+
+  <line x1="182" y1="125" x2="216" y2="125" stroke="#3dcfbf" stroke-width="1.5" marker-end="url(#arrow-cyan-cmredux)"/>
+
+  <g transform="translate(222, 54)">
+    <rect width="172" height="142" rx="4" fill="#0e1520" stroke="#3dcfbf" stroke-opacity="0.55" stroke-width="1.25"/>
+    <text x="14" y="22" fill="#3dcfbf" font-family="ui-monospace, monospace" font-size="9" letter-spacing="1.5">02 / HYSTERESIS SIL</text>
+    <text x="14" y="46" fill="#e4eaf2" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="600">Square-Loop B-H</text>
+    <text x="14" y="66" fill="#8a96a8" font-family="ui-monospace, monospace" font-size="10">- Coercive I_m threshold</text>
+    <text x="14" y="84" fill="#8a96a8" font-family="ui-monospace, monospace" font-size="10">- Half-select disturb</text>
+    <text x="14" y="102" fill="#8a96a8" font-family="ui-monospace, monospace" font-size="10">- dPhi/dt sense EMF</text>
+    <rect x="14" y="112" width="144" height="18" rx="2" fill="#14202e"/>
+    <text x="20" y="124" fill="#7aefe0" font-family="ui-monospace, monospace" font-size="9" letter-spacing="1">FIDELITY LADDER</text>
+  </g>
+
+  <line x1="394" y1="125" x2="428" y2="125" stroke="#3dcfbf" stroke-width="1.5" marker-end="url(#arrow-cyan-cmredux)"/>
+
+  <g transform="translate(434, 54)">
+    <rect width="162" height="142" rx="4" fill="#0e1520" stroke="#3dcfbf" stroke-opacity="0.28" stroke-width="1"/>
+    <text x="14" y="22" fill="#c4a574" font-family="ui-monospace, monospace" font-size="9" letter-spacing="1.5">03 / SPICE CIRCUIT</text>
+    <text x="14" y="46" fill="#e4eaf2" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="600">Driver Transients</text>
+    <text x="14" y="66" fill="#8a96a8" font-family="ui-monospace, monospace" font-size="10">- H-bridge switches</text>
+    <text x="14" y="84" fill="#8a96a8" font-family="ui-monospace, monospace" font-size="10">- Inhibit pulse gate</text>
+    <text x="14" y="102" fill="#8a96a8" font-family="ui-monospace, monospace" font-size="10">- Line R / L parasitics</text>
+    <rect x="14" y="112" width="134" height="18" rx="2" fill="#14202e"/>
+    <text x="20" y="124" fill="#7aefe0" font-family="ui-monospace, monospace" font-size="9" letter-spacing="1">PRE-BENCH PROOF</text>
+  </g>
+
+  <line x1="596" y1="125" x2="630" y2="125" stroke="#c4a574" stroke-width="1.5" marker-end="url(#arrow-brass-cmredux)"/>
+
+  <g transform="translate(636, 54)">
+    <rect width="140" height="142" rx="4" fill="#0e1520" stroke="#c4a574" stroke-opacity="0.55" stroke-width="1.25"/>
+    <text x="12" y="22" fill="#c4a574" font-family="ui-monospace, monospace" font-size="9" letter-spacing="1.5">04 / DRIVER PARITY</text>
+    <text x="12" y="46" fill="#e4eaf2" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="600">Gated Sign-off</text>
+    <text x="12" y="66" fill="#8a96a8" font-family="ui-monospace, monospace" font-size="10">- Strobe window tol</text>
+    <text x="12" y="84" fill="#8a96a8" font-family="ui-monospace, monospace" font-size="10">- Current margin CI</text>
+    <text x="12" y="102" fill="#8a96a8" font-family="ui-monospace, monospace" font-size="10">- Safe HW handoff</text>
+    <rect x="12" y="112" width="116" height="18" rx="2" fill="#1a1814" stroke="#c4a574" stroke-opacity="0.4"/>
+    <text x="18" y="124" fill="#c4a574" font-family="ui-monospace, monospace" font-size="9" letter-spacing="1">SIL VALIDATED</text>
+  </g>
+</svg>
