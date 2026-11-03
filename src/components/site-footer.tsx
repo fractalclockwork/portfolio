@@ -1,4 +1,4 @@
-import { about, withBasePath } from "@/lib/projects";
+import { about, footerCopy, withBasePath } from "@/data/portfolioData";
 
 export function SiteFooter() {
   const year = new Date().getFullYear();
@@ -11,14 +11,13 @@ export function SiteFooter() {
         </p>
         <p className="text-sm text-steel">
           <a
-            href={withBasePath("/blog/from-the-bench/")}
+            href={withBasePath(footerCopy.blogHref)}
             className="transition-colors hover:text-signal"
           >
-            From the bench and the cluster
+            {footerCopy.blogLinkLabel}
           </a>
-          <span className="mx-2 text-steel/40">·</span>
-          Curated public work. Classroom dumps and retired joke branding stay
-          off this surface.
+          <span className="mx-2 text-steel/40">—</span>
+          {footerCopy.summary}
         </p>
       </div>
     </footer>

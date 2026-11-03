@@ -32,6 +32,8 @@ npm run lint
 
 Push to `main` runs [.github/workflows/deploy-pages.yml](.github/workflows/deploy-pages.yml) (Next static export → GitHub Pages).
 
-## Curation
+## Architecture & Content
 
-Landing hub: identity → achievements → trajectory → four Dream-JD **domain cards** (in-page anchors) → constraint-first flagships (**hpc-runner**, **rad-lab**, **spectrometer-lab**, **FPGA Kit**, **Soft X-ray PMT**) → domain shelves → Hardware Archive last. Contact: brentathorne@gmail.com. Classroom dumps stay off this surface. Remotes are not deleted.
+- Structured data and editorial copy live in `src/data/portfolioData.ts` (re-exported via `src/lib/projects.ts`).
+- Landing hub: identity → achievements → trajectory → four technical **domain cards** (in-page anchors) → flagship engineering systems (**hpc-runner**, **rad-lab**, **spectrometer-lab**, **FPGA Kit**, **Soft X-ray PMT**) → domain shelves → Hardware Archive.
+- Contact: brentathorne@gmail.com.

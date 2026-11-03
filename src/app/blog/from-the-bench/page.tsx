@@ -1,9 +1,9 @@
-import { about, identity } from "@/lib/projects";
+import { about, footerCopy, identity } from "@/data/portfolioData";
 import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: `From the bench and the cluster — ${about.name}`,
+  title: `${footerCopy.blogLinkLabel} — ${about.name}`,
   description:
     "Research Engineer bridging physical hardware constraints with high-performance scientific software — domain hub and flagship public work.",
 };
@@ -43,14 +43,14 @@ export default function FromTheBenchPost() {
             Blog
           </p>
           <h1 className="mt-4 font-display text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
-            From the bench and the cluster
+            {footerCopy.blogLinkLabel}
           </h1>
           <p className="mt-3 font-tech text-[11px] tracking-[0.16em] text-steel/80 uppercase">
             2026-10-30 · {about.name}
           </p>
           <p className="mt-6 text-base leading-relaxed text-steel sm:text-lg">
-            {identity.lead} The portfolio routes through four engineering
-            domains; classroom dumps stay off this page. Source lives under{" "}
+            {identity.lead} The portfolio organizes selected engineering systems
+            across four primary technical domains. Source lives under{" "}
             <Ext href={about.github}>github.com/fractalclockwork</Ext>.
           </p>
         </header>
@@ -93,18 +93,20 @@ export default function FromTheBenchPost() {
                 <Ext href="https://github.com/fractalclockwork/spectrometer-lab">
                   spectrometer-lab
                 </Ext>{" "}
-                (Stages 1–3 PASS; Gate D open),{" "}
+                (RS-232 DAQ, baseline emission scans, and optical spectrum
+                calibration) and{" "}
                 <Ext href="https://github.com/fractalclockwork/soft-xray-pmt">
                   Soft X-ray PMT
                 </Ext>{" "}
-                (Stage 1; Gate 0 PASS; no HV yet).
+                (low-noise KiCad filter and Type A divider design for the
+                Photonis XP3312/SQ).
               </li>
               <li>
                 <strong className="text-foreground">
                   Scientific Field &amp; Lab Infrastructure
                 </strong>{" "}
-                — fixtures, telemetry, bioelectrical IP; historical craft in the
-                Hardware Archive.
+                — fixtures, telemetry, bioelectrical IP, and physical computing
+                explorations in the Hardware Archive.
               </li>
             </ol>
           </section>
@@ -132,8 +134,9 @@ export default function FromTheBenchPost() {
                 <Ext href="https://github.com/fractalclockwork/spectrometer-lab">
                   spectrometer-lab
                 </Ext>{" "}
-                — RS-232 DAQ for a PerkinElmer LS 55; Stages 1–3 PASS
-                (2026-10-28); Gate D optical validation open.
+                — validated electrical bring-up, RS-232 command protocols, and
+                baseline emission scans for the PerkinElmer LS 55; active work
+                focused on full optical spectrum calibration.
               </li>
               <li>
                 <Ext href="https://github.com/fractalclockwork/fpga-kit">
@@ -145,8 +148,9 @@ export default function FromTheBenchPost() {
                 <Ext href="https://github.com/fractalclockwork/soft-xray-pmt">
                   Soft X-ray PMT
                 </Ext>{" "}
-                — Photonis XP3312/SQ Stage 1 HV-bias and anode-sense bring-up;
-                pin map PASS, Gate 0 design/sch/SPICE PASS; no HV applied yet.
+                — designed and simulated low-noise KiCad filter circuit and Type
+                A divider for Photonis XP3312/SQ PMT; validated pin mapping
+                ahead of high-voltage integration.
               </li>
             </ul>
           </section>
@@ -196,8 +200,9 @@ export default function FromTheBenchPost() {
               Computational Imaging &amp; Instrumentation
             </h2>
             <p className="mt-4">
-              Featured spectrometer-lab and Soft X-ray PMT Stage 1; freelance
-              CT/radio reconstruction. Public sensing reference:{" "}
+              Featured spectrometer-lab and Soft X-ray PMT instrumentation
+              alongside custom CT and radio reconstruction pipelines. Public
+              sensing reference:{" "}
               <Ext href="https://github.com/fractalclockwork/biofeedback_emg">
                 Biofeedback EMG
               </Ext>
@@ -210,7 +215,9 @@ export default function FromTheBenchPost() {
               Hardware Archive
             </h2>
             <p className="mt-4">
-              Secondary to the Research Engineer story.{" "}
+              Foundational explorations in physical computing, magnetic core
+              storage, and CRT synchronization demonstrating low-level hardware
+              craft.{" "}
               <Ext href="https://github.com/fractalclockwork/core-memory-redux">
                 Core Memory Redux
               </Ext>{" "}
@@ -218,12 +225,12 @@ export default function FromTheBenchPost() {
               <Ext href="https://github.com/fractalclockwork/core-memory">
                 Core Memory
               </Ext>{" "}
-              — SIL into a real 9″ ferrite plane.{" "}
+              — SIL simulation and drive electronics for a 9″ ferrite plane.{" "}
               <Ext href="https://github.com/fractalclockwork/crt-drive">
                 CRT Drive
               </Ext>{" "}
-              — open CRT firmware. <em>Retro Compute</em> (Chu, 1962) stays
-              private until ready.
+              — open CRT synchronization firmware. <em>Retro Compute</em> (Chu,
+              1962) is in preparation for release.
             </p>
           </section>
 
@@ -232,15 +239,14 @@ export default function FromTheBenchPost() {
               Follow along
             </h2>
             <p className="mt-4">
-              Start with the portfolio{" "}
+              Explore the portfolio{" "}
               <Link
                 href="/#areas"
                 className="text-signal underline-offset-4 hover:text-signal-bright hover:underline"
               >
                 domain cards
-              </Link>
-              , then the five flagships. Compute and embedded shelves next;
-              Hardware Archive last. Contact: {about.email}.
+              </Link>{" "}
+              and flagship systems, or get in touch directly at {about.email}.
             </p>
             <ul className="mt-4 space-y-2 font-tech text-sm tracking-[0.04em]">
               <li>
@@ -253,8 +259,7 @@ export default function FromTheBenchPost() {
         </div>
 
         <footer className="mt-14 border-t border-signal/12 pt-8 font-tech text-[11px] tracking-[0.14em] text-steel/60">
-          {about.name} · curated public work. Classroom dumps and retired joke
-          branding stay off this surface; remotes are not deleted.
+          {about.name} — {footerCopy.summary}
           <div className="mt-4">
             <Link
               href="/"

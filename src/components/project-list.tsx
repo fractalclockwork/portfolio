@@ -1,7 +1,8 @@
 "use client";
 
+import { Badge } from "@/components/badge";
 import { Button } from "@/components/ui/button";
-import type { Project } from "@/lib/projects";
+import { type Project, withBasePath } from "@/data/portfolioData";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 
@@ -45,19 +46,11 @@ export function ProjectList({
             {String(startIndex + index).padStart(2, "0")}
           </span>
           <div className="min-w-0">
-            <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+            <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5">
               <h3 className="font-display text-xl font-semibold tracking-tight text-foreground sm:text-2xl">
                 {project.title}
               </h3>
-              {project.status === "private" ? (
-                <span className="font-tech text-[10px] tracking-[0.22em] text-brass uppercase">
-                  Private
-                </span>
-              ) : (
-                <span className="font-tech text-[10px] tracking-[0.22em] text-signal uppercase">
-                  Public
-                </span>
-              )}
+              <Badge label={project.badgeLabel} variant={project.badgeVariant} />
             </div>
             <p className="mt-1 font-tech text-[11px] tracking-[0.12em] text-steel/80 uppercase">
               {[project.lang, ...project.tags].filter(Boolean).join(" · ")}
@@ -69,6 +62,17 @@ export function ProjectList({
               <p className="mt-3 font-tech text-xs tracking-[0.06em] text-steel/70">
                 {project.note}
               </p>
+            )}
+            {project.diagramUrl && (
+              <div className="mt-4 max-w-2xl overflow-hidden rounded-md border border-signal/15 bg-ink/90">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={withBasePath(project.diagramUrl)}
+                  alt={project.diagramAlt ?? `${project.title} Architecture Diagram`}
+                  className="w-full object-cover opacity-90 transition-opacity hover:opacity-100"
+                  loading="lazy"
+                />
+              </div>
             )}
           </div>
           <div className="sm:pt-1">

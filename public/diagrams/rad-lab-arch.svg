@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 220" width="800" height="220" fill="none">
+  <defs>
+    <pattern id="grid-rad" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#3dcfbf" stroke-opacity="0.06" stroke-width="1"/>
+    </pattern>
+    <marker id="arrow-signal" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8.5 5 L 0 8.5 z" fill="#3dcfbf"/>
+    </marker>
+    <marker id="arrow-brass" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8.5 5 L 0 8.5 z" fill="#c4a574"/>
+    </marker>
+  </defs>
+
+  <rect width="800" height="220" fill="#070b12"/>
+  <rect width="800" height="220" fill="url(#grid-rad)"/>
+
+  <!-- Top Header Bar -->
+  <text x="24" y="26" fill="#c4a574" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="10" letter-spacing="2">
+    TOPOLOGY // HOST-GATED RF &amp; MULTI-MCU HARDWARE-IN-THE-LOOP
+  </text>
+  <line x1="24" y1="36" x2="776" y2="36" stroke="#3dcfbf" stroke-opacity="0.18" stroke-width="1"/>
+
+  <!-- Stage 1: Containerized SIL / Runner -->
+  <g transform="translate(24, 54)">
+    <rect width="164" height="142" rx="4" fill="#0e1520" stroke="#3dcfbf" stroke-opacity="0.28" stroke-width="1"/>
+    <text x="14" y="22" fill="#c4a574" font-family="ui-monospace, monospace" font-size="9" letter-spacing="1.5">01 · SIL STAGE</text>
+    <text x="14" y="46" fill="#e4eaf2" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="600">Container Runner</text>
+    <text x="14" y="66" fill="#8a96a8" font-family="ui-monospace, monospace" font-size="10">·IQ baseband synth</text>
+    <text x="14" y="84" fill="#8a96a8" font-family="ui-monospace, monospace" font-size="10">·Protocol framing</text>
+    <text x="14" y="102" fill="#8a96a8" font-family="ui-monospace, monospace" font-size="10">·Pre-flight bounds</text>
+    <rect x="14" y="112" width="136" height="18" rx="2" fill="#121a26" stroke="#3dcfbf" stroke-opacity="0.25"/>
+    <text x="22" y="124" fill="#7aefe0" font-family="ui-monospace, monospace" font-size="9" letter-spacing="1">DETERMINISTIC ENV</text>
+  </g>
+
+  <!-- Connector 1 -> 2 -->
+  <line x1="188" y1="125" x2="222" y2="125" stroke="#c4a574" stroke-width="1.5" marker-end="url(#arrow-brass)"/>
+
+  <!-- Stage 2: Human Assent Gate -->
+  <g transform="translate(228, 54)">
+    <rect width="152" height="142" rx="4" fill="#0e1520" stroke="#c4a574" stroke-opacity="0.6" stroke-width="1.25"/>
+    <text x="14" y="22" fill="#c4a574" font-family="ui-monospace, monospace" font-size="9" letter-spacing="1.5">02 · SAFETY GATE</text>
+    <text x="14" y="46" fill="#e4eaf2" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="600">TX Assent Lock</text>
+    <text x="14" y="66" fill="#8a96a8" font-family="ui-monospace, monospace" font-size="10">·Freq / power check</text>
+    <text x="14" y="84" fill="#8a96a8" font-family="ui-monospace, monospace" font-size="10">·Attenuator verify</text>
+    <text x="14" y="102" fill="#8a96a8" font-family="ui-monospace, monospace" font-size="10">·Operator sign-off</text>
+    <rect x="14" y="112" width="124" height="18" rx="2" fill="#1a1814" stroke="#c4a574" stroke-opacity="0.4"/>
+    <text x="20" y="124" fill="#c4a574" font-family="ui-monospace, monospace" font-size="9" letter-spacing="1">HUMAN-IN-LOOP</text>
+  </g>
+
+  <!-- Connector 2 -> 3 -->
+  <line x1="380" y1="125" x2="414" y2="125" stroke="#3dcfbf" stroke-width="1.5" marker-end="url(#arrow-signal)"/>
+
+  <!-- Stage 3: Physical RF & Multi-MCU Bench -->
+  <g transform="translate(420, 54)">
+    <rect width="174" height="142" rx="4" fill="#0e1520" stroke="#3dcfbf" stroke-opacity="0.5" stroke-width="1.25"/>
+    <text x="14" y="22" fill="#3dcfbf" font-family="ui-monospace, monospace" font-size="9" letter-spacing="1.5">03 · HWIL BENCH</text>
+    <rect x="14" y="34" width="146" height="30" rx="3" fill="#121a26" stroke="#3dcfbf" stroke-opacity="0.25"/>
+    <text x="22" y="53" fill="#e4eaf2" font-family="ui-monospace, monospace" font-size="10">SDR Transceiver I/O</text>
+    <rect x="14" y="70" width="146" height="30" rx="3" fill="#121a26" stroke="#3dcfbf" stroke-opacity="0.25"/>
+    <text x="22" y="89" fill="#e4eaf2" font-family="ui-monospace, monospace" font-size="10">Multi-MCU Nodes</text>
+    <rect x="14" y="106" width="146" height="24" rx="3" fill="#14202e"/>
+    <text x="22" y="122" fill="#7aefe0" font-family="ui-monospace, monospace" font-size="9" letter-spacing="1">SYNC TELEMETRY BUS</text>
+  </g>
+
+  <!-- Connector 3 -> 4 -->
+  <line x1="594" y1="125" x2="628" y2="125" stroke="#3dcfbf" stroke-width="1.5" marker-end="url(#arrow-signal)"/>
+
+  <!-- Stage 4: Evidence Report -->
+  <g transform="translate(634, 54)">
+    <rect width="142" height="142" rx="4" fill="#0e1520" stroke="#3dcfbf" stroke-opacity="0.28" stroke-width="1"/>
+    <text x="12" y="22" fill="#c4a574" font-family="ui-monospace, monospace" font-size="9" letter-spacing="1.5">04 · ARTIFACTS</text>
+    <text x="12" y="46" fill="#e4eaf2" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="600">Evidence Bundle</text>
+    <text x="12" y="66" fill="#8a96a8" font-family="ui-monospace, monospace" font-size="10">· SNR &amp; EVM trace</text>
+    <text x="12" y="84" fill="#8a96a8" font-family="ui-monospace, monospace" font-size="10">· MCU UART logs</text>
+    <text x="12" y="102" fill="#8a96a8" font-family="ui-monospace, monospace" font-size="10">· Audit manifest</text>
+    <rect x="12" y="112" width="118" height="18" rx="2" fill="#14202e"/>
+    <text x="20" y="124" fill="#3dcfbf" font-family="ui-monospace, monospace" font-size="9" letter-spacing="1">SIGNED REPORT</text>
+  </g>
+</svg>

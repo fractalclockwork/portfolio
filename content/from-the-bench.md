@@ -1,17 +1,17 @@
-# From the bench and the cluster
+# From the bench to the cluster
 
-*A short tour of curated public work by Brent A. Thorne — not a résumé dump.*
+*Selected scientific software, embedded firmware, and physical instrumentation systems by Brent A. Thorne.*
 
 ---
 
-Bridging physical hardware constraints with high-performance scientific software. Over two decades at the hardware–software boundary — from oscilloscope bench bring-up and Linux drivers to GPU-accelerated parallel algorithms for reproducible scientific simulation. The [portfolio](https://fractalclockwork.github.io/portfolio/) routes visitors through four engineering domains; classroom dumps stay offstage. Source lives under [github.com/fractalclockwork](https://github.com/fractalclockwork).
+Bridging physical hardware constraints with high-performance scientific software. Over two decades at the hardware–software boundary — from oscilloscope bench bring-up and Linux drivers to GPU-accelerated parallel algorithms for reproducible scientific simulation. The [portfolio](https://fractalclockwork.github.io/portfolio/) organizes engineering systems across four primary technical domains. Source lives under [github.com/fractalclockwork](https://github.com/fractalclockwork).
 
 ## Domains
 
 1. **High-Performance Computing & Scientific Software** — reproducibility across local, container, and cluster backends. Flagship: [hpc-runner](https://github.com/fractalclockwork/hpc-runner).
 2. **Embedded Firmware & Sensing Systems** — board bring-up, HWIL, high-rate acquisition. Flagships: [rad-lab](https://github.com/fractalclockwork/rad-lab), [CEDE / cede-labgrid](https://github.com/fractalclockwork/cede).
-3. **Computational Imaging & Instrumentation** — instrument control and reconstruction. Flagships: [spectrometer-lab](https://github.com/fractalclockwork/spectrometer-lab) (Stages 1–3 PASS; Gate D open), [Soft X-ray PMT](https://github.com/fractalclockwork/soft-xray-pmt) (Stage 1; Gate 0 PASS; no HV yet).
-4. **Scientific Field & Lab Infrastructure** — fixtures, telemetry, bioelectrical IP; historical bench craft in the Hardware Archive.
+3. **Computational Imaging & Instrumentation** — instrument control and reconstruction. Flagships: [spectrometer-lab](https://github.com/fractalclockwork/spectrometer-lab) (RS-232 DAQ, baseline emission scans, and optical spectrum calibration), [Soft X-ray PMT](https://github.com/fractalclockwork/soft-xray-pmt) (low-noise KiCad filter circuit and Type A divider for the Photonis XP3312/SQ).
+4. **Scientific Field & Lab Infrastructure** — fixtures, telemetry, bioelectrical IP, and physical computing explorations in the Hardware Archive.
 
 ## Featured flagships
 
@@ -19,11 +19,11 @@ Bridging physical hardware constraints with high-performance scientific software
 
 **[rad-lab](https://github.com/fractalclockwork/rad-lab)** — host-gated RF HWIL with human assent before TX, SIL→HWIL stages, and evidence reports.
 
-**[spectrometer-lab](https://github.com/fractalclockwork/spectrometer-lab)** — RS-232 DAQ and control for a PerkinElmer LS 55; Stages 1–3 PASS (2026-10-28); Gate D optical validation open.
+**[spectrometer-lab](https://github.com/fractalclockwork/spectrometer-lab)** — validated electrical bring-up, RS-232 command protocols, and baseline emission scans for the PerkinElmer LS 55; active work focused on full optical spectrum calibration.
 
 **[FPGA Kit](https://github.com/fractalclockwork/fpga-kit)** — bring-up archive for Digilent Spartan boards so firmware work survives tool churn.
 
-**[Soft X-ray PMT](https://github.com/fractalclockwork/soft-xray-pmt)** — Photonis XP3312/SQ Stage 1 HV-bias and anode-sense bring-up; pin map PASS, Gate 0 design/sch/SPICE PASS; no HV applied yet.
+**[Soft X-ray PMT](https://github.com/fractalclockwork/soft-xray-pmt)** — designed and simulated low-noise KiCad filter circuit and Type A divider for Photonis XP3312/SQ PMT; validated pin mapping ahead of high-voltage integration.
 
 ## High-Performance Computing & Scientific Software
 
@@ -35,15 +35,13 @@ Bridging physical hardware constraints with high-performance scientific software
 
 ## Computational Imaging & Instrumentation
 
-Featured spectrometer-lab and Soft X-ray PMT Stage 1; freelance CT/radio reconstruction pipelines. Public sensing reference: [Biofeedback EMG](https://github.com/fractalclockwork/biofeedback_emg).
+Featured spectrometer-lab and Soft X-ray PMT instrumentation alongside custom CT and radio reconstruction pipelines. Public sensing reference: [Biofeedback EMG](https://github.com/fractalclockwork/biofeedback_emg).
 
 ## Hardware Archive
 
-Secondary to the Research Engineer story. [Core Memory Redux](https://github.com/fractalclockwork/core-memory-redux) and [Core Memory](https://github.com/fractalclockwork/core-memory) — SIL into a real 9″ ferrite plane. [CRT Drive](https://github.com/fractalclockwork/crt-drive) — open CRT firmware. *Retro Compute* (Chu, 1962) stays private until ready.
+Foundational explorations in physical computing, magnetic core storage, and CRT synchronization demonstrating low-level hardware craft. [Core Memory Redux](https://github.com/fractalclockwork/core-memory-redux) and [Core Memory](https://github.com/fractalclockwork/core-memory) — SIL simulation and drive electronics for a 9″ ferrite plane. [CRT Drive](https://github.com/fractalclockwork/crt-drive) — open CRT synchronization firmware. *Retro Compute* (Chu, 1962) is in preparation for release.
 
-## How to follow along
-
-Start on the portfolio domain cards, then the five flagships. Compute and embedded shelves next; Hardware Archive last. Public links live on the site; private work stays unmarked until it ships.
+## Connect
 
 **Portfolio:** [fractalclockwork.github.io/portfolio](https://fractalclockwork.github.io/portfolio/)  
 **GitHub:** [github.com/fractalclockwork](https://github.com/fractalclockwork)  
@@ -51,4 +49,4 @@ Start on the portfolio domain cards, then the five flagships. Compute and embedd
 
 ---
 
-*Brent A. Thorne · curated public work. Classroom dumps and retired joke branding stay off this surface; remotes are not deleted.*
+*Brent A. Thorne — selected scientific software, embedded firmware, and physical instrumentation systems.*

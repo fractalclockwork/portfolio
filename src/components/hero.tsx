@@ -2,9 +2,9 @@
 
 import { AtmosphereField } from "@/components/atmosphere-field";
 import { Button } from "@/components/ui/button";
-import { about, identity, withBasePath } from "@/lib/projects";
+import { about, identity, withBasePath } from "@/data/portfolioData";
 import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Mail } from "lucide-react";
 
 const fade = {
   hidden: { opacity: 0, y: 18 },
@@ -123,11 +123,21 @@ export function Hero() {
           >
             <Button
               nativeButton={false}
-              render={<a href="#featured" />}
+              render={<a href={`mailto:${about.email}`} />}
               size="lg"
               className="h-11 rounded-md bg-signal px-5 font-tech text-xs tracking-[0.18em] text-primary-foreground uppercase hover:bg-signal-bright"
             >
-              Featured work
+              <Mail data-icon="inline-start" />
+              Get in Touch
+            </Button>
+            <Button
+              nativeButton={false}
+              render={<a href="#featured" />}
+              variant="outline"
+              size="lg"
+              className="h-11 rounded-md border-signal/25 bg-transparent px-5 font-tech text-xs tracking-[0.18em] text-signal uppercase hover:bg-signal/10 hover:text-signal-bright"
+            >
+              Featured Work
             </Button>
             <Button
               nativeButton={false}

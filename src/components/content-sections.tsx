@@ -8,10 +8,11 @@ import {
   domainCards,
   experience,
   featured,
+  sectionMeta,
   sections,
   trajectory,
   withBasePath,
-} from "@/lib/projects";
+} from "@/data/portfolioData";
 import { motion } from "framer-motion";
 import { ArrowUpRight, Mail } from "lucide-react";
 
@@ -63,9 +64,9 @@ export function ContentSections() {
       >
         <div className="mx-auto max-w-6xl">
           <SectionHeader
-            label="Highlights"
-            title="Selected achievements"
-            intro="Immediate credibility — commercial scale, scientific tooling, imaging systems, IP, and graduate research. Full detail is in the resume."
+            label={sectionMeta.highlights.subtitle}
+            title={sectionMeta.highlights.title}
+            intro={sectionMeta.highlights.description}
           />
           <motion.ul
             className="mt-12 max-w-3xl space-y-4"
@@ -92,9 +93,9 @@ export function ContentSections() {
       >
         <div className="mx-auto max-w-6xl">
           <SectionHeader
-            label="Trajectory"
-            title="How the work connects"
-            intro="A progression across eras — not a grab bag of unrelated interests. Each step compounds the next."
+            label={sectionMeta.trajectory.subtitle}
+            title={sectionMeta.trajectory.title}
+            intro={sectionMeta.trajectory.description}
           />
           <ol className="mt-12 max-w-xl space-y-0">
             {trajectory.map((step, index) => (
@@ -131,9 +132,9 @@ export function ContentSections() {
       >
         <div className="mx-auto max-w-6xl">
           <SectionHeader
-            label="Core engineering domains"
-            title="Where to go next"
-            intro="Four pathways aligned to the work I do. Each card jumps to that domain’s projects. Stack lines are secondary — problems and outcomes lead."
+            label={sectionMeta.domains.subtitle}
+            title={sectionMeta.domains.title}
+            intro={sectionMeta.domains.description}
           />
           <div className="mt-12 grid gap-6 sm:grid-cols-2">
             {domainCards.map((card) => (
@@ -170,9 +171,9 @@ export function ContentSections() {
       >
         <div className="mx-auto max-w-6xl">
           <SectionHeader
-            label="Featured"
-            title="Flagship public work"
-            intro="Constraint-first systems that define the Research Engineer story: HPC regression (hpc-runner), RF HWIL (rad-lab), optical DAQ (spectrometer-lab), FPGA bring-up continuity (FPGA Kit), and soft X-ray PMT Stage 1. Pick a domain above to see the rest of the shelf."
+            label={sectionMeta.featured.subtitle}
+            title={sectionMeta.featured.title}
+            intro={sectionMeta.featured.description}
           />
           <ProjectList projects={featured} />
         </div>
@@ -201,9 +202,9 @@ export function ContentSections() {
       >
         <div className="mx-auto max-w-6xl">
           <SectionHeader
-            label="Experience"
-            title="Professional history"
-            intro="Industry depth across embedded firmware, wireless systems, and independent R&D. Reviewers care about this before degrees — full detail is in the resume."
+            label={sectionMeta.experience.subtitle}
+            title={sectionMeta.experience.title}
+            intro={sectionMeta.experience.description}
           />
           <ol className="mt-12 space-y-10">
             {experience.map((job) => (
